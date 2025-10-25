@@ -1,0 +1,4731 @@
+
+Balance : 22577.507413647876
+MaxEquity : 136.74287051641318
+MinEquity : -7.369131224234299
+AccountEquity : 125.77507413647876
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 1/1/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 1
+--------------------------------------
+Balance : 22662.75017372295
+MaxEquity : 137.59529811716396
+MinEquity : -6.516703623483522
+AccountEquity : 126.62750173722955
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 1/2/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 2
+--------------------------------------
+Balance : 22847.69663069955
+MaxEquity : 139.44476268692992
+MinEquity : -4.667239053717569
+AccountEquity : 128.4769663069955
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 1/3/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 3
+--------------------------------------
+Balance : 22962.786084152303
+MaxEquity : 140.59565722145746
+MinEquity : -3.51634451919003
+AccountEquity : 129.62786084152305
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 1/4/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 4
+--------------------------------------
+Balance : 22643.722384362813
+MaxEquity : 137.40502022356247
+MinEquity : -6.7069815170849765
+AccountEquity : 126.43722384362806
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 1/5/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 5
+--------------------------------------
+Balance : 8963.94177032394
+MaxEquity : 8.673883156943539
+MinEquity : -10.36058229676059
+AccountEquity : -10.36058229676059
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/8/2024 12:00:00 AM
+CloseTime : 2/21/2024 6:11:00 PM
+AccountID : 6
+--------------------------------------
+Balance : 8956.041637006738
+MaxEquity : 9.87518506760711
+MinEquity : -10.439583629932612
+AccountEquity : -10.439583629932612
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/9/2024 12:00:00 AM
+CloseTime : 2/22/2024 5:31:00 AM
+AccountID : 7
+--------------------------------------
+Balance : 8937.0663618204
+MaxEquity : 3.9615241125987453
+MinEquity : -10.629336381795996
+AccountEquity : -10.629336381795996
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/10/2024 12:00:00 AM
+CloseTime : 2/19/2024 2:02:00 AM
+AccountID : 8
+--------------------------------------
+Balance : 8996.964843753673
+MaxEquity : 1.397078984210081
+MinEquity : -10.030351562463284
+AccountEquity : -10.030351562463284
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/11/2024 12:00:00 AM
+CloseTime : 2/16/2024 7:09:00 AM
+AccountID : 9
+--------------------------------------
+Balance : 8931.23168102757
+MaxEquity : 2.6975513373849096
+MinEquity : -10.687683189724304
+AccountEquity : -10.687683189724304
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/12/2024 12:00:00 AM
+CloseTime : 2/20/2024 10:04:00 AM
+AccountID : 10
+--------------------------------------
+Balance : 8920.517065150329
+MaxEquity : 3.5617045206673676
+MinEquity : -10.794829348496712
+AccountEquity : -10.794829348496712
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/15/2024 12:00:00 AM
+CloseTime : 2/21/2024 6:11:00 PM
+AccountID : 11
+--------------------------------------
+Balance : 8929.423326646785
+MaxEquity : 4.931070379467525
+MinEquity : -10.705766733532144
+AccountEquity : -10.705766733532144
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/16/2024 12:00:00 AM
+CloseTime : 2/22/2024 5:31:00 AM
+AccountID : 12
+--------------------------------------
+Balance : 8995.46959002429
+MaxEquity : 3.339930427352115
+MinEquity : -10.045304099757098
+AccountEquity : -10.045304099757098
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/17/2024 12:00:00 AM
+CloseTime : 2/20/2024 10:04:00 AM
+AccountID : 13
+--------------------------------------
+Balance : 8885.967610837775
+MaxEquity : 4.496513221377425
+MinEquity : -11.140323891622241
+AccountEquity : -11.140323891622241
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/18/2024 12:00:00 AM
+CloseTime : 2/22/2024 5:31:00 AM
+AccountID : 14
+--------------------------------------
+Balance : 8966.628093341022
+MaxEquity : 4.022814802574309
+MinEquity : -10.333719066589769
+AccountEquity : -10.333719066589769
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/19/2024 12:00:00 AM
+CloseTime : 2/21/2024 6:11:00 PM
+AccountID : 15
+--------------------------------------
+Balance : 8958.752684614798
+MaxEquity : 1.895574378602387
+MinEquity : -10.412473153852005
+AccountEquity : -10.412473153852005
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/20/2024 12:00:00 AM
+CloseTime : 2/19/2024 2:02:00 AM
+AccountID : 16
+--------------------------------------
+Balance : 8938.268164303645
+MaxEquity : 2.7679161701456882
+MinEquity : -10.617318356963525
+AccountEquity : -10.617318356963525
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/22/2024 12:00:00 AM
+CloseTime : 2/20/2024 10:04:00 AM
+AccountID : 17
+--------------------------------------
+Balance : 8930.311609142227
+MaxEquity : 3.659649960586375
+MinEquity : -10.696883908577703
+AccountEquity : -10.696883908577703
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/23/2024 12:00:00 AM
+CloseTime : 2/21/2024 6:11:00 PM
+AccountID : 18
+--------------------------------------
+Balance : 8926.65215775169
+MaxEquity : 0.6939521241902841
+MinEquity : -10.733478422483083
+AccountEquity : -10.733478422483083
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/24/2024 12:00:00 AM
+CloseTime : 2/16/2024 7:09:00 AM
+AccountID : 19
+--------------------------------------
+Balance : 8986.18286777813
+MaxEquity : 0.4258608570591303
+MinEquity : -10.13817132221867
+AccountEquity : -10.13817132221867
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/25/2024 12:00:00 AM
+CloseTime : 2/19/2024 2:02:00 AM
+AccountID : 20
+--------------------------------------
+Balance : 8973.193751177187
+MaxEquity : 0
+MinEquity : -10.268062488228114
+AccountEquity : -10.268062488228114
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/26/2024 12:00:00 AM
+CloseTime : 2/19/2024 2:02:00 AM
+AccountID : 21
+--------------------------------------
+Balance : 8987.051043725478
+MaxEquity : 0
+MinEquity : -10.129489562745205
+AccountEquity : -10.129489562745205
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/29/2024 12:00:00 AM
+CloseTime : 2/20/2024 10:04:00 AM
+AccountID : 22
+--------------------------------------
+Balance : 8916.292711841477
+MaxEquity : 0
+MinEquity : -10.8370728815852
+AccountEquity : -10.8370728815852
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/30/2024 12:00:00 AM
+CloseTime : 2/21/2024 6:11:00 PM
+AccountID : 23
+--------------------------------------
+Balance : 8935.39803284946
+MaxEquity : 0.6896825891772642
+MinEquity : -10.646019671505364
+AccountEquity : -10.646019671505364
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/31/2024 12:00:00 AM
+CloseTime : 2/22/2024 5:31:00 AM
+AccountID : 24
+--------------------------------------
+Balance : 8951.773922004748
+MaxEquity : 0.3584706998296217
+MinEquity : -10.48226077995249
+AccountEquity : -10.48226077995249
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 2/1/2024 12:00:00 AM
+CloseTime : 2/22/2024 5:31:00 AM
+AccountID : 25
+--------------------------------------
+Balance : 8976.339863289313
+MaxEquity : 6.275427019905359
+MinEquity : -10.236601367106859
+AccountEquity : -10.236601367106859
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 2/2/2024 12:00:00 AM
+CloseTime : 4/5/2024 5:02:00 AM
+AccountID : 26
+--------------------------------------
+Balance : 22368.421491286932
+MaxEquity : 134.65201129280376
+MinEquity : -9.459990447843719
+AccountEquity : 123.68421491286935
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/5/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 27
+--------------------------------------
+Balance : 22539.56110072797
+MaxEquity : 136.36340738721415
+MinEquity : -7.748594353433352
+AccountEquity : 125.39561100727974
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/6/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 28
+--------------------------------------
+Balance : 22502.940496939034
+MaxEquity : 135.99720134932483
+MinEquity : -8.114800391322682
+AccountEquity : 125.02940496939041
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/7/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 29
+--------------------------------------
+Balance : 22599.22488358009
+MaxEquity : 136.9600452157353
+MinEquity : -7.1519565249121735
+AccountEquity : 125.9922488358009
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/8/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 30
+--------------------------------------
+Balance : 22386.67571714242
+MaxEquity : 134.83455355135865
+MinEquity : -9.277448189288856
+AccountEquity : 123.86675717142424
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/9/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 31
+--------------------------------------
+Balance : 8953.336688394273
+MaxEquity : 0
+MinEquity : -10.466633116057249
+AccountEquity : -10.466633116057249
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 2/12/2024 12:00:00 AM
+CloseTime : 2/22/2024 5:31:00 AM
+AccountID : 32
+--------------------------------------
+Balance : 8971.392840531546
+MaxEquity : 6.225956792327666
+MinEquity : -10.286071594684552
+AccountEquity : -10.286071594684552
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 2/13/2024 12:00:00 AM
+CloseTime : 4/5/2024 5:02:00 AM
+AccountID : 33
+--------------------------------------
+Balance : 22453.932103264207
+MaxEquity : 135.5071174125765
+MinEquity : -8.604884328070996
+AccountEquity : 124.53932103264208
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/15/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 34
+--------------------------------------
+Balance : 22576.704128326553
+MaxEquity : 136.73483766319998
+MinEquity : -7.377164077447525
+AccountEquity : 125.76704128326557
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/16/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 35
+--------------------------------------
+Balance : 22742.31339583964
+MaxEquity : 138.39093033833078
+MinEquity : -5.721071402316711
+AccountEquity : 127.42313395839636
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/19/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 36
+--------------------------------------
+Balance : 22830.37509441774
+MaxEquity : 139.27154732411182
+MinEquity : -4.840454416535684
+AccountEquity : 128.3037509441774
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/20/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 37
+--------------------------------------
+Balance : 22938.093793883225
+MaxEquity : 140.34873431876662
+MinEquity : -3.763267421880871
+AccountEquity : 129.3809379388322
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/21/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 38
+--------------------------------------
+Balance : 23035.223728088702
+MaxEquity : 141.32003366082148
+MinEquity : -2.7919680798260047
+AccountEquity : 130.35223728088707
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/22/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 39
+--------------------------------------
+Balance : 23163.25405247226
+MaxEquity : 142.60033690465707
+MinEquity : -1.5116648359904143
+AccountEquity : 131.63254052472266
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/23/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 40
+--------------------------------------
+Balance : 22765.210147708374
+MaxEquity : 138.61989785701815
+MinEquity : -5.492103883629366
+AccountEquity : 127.65210147708373
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/27/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 41
+--------------------------------------
+Balance : 22866.327289645185
+MaxEquity : 139.63106927638626
+MinEquity : -4.480932464261242
+AccountEquity : 128.66327289645184
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/28/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 42
+--------------------------------------
+Balance : 23057.940991311498
+MaxEquity : 141.5472062930494
+MinEquity : -2.5647954475980606
+AccountEquity : 130.579409913115
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/29/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 43
+--------------------------------------
+Balance : 22692.237624567988
+MaxEquity : 137.8901726256143
+MinEquity : -6.22182911503322
+AccountEquity : 126.92237624567989
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/1/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 44
+--------------------------------------
+Balance : 22804.94515045515
+MaxEquity : 139.01724788448593
+MinEquity : -5.094753856161577
+AccountEquity : 128.0494515045515
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/4/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 45
+--------------------------------------
+Balance : 22999.569964903265
+MaxEquity : 140.96349602896706
+MinEquity : -3.148505711680427
+AccountEquity : 129.99569964903264
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/5/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 46
+--------------------------------------
+Balance : 23102.889848583403
+MaxEquity : 141.99669486576843
+MinEquity : -2.1153068748790442
+AccountEquity : 131.02889848583402
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/6/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 47
+--------------------------------------
+Balance : 8971.79434292339
+MaxEquity : 1.4227268535099946
+MinEquity : -10.282056570766095
+AccountEquity : -10.282056570766095
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 3/7/2024 12:00:00 AM
+CloseTime : 3/15/2024 2:02:00 AM
+AccountID : 48
+--------------------------------------
+Balance : 8997.3467908212
+MaxEquity : 2.565575053922605
+MinEquity : -10.026532091787987
+AccountEquity : -10.026532091787987
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 3/8/2024 12:00:00 AM
+CloseTime : 3/18/2024 1:04:00 PM
+AccountID : 49
+--------------------------------------
+Balance : 8978.533459317117
+MaxEquity : 0
+MinEquity : -10.214665406828821
+AccountEquity : -10.214665406828821
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 3/11/2024 12:00:00 AM
+CloseTime : 3/20/2024 1:04:00 AM
+AccountID : 50
+--------------------------------------
+Balance : 8965.249386577361
+MaxEquity : 1.1024490960051812
+MinEquity : -10.347506134226444
+AccountEquity : -10.347506134226444
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 3/12/2024 12:00:00 AM
+CloseTime : 3/29/2024 1:03:00 AM
+AccountID : 51
+--------------------------------------
+Balance : 22355.95227175341
+MaxEquity : 134.5273190974685
+MinEquity : -9.584682643178962
+AccountEquity : 123.5595227175341
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/13/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 52
+--------------------------------------
+Balance : 22423.704356247512
+MaxEquity : 135.20483994240954
+MinEquity : -8.907161798237976
+AccountEquity : 124.23704356247512
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/14/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 53
+--------------------------------------
+Balance : 22617.185579072375
+MaxEquity : 137.1396521706581
+MinEquity : -6.972349569989379
+AccountEquity : 126.1718557907237
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/15/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 54
+--------------------------------------
+Balance : 22789.484866428433
+MaxEquity : 138.86264504421868
+MinEquity : -5.249356696428824
+AccountEquity : 127.89484866428427
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/18/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 55
+--------------------------------------
+Balance : 22878.217238571877
+MaxEquity : 139.74996876565316
+MinEquity : -4.362032974994321
+AccountEquity : 128.78217238571875
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/19/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 56
+--------------------------------------
+Balance : 22618.117777048257
+MaxEquity : 137.14897415041696
+MinEquity : -6.963027590230507
+AccountEquity : 126.18117777048255
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/20/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 57
+--------------------------------------
+Balance : 22909.184691474013
+MaxEquity : 140.05964329467452
+MinEquity : -4.052358445972972
+AccountEquity : 129.0918469147401
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/21/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 58
+--------------------------------------
+Balance : 22904.949164269314
+MaxEquity : 140.01728802262755
+MinEquity : -4.09471371801995
+AccountEquity : 129.04949164269314
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/22/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 59
+--------------------------------------
+Balance : 23029.064365928007
+MaxEquity : 141.25844003921452
+MinEquity : -2.853561701432977
+AccountEquity : 130.2906436592801
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/25/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 60
+--------------------------------------
+Balance : 23120.003891274424
+MaxEquity : 142.16783529267866
+MinEquity : -1.9441664479687972
+AccountEquity : 131.20003891274425
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/26/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 61
+--------------------------------------
+Balance : 23032.273343414727
+MaxEquity : 141.2905298140817
+MinEquity : -2.821471926565787
+AccountEquity : 130.3227334341473
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/27/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 62
+--------------------------------------
+Balance : 23093.37312497073
+MaxEquity : 141.90152762964172
+MinEquity : -2.2104741110057518
+AccountEquity : 130.9337312497073
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/28/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 63
+--------------------------------------
+Balance : 23182.688404198463
+MaxEquity : 142.7946804219191
+MinEquity : -1.3173213187283679
+AccountEquity : 131.8268840419847
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/29/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 64
+--------------------------------------
+Balance : 22817.984707989923
+MaxEquity : 139.1476434598337
+MinEquity : -4.964358280813821
+AccountEquity : 128.17984707989928
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/1/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 65
+--------------------------------------
+Balance : 22605.796751826656
+MaxEquity : 137.02576389820103
+MinEquity : -7.086237842446461
+AccountEquity : 126.05796751826662
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/2/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 66
+--------------------------------------
+Balance : 22749.837664545008
+MaxEquity : 138.4661730253845
+MinEquity : -5.645828715263006
+AccountEquity : 127.4983766454501
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/3/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 67
+--------------------------------------
+Balance : 22928.598489414817
+MaxEquity : 140.25378127408263
+MinEquity : -3.858220466564869
+AccountEquity : 129.2859848941482
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/4/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 68
+--------------------------------------
+Balance : 23053.88978507239
+MaxEquity : 141.50669423065838
+MinEquity : -2.6053075099891028
+AccountEquity : 130.53889785072397
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/5/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 69
+--------------------------------------
+Balance : 23270.209362702033
+MaxEquity : 143.66989000695477
+MinEquity : -0.442111733692695
+AccountEquity : 132.70209362702036
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/8/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 70
+--------------------------------------
+Balance : 22887.033819894878
+MaxEquity : 139.83813457888323
+MinEquity : -1.323640028748266
+AccountEquity : 128.87033819894882
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/9/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 71
+--------------------------------------
+Balance : 22972.033885413937
+MaxEquity : 140.68813523407385
+MinEquity : -0.47363937355762825
+AccountEquity : 129.72033885413944
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/10/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 72
+--------------------------------------
+Balance : 22792.90985049673
+MaxEquity : 138.8968948849017
+MinEquity : 0
+AccountEquity : 127.9290985049673
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/11/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 73
+--------------------------------------
+Balance : 22595.264311565432
+MaxEquity : 136.9204394955887
+MinEquity : -0.9082705648661479
+AccountEquity : 125.9526431156543
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/12/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 74
+--------------------------------------
+Balance : 22686.091368052043
+MaxEquity : 137.8287100604549
+MinEquity : 0
+AccountEquity : 126.8609136805205
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/13/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 75
+--------------------------------------
+Balance : 21806.054164191355
+MaxEquity : 129.02833802184784
+MinEquity : 0
+AccountEquity : 118.06054164191343
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/15/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 76
+--------------------------------------
+Balance : 21125.47480108972
+MaxEquity : 122.22254439083159
+MinEquity : -1.1286101666710577
+AccountEquity : 111.25474801089717
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/16/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 77
+--------------------------------------
+Balance : 20959.498761312283
+MaxEquity : 120.56278399305725
+MinEquity : -2.7883705644454104
+AccountEquity : 109.59498761312284
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/17/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 78
+--------------------------------------
+Balance : 21041.22951016742
+MaxEquity : 121.38009148160853
+MinEquity : -1.971063075894082
+AccountEquity : 110.41229510167412
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/18/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 79
+--------------------------------------
+Balance : 21238.33581775682
+MaxEquity : 123.35115455750261
+MinEquity : 0
+AccountEquity : 112.3833581775682
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/19/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 80
+--------------------------------------
+Balance : 20737.739475205384
+MaxEquity : 118.34519113198823
+MinEquity : -1.968888286935576
+AccountEquity : 107.37739475205382
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/22/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 81
+--------------------------------------
+Balance : 20657.521007194355
+MaxEquity : 117.54300645187797
+MinEquity : -2.7710729670458423
+AccountEquity : 106.57521007194356
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/23/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 82
+--------------------------------------
+Balance : 20797.810468584725
+MaxEquity : 118.94590106578161
+MinEquity : -1.368178353142226
+AccountEquity : 107.9781046858472
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/24/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 83
+--------------------------------------
+Balance : 20862.364424804615
+MaxEquity : 119.59144062798057
+MinEquity : -0.7226387909432619
+AccountEquity : 108.62364424804616
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/25/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 84
+--------------------------------------
+Balance : 20738.72576940285
+MaxEquity : 118.35505407396292
+MinEquity : -0.46372363299202796
+AccountEquity : 107.3872576940285
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/26/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 85
+--------------------------------------
+Balance : 20600.541874714163
+MaxEquity : 116.97321512707603
+MinEquity : 0
+AccountEquity : 106.00541874714162
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/29/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 86
+--------------------------------------
+Balance : 20354.086547487088
+MaxEquity : 114.50866185480521
+MinEquity : 0
+AccountEquity : 103.5408654748708
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/30/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 87
+--------------------------------------
+Balance : 19874.64916976432
+MaxEquity : 109.71428807757758
+MinEquity : -2.913805116532204
+AccountEquity : 98.74649169764317
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/1/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 88
+--------------------------------------
+Balance : 19990.61644131325
+MaxEquity : 110.87396079306689
+MinEquity : -1.7541324010428898
+AccountEquity : 99.90616441313247
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/2/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 89
+--------------------------------------
+Balance : 20089.936551996718
+MaxEquity : 111.86716189990162
+MinEquity : -0.7609312942082221
+AccountEquity : 100.8993655199672
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/3/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 90
+--------------------------------------
+Balance : 20050.103925875825
+MaxEquity : 111.46883563869267
+MinEquity : -1.1592575554171605
+AccountEquity : 100.50103925875825
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/6/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 91
+--------------------------------------
+Balance : 20166.029681417538
+MaxEquity : 112.62809319410985
+MinEquity : 0
+AccountEquity : 101.66029681417544
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/7/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 92
+--------------------------------------
+Balance : 19874.497424766036
+MaxEquity : 109.71277062759467
+MinEquity : 0
+AccountEquity : 98.74497424766025
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/8/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 93
+--------------------------------------
+Balance : 19628.6441200752
+MaxEquity : 107.25423758068627
+MinEquity : -1.0018308198488028
+AccountEquity : 96.28644120075185
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/9/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 94
+--------------------------------------
+Balance : 19524.022929612463
+MaxEquity : 106.20802567605887
+MinEquity : -2.04804272447619
+AccountEquity : 95.24022929612445
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/10/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 95
+--------------------------------------
+Balance : 19340.92439191994
+MaxEquity : 104.37704029913363
+MinEquity : -3.879028101401413
+AccountEquity : 93.40924391919921
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/13/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 96
+--------------------------------------
+Balance : 19451.352115464808
+MaxEquity : 105.48131753458233
+MinEquity : -2.774750865952728
+AccountEquity : 94.51352115464792
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/14/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 97
+--------------------------------------
+Balance : 19572.79952048897
+MaxEquity : 106.69579158482392
+MinEquity : -1.560276815711124
+AccountEquity : 95.72799520488951
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/15/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 98
+--------------------------------------
+Balance : 19634.88420939517
+MaxEquity : 107.31663847388597
+MinEquity : -0.9394299266491006
+AccountEquity : 96.34884209395156
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/16/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 99
+--------------------------------------
+Balance : 19728.827202060078
+MaxEquity : 108.2560684005351
+MinEquity : 0
+AccountEquity : 97.28827202060069
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/17/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 100
+--------------------------------------
+Balance : 19585.178270955876
+MaxEquity : 106.819579089493
+MinEquity : 0
+AccountEquity : 95.85178270955859
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/18/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 101
+--------------------------------------
+Balance : 19333.558265319436
+MaxEquity : 104.30337903312858
+MinEquity : -2.1703957823140376
+AccountEquity : 93.33558265319417
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/20/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 102
+--------------------------------------
+Balance : 19449.60274081006
+MaxEquity : 105.46382378803483
+MinEquity : -1.009951027407797
+AccountEquity : 94.49602740810042
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/22/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 103
+--------------------------------------
+Balance : 19550.59784355084
+MaxEquity : 106.47377481544265
+MinEquity : 0
+AccountEquity : 95.50597843550824
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/23/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 104
+--------------------------------------
+Balance : 18861.651799119965
+MaxEquity : 99.58431437113387
+MinEquity : -1.9143036255774786
+AccountEquity : 88.61651799119946
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/24/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 105
+--------------------------------------
+Balance : 18608.90049115124
+MaxEquity : 97.05680129144665
+MinEquity : -4.441816705264737
+AccountEquity : 86.08900491151223
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/25/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 106
+--------------------------------------
+Balance : 18665.97696264541
+MaxEquity : 97.62756600638835
+MinEquity : -3.8710519903229943
+AccountEquity : 86.65976962645394
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/27/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 107
+--------------------------------------
+Balance : 18808.255817489862
+MaxEquity : 99.0503545548329
+MinEquity : -2.4482634418784888
+AccountEquity : 88.08255817489848
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/28/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 108
+--------------------------------------
+Balance : 18702.20645868596
+MaxEquity : 97.98986096679383
+MinEquity : -3.508757029917534
+AccountEquity : 87.02206458685941
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/29/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 109
+--------------------------------------
+Balance : 18536.353334769377
+MaxEquity : 96.33132972762803
+MinEquity : -5.167288269083328
+AccountEquity : 85.36353334769362
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/30/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 110
+--------------------------------------
+Balance : 18673.15543241427
+MaxEquity : 97.69935070407698
+MinEquity : -3.7992672926343913
+AccountEquity : 86.73155432414256
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 5/31/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 111
+--------------------------------------
+Balance : 18758.51955512718
+MaxEquity : 98.55299193120604
+MinEquity : -2.9456260655053255
+AccountEquity : 87.58519555127162
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 6/3/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 112
+--------------------------------------
+Balance : 18624.970090087627
+MaxEquity : 97.21749728081053
+MinEquity : -4.281120715900824
+AccountEquity : 86.24970090087612
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 6/4/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 113
+--------------------------------------
+Balance : 18475.14884418936
+MaxEquity : 95.71928482182787
+MinEquity : -5.779333174883495
+AccountEquity : 84.75148844189346
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 6/5/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 114
+--------------------------------------
+Balance : 18290.401140275262
+MaxEquity : 93.87180778268689
+MinEquity : -7.626810214024482
+AccountEquity : 82.90401140275247
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 6/6/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 115
+--------------------------------------
+Balance : 18395.442873676402
+MaxEquity : 94.92222511669831
+MinEquity : -6.576392880013068
+AccountEquity : 83.9544287367639
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 6/7/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 116
+--------------------------------------
+Balance : 18530.97903243752
+MaxEquity : 96.2775867043095
+MinEquity : -5.221031292401874
+AccountEquity : 85.30979032437509
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 6/10/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 117
+--------------------------------------
+Balance : 18497.151351294506
+MaxEquity : 95.93930989287932
+MinEquity : -5.559308103832033
+AccountEquity : 84.97151351294491
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 6/11/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 118
+--------------------------------------
+Balance : 18602.18607602739
+MaxEquity : 96.98965714020815
+MinEquity : -4.508960856503213
+AccountEquity : 86.02186076027374
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 6/12/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 119
+--------------------------------------
+Balance : 18784.104493341285
+MaxEquity : 98.8088413133471
+MinEquity : -2.6897766833642547
+AccountEquity : 87.84104493341269
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 6/13/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 120
+--------------------------------------
+Balance : 18626.103794285158
+MaxEquity : 97.22883432278587
+MinEquity : -4.2697836739254935
+AccountEquity : 86.26103794285146
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 6/14/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 121
+--------------------------------------
+Balance : 18706.08381938212
+MaxEquity : 98.02863457375545
+MinEquity : -3.469983422955893
+AccountEquity : 87.06083819382104
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 6/17/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 122
+--------------------------------------
+Balance : 18804.281258551866
+MaxEquity : 99.01060896545295
+MinEquity : -2.488009031258431
+AccountEquity : 88.04281258551853
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 6/18/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 123
+--------------------------------------
+Balance : 18436.67145046038
+MaxEquity : 95.33451088453805
+MinEquity : -6.164107112173304
+AccountEquity : 84.36671450460364
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 6/19/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 124
+--------------------------------------
+Balance : 18510.054788671336
+MaxEquity : 96.06834426664761
+MinEquity : -5.430273730063738
+AccountEquity : 85.1005478867132
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 6/20/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 125
+--------------------------------------
+Balance : 18627.236068281
+MaxEquity : 97.24015706274426
+MinEquity : -4.258460933967104
+AccountEquity : 86.27236068280985
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 6/21/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 126
+--------------------------------------
+Balance : 8994.506839688003
+MaxEquity : 0
+MinEquity : -10.05493160311994
+AccountEquity : -10.05493160311994
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 6/24/2024 12:00:00 AM
+CloseTime : 7/22/2024 1:19:00 AM
+AccountID : 127
+--------------------------------------
+Balance : 18169.16626420949
+MaxEquity : 92.65945902202913
+MinEquity : -8.839158974682245
+AccountEquity : 81.69166264209471
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 6/25/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 128
+--------------------------------------
+Balance : 18301.539664799544
+MaxEquity : 93.98319302792967
+MinEquity : -7.515424968781688
+AccountEquity : 83.01539664799526
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 6/26/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 129
+--------------------------------------
+Balance : 18424.602894518357
+MaxEquity : 95.2138253251178
+MinEquity : -6.284792671593578
+AccountEquity : 84.24602894518338
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 6/27/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 130
+--------------------------------------
+Balance : 18217.886092074434
+MaxEquity : 93.14665730067856
+MinEquity : -8.351960696032815
+AccountEquity : 82.17886092074414
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 6/28/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 131
+--------------------------------------
+Balance : 18380.249101755784
+MaxEquity : 94.77028739749204
+MinEquity : -6.7283305992193165
+AccountEquity : 83.80249101755763
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 7/1/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 132
+--------------------------------------
+Balance : 18239.728027109853
+MaxEquity : 93.36507665103275
+MinEquity : -8.133541345678616
+AccountEquity : 82.39728027109834
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 7/2/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 133
+--------------------------------------
+Balance : 18363.66530824196
+MaxEquity : 94.60444946235384
+MinEquity : -6.8941685343575285
+AccountEquity : 83.63665308241943
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 7/3/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 134
+--------------------------------------
+Balance : 18135.347167452077
+MaxEquity : 92.32126805445503
+MinEquity : -9.177349942256363
+AccountEquity : 81.35347167452062
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 7/4/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 135
+--------------------------------------
+Balance : 18241.77716150508
+MaxEquity : 93.38556799498505
+MinEquity : -8.113050001726332
+AccountEquity : 82.41777161505064
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 7/5/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 136
+--------------------------------------
+Balance : 18490.860344057473
+MaxEquity : 95.87639982050894
+MinEquity : -5.622218176202412
+AccountEquity : 84.90860344057452
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 7/8/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 137
+--------------------------------------
+Balance : 18552.93905737123
+MaxEquity : 96.49718695364649
+MinEquity : -5.001431043064872
+AccountEquity : 85.52939057371208
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 7/9/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 138
+--------------------------------------
+Balance : 18651.193401372442
+MaxEquity : 97.4797303936586
+MinEquity : -4.018887603052754
+AccountEquity : 86.51193401372419
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 7/11/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 139
+--------------------------------------
+Balance : 18340.704322933056
+MaxEquity : 94.37483960926477
+MinEquity : -7.123778387446598
+AccountEquity : 83.40704322933036
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 7/12/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 140
+--------------------------------------
+Balance : 18526.356386986172
+MaxEquity : 96.23136024979593
+MinEquity : -5.26725774691545
+AccountEquity : 85.26356386986151
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 7/15/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 141
+--------------------------------------
+Balance : 18634.015751139745
+MaxEquity : 97.30795389133164
+MinEquity : -4.190664105379719
+AccountEquity : 86.34015751139722
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 7/16/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 142
+--------------------------------------
+Balance : 18763.71577680261
+MaxEquity : 98.60495414796031
+MinEquity : -2.893663848751033
+AccountEquity : 87.6371577680259
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 7/17/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 143
+--------------------------------------
+Balance : 18788.25984375972
+MaxEquity : 98.8503948175314
+MinEquity : -2.648223179179965
+AccountEquity : 87.88259843759698
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 7/18/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 144
+--------------------------------------
+Balance : 18851.70830826882
+MaxEquity : 99.48487946262239
+MinEquity : -2.0137385340889646
+AccountEquity : 88.51708308268798
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 7/19/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 145
+--------------------------------------
+Balance : 18955.539718939202
+MaxEquity : 100.52319356932622
+MinEquity : -0.9754244273851276
+AccountEquity : 89.55539718939181
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 7/22/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 146
+--------------------------------------
+Balance : 19053.08216167772
+MaxEquity : 101.49861799671135
+MinEquity : 0
+AccountEquity : 90.53082161677693
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 7/23/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 147
+--------------------------------------
+Balance : 18917.603186715012
+MaxEquity : 100.14382824708431
+MinEquity : -0.07512444456397227
+AccountEquity : 89.1760318671499
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 7/24/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 148
+--------------------------------------
+Balance : 18652.614292883667
+MaxEquity : 97.49393930877085
+MinEquity : -2.7250133828774246
+AccountEquity : 86.52614292883644
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 7/25/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 149
+--------------------------------------
+Balance : 18860.588783685544
+MaxEquity : 99.57368421678962
+MinEquity : -0.6452684748586557
+AccountEquity : 88.6058878368552
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 7/26/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 150
+--------------------------------------
+Balance : 18925.11563117141
+MaxEquity : 100.2189526916483
+MinEquity : 0
+AccountEquity : 89.25115631171388
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 7/29/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 151
+--------------------------------------
+Balance : 18713.126718931275
+MaxEquity : 98.09906356924697
+MinEquity : 0
+AccountEquity : 87.13126718931255
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 7/30/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 152
+--------------------------------------
+Balance : 17888.00364415029
+MaxEquity : 89.8478328214372
+MinEquity : -0.9088956332920142
+AccountEquity : 78.88003644150278
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 7/31/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 153
+--------------------------------------
+Balance : 17766.869649050434
+MaxEquity : 88.63649287043857
+MinEquity : -2.1202355842905916
+AccountEquity : 77.66869649050416
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 8/1/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 154
+--------------------------------------
+Balance : 17867.15213030096
+MaxEquity : 89.63931768294394
+MinEquity : -1.1174107717852737
+AccountEquity : 78.67152130300953
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 8/2/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 155
+--------------------------------------
+Balance : 17978.893207479494
+MaxEquity : 90.75672845472916
+MinEquity : 0
+AccountEquity : 79.78893207479474
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 8/5/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 156
+--------------------------------------
+Balance : 16999.70674510005
+MaxEquity : 80.96486383093479
+MinEquity : -1.844348742645479
+AccountEquity : 69.99706745100038
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 8/6/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 157
+--------------------------------------
+Balance : 16862.89378591876
+MaxEquity : 79.59673423912194
+MinEquity : -3.212478334458312
+AccountEquity : 68.62893785918753
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 8/7/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 158
+--------------------------------------
+Balance : 17184.141619364596
+MaxEquity : 82.80921257358028
+MinEquity : 0
+AccountEquity : 71.84141619364587
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 8/8/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 159
+--------------------------------------
+Balance : 15584.669454007948
+MaxEquity : 66.8144909200138
+MinEquity : -4.010028276512489
+AccountEquity : 55.846694540079376
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 8/9/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 160
+--------------------------------------
+Balance : 15809.75390803237
+MaxEquity : 69.06533546025805
+MinEquity : -1.759183736268227
+AccountEquity : 58.097539080323635
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 8/12/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 161
+--------------------------------------
+Balance : 15341.565972022789
+MaxEquity : 64.3834561001622
+MinEquity : -6.441063096364088
+AccountEquity : 53.4156597202278
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 8/13/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 162
+--------------------------------------
+Balance : 15504.970061140091
+MaxEquity : 66.01749699133524
+MinEquity : -4.807022205191055
+AccountEquity : 55.04970061140082
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 8/14/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 163
+--------------------------------------
+Balance : 15585.482332259238
+MaxEquity : 66.82261970252671
+MinEquity : -4.0018994939995745
+AccountEquity : 55.85482332259229
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 8/15/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 164
+--------------------------------------
+Balance : 15716.406302432944
+MaxEquity : 68.13185940426375
+MinEquity : -2.6926597922625355
+AccountEquity : 57.16406302432933
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 8/16/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 165
+--------------------------------------
+Balance : 15263.334020535785
+MaxEquity : 63.6011365852922
+MinEquity : -7.223382611234092
+AccountEquity : 52.6333402053578
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 8/19/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 166
+--------------------------------------
+Balance : 15061.372745708752
+MaxEquity : 61.58152383702187
+MinEquity : -9.242995359504429
+AccountEquity : 50.613727457087464
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 8/20/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 167
+--------------------------------------
+Balance : 15139.33589613303
+MaxEquity : 62.36115534126467
+MinEquity : -8.463363855261637
+AccountEquity : 51.393358961330264
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 8/21/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 168
+--------------------------------------
+Balance : 8961.519330975985
+MaxEquity : 0.3484127875560281
+MinEquity : -10.384806690240165
+AccountEquity : -10.384806690240165
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 8/22/2024 12:00:00 AM
+CloseTime : 9/2/2024 3:21:00 AM
+AccountID : 169
+--------------------------------------
+Balance : 8926.777504528678
+MaxEquity : 1.794311264336232
+MinEquity : -10.73222495471321
+AccountEquity : -10.73222495471321
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 8/23/2024 12:00:00 AM
+CloseTime : 9/6/2024 5:01:00 AM
+AccountID : 170
+--------------------------------------
+Balance : 8926.67805222038
+MaxEquity : 0
+MinEquity : -10.733219477796194
+AccountEquity : -10.733219477796194
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 8/26/2024 12:00:00 AM
+CloseTime : 9/2/2024 3:21:00 AM
+AccountID : 171
+--------------------------------------
+Balance : 8970.512662917698
+MaxEquity : 0.28775575785395435
+MinEquity : -10.294873370823034
+AccountEquity : -10.294873370823034
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 8/27/2024 12:00:00 AM
+CloseTime : 9/3/2024 1:26:00 PM
+AccountID : 172
+--------------------------------------
+Balance : 8929.091156957724
+MaxEquity : 0.06858941545980324
+MinEquity : -10.709088430422732
+AccountEquity : -10.709088430422732
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 8/28/2024 12:00:00 AM
+CloseTime : 9/6/2024 5:01:00 AM
+AccountID : 173
+--------------------------------------
+Balance : 8980.071602889888
+MaxEquity : 0.9806391835956029
+MinEquity : -10.199283971101087
+AccountEquity : -10.199283971101087
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 8/29/2024 12:00:00 AM
+CloseTime : 9/16/2024 9:57:00 PM
+AccountID : 174
+--------------------------------------
+Balance : 15022.427591520496
+MaxEquity : 61.19207229513935
+MinEquity : -9.632446901386963
+AccountEquity : 50.22427591520494
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 8/30/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 175
+--------------------------------------
+Balance : 15142.417174889546
+MaxEquity : 62.391968128829824
+MinEquity : -8.432551067696473
+AccountEquity : 51.42417174889542
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 8/31/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 176
+--------------------------------------
+Balance : 15301.064707726939
+MaxEquity : 63.978443457203745
+MinEquity : -6.846075739322561
+AccountEquity : 53.01064707726934
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 9/2/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 177
+--------------------------------------
+Balance : 15572.418118545975
+MaxEquity : 66.69197756539411
+MinEquity : -4.132541631132182
+AccountEquity : 55.72418118545969
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 9/3/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 178
+--------------------------------------
+Balance : 15673.317469103058
+MaxEquity : 67.70097107096494
+MinEquity : -3.123548125561351
+AccountEquity : 56.73317469103052
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 9/4/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 179
+--------------------------------------
+Balance : 15452.310674064694
+MaxEquity : 65.49090312058131
+MinEquity : -5.333616075944994
+AccountEquity : 54.523106740646895
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 9/5/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 180
+--------------------------------------
+Balance : 15609.482773719239
+MaxEquity : 67.0626241171267
+MinEquity : -3.7618950793995753
+AccountEquity : 56.09482773719228
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 9/6/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 181
+--------------------------------------
+Balance : 15751.749792671304
+MaxEquity : 68.48529430664736
+MinEquity : -2.339224889878937
+AccountEquity : 57.51749792671294
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 9/9/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 182
+--------------------------------------
+Balance : 15502.123166070225
+MaxEquity : 65.98902804063658
+MinEquity : -4.835491155889715
+AccountEquity : 55.02123166070217
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 9/10/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 183
+--------------------------------------
+Balance : 15640.20450400771
+MaxEquity : 67.36984142001143
+MinEquity : -3.4546777765148646
+AccountEquity : 56.402045040077006
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 9/11/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 184
+--------------------------------------
+Balance : 15643.394143806981
+MaxEquity : 67.40173781800412
+MinEquity : -3.4227813785221626
+AccountEquity : 56.4339414380697
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 9/12/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 185
+--------------------------------------
+Balance : 15575.957104400215
+MaxEquity : 66.72736742393649
+MinEquity : -4.0971517725898075
+AccountEquity : 55.759571044002065
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 9/13/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 186
+--------------------------------------
+Balance : 15677.155975207155
+MaxEquity : 67.73935613200587
+MinEquity : -3.0851630645204207
+AccountEquity : 56.77155975207145
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 9/16/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 187
+--------------------------------------
+Balance : 15791.974323552717
+MaxEquity : 68.8875396154615
+MinEquity : -1.936979581064783
+AccountEquity : 57.919743235527086
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 9/17/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 188
+--------------------------------------
+Balance : 15985.672281659194
+MaxEquity : 70.82451919652631
+MinEquity : 0
+AccountEquity : 59.85672281659189
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 9/18/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 189
+--------------------------------------
+Balance : 15748.394979068049
+MaxEquity : 68.4517461706148
+MinEquity : -0.41262856742654697
+AccountEquity : 57.48394979068038
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 9/19/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 190
+--------------------------------------
+Balance : 15749.616932584948
+MaxEquity : 68.46396570578378
+MinEquity : -0.4004090322575692
+AccountEquity : 57.49616932584936
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 9/20/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 191
+--------------------------------------
+Balance : 15539.735952308656
+MaxEquity : 66.36515590302086
+MinEquity : 0
+AccountEquity : 55.39735952308645
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 9/23/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 192
+--------------------------------------
+Balance : 15041.021725622737
+MaxEquity : 61.37801363616172
+MinEquity : -0.7362388994867938
+AccountEquity : 50.41021725622731
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 9/24/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 193
+--------------------------------------
+Balance : 15003.036036961537
+MaxEquity : 60.9981567495497
+MinEquity : -1.1160957860988097
+AccountEquity : 50.030360369615295
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 9/25/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 194
+--------------------------------------
+Balance : 14914.49710436209
+MaxEquity : 60.11276742355523
+MinEquity : -2.001485112093267
+AccountEquity : 49.14497104362083
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 9/26/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 195
+--------------------------------------
+Balance : 15057.128834433806
+MaxEquity : 61.53908472427239
+MinEquity : -0.5751678113761144
+AccountEquity : 50.57128834433799
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 9/27/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 196
+--------------------------------------
+Balance : 14796.380866572847
+MaxEquity : 58.93160504566277
+MinEquity : -2.7464917778646405
+AccountEquity : 47.963808665728365
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 9/28/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 197
+--------------------------------------
+Balance : 14961.635089427222
+MaxEquity : 60.58414727420655
+MinEquity : -1.0939495493208635
+AccountEquity : 49.616350894272145
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 9/30/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 198
+--------------------------------------
+Balance : 14604.195785198444
+MaxEquity : 57.009754231918755
+MinEquity : -4.668342591608656
+AccountEquity : 46.04195785198435
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 10/2/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 199
+--------------------------------------
+Balance : 14749.072935499873
+MaxEquity : 58.458525734933055
+MinEquity : -3.2195710885943463
+AccountEquity : 47.49072935499865
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 10/3/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 200
+--------------------------------------
+Balance : 14949.07449969605
+MaxEquity : 60.45854137689482
+MinEquity : -1.2195554466325882
+AccountEquity : 49.490744996960416
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 10/4/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 201
+--------------------------------------
+Balance : 15071.030044359311
+MaxEquity : 61.67809682352742
+MinEquity : 0
+AccountEquity : 50.71030044359301
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 10/5/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 202
+--------------------------------------
+Balance : 14810.90850152168
+MaxEquity : 59.0768813951511
+MinEquity : 0
+AccountEquity : 48.10908501521669
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 10/7/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 203
+--------------------------------------
+Balance : 14611.49987475753
+MaxEquity : 57.082795127509605
+MinEquity : -1.933000969558032
+AccountEquity : 46.1149987475752
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 10/8/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 204
+--------------------------------------
+Balance : 14720.045798026706
+MaxEquity : 58.16825436020135
+MinEquity : -0.8475417368662786
+AccountEquity : 47.20045798026695
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 10/9/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 205
+--------------------------------------
+Balance : 14804.799971713332
+MaxEquity : 59.01579609706763
+MinEquity : 0
+AccountEquity : 48.04799971713322
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 10/10/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 206
+--------------------------------------
+Balance : 14660.707825211332
+MaxEquity : 57.57487463204763
+MinEquity : -0.7005602894491118
+AccountEquity : 46.607078252113226
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 10/11/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 207
+--------------------------------------
+Balance : 14429.596195218885
+MaxEquity : 55.263758332123146
+MinEquity : -3.0116765893735993
+AccountEquity : 44.29596195218874
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 10/14/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 208
+--------------------------------------
+Balance : 14361.92376215972
+MaxEquity : 54.58703400153151
+MinEquity : -3.6884009199652317
+AccountEquity : 43.6192376215971
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 10/15/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 209
+--------------------------------------
+Balance : 14400.38464358055
+MaxEquity : 54.97164281573983
+MinEquity : -3.303792105756913
+AccountEquity : 44.00384643580542
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 10/16/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 210
+--------------------------------------
+Balance : 14366.169166362557
+MaxEquity : 54.62948804355988
+MinEquity : -3.6459468779368533
+AccountEquity : 43.661691663625476
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 10/17/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 211
+--------------------------------------
+Balance : 14467.976779674063
+MaxEquity : 55.647564176674976
+MinEquity : -2.6278707448217764
+AccountEquity : 44.67976779674057
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 10/18/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 212
+--------------------------------------
+Balance : 14579.537581554228
+MaxEquity : 56.76317219547659
+MinEquity : -1.5122627260201502
+AccountEquity : 45.79537581554219
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 10/21/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 213
+--------------------------------------
+Balance : 14675.216477102782
+MaxEquity : 57.71996115096213
+MinEquity : -0.555473770534606
+AccountEquity : 46.75216477102772
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 10/22/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 214
+--------------------------------------
+Balance : 14524.57100716445
+MaxEquity : 56.21350645157882
+MinEquity : -0.4814785107503945
+AccountEquity : 45.24571007164442
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 10/23/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 215
+--------------------------------------
+Balance : 14483.703667668153
+MaxEquity : 55.80483305661586
+MinEquity : -0.8901519057133656
+AccountEquity : 44.83703667668146
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 10/24/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 216
+--------------------------------------
+Balance : 14563.040177731975
+MaxEquity : 56.598198157254075
+MinEquity : -0.09678680507514281
+AccountEquity : 45.63040177731967
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 10/25/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 217
+--------------------------------------
+Balance : 14231.380597786672
+MaxEquity : 53.281602357801034
+MinEquity : -3.4133826045281848
+AccountEquity : 42.31380597786663
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 10/28/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 218
+--------------------------------------
+Balance : 14322.39376689992
+MaxEquity : 54.19173404893352
+MinEquity : -2.5032509133957004
+AccountEquity : 43.22393766899911
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 10/29/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 219
+--------------------------------------
+Balance : 14466.3603892965
+MaxEquity : 55.63140027289934
+MinEquity : -1.063584689429883
+AccountEquity : 44.663603892964936
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 10/30/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 220
+--------------------------------------
+Balance : 14241.330255745575
+MaxEquity : 53.38109893739008
+MinEquity : -3.313886024939141
+AccountEquity : 42.41330255745567
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 10/31/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 221
+--------------------------------------
+Balance : 14205.07633786857
+MaxEquity : 53.01855975862
+MinEquity : -3.6764252037092136
+AccountEquity : 42.050763378685595
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 11/1/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 222
+--------------------------------------
+Balance : 13909.907651173071
+MaxEquity : 50.066872891665035
+MinEquity : -6.628112070664187
+AccountEquity : 39.09907651173063
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 11/4/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 223
+--------------------------------------
+Balance : 13673.410109480934
+MaxEquity : 47.701897474743674
+MinEquity : -8.99308748758554
+AccountEquity : 36.73410109480927
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 11/5/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 224
+--------------------------------------
+Balance : 8888.240534681403
+MaxEquity : 0.8352084138504061
+MinEquity : -11.117594653185991
+AccountEquity : -11.117594653185991
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 11/6/2024 12:00:00 AM
+CloseTime : 12/10/2024 3:13:00 AM
+AccountID : 225
+--------------------------------------
+Balance : 8955.873461981702
+MaxEquity : 1.5115376868534058
+MinEquity : -10.441265380182992
+AccountEquity : -10.441265380182992
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 11/7/2024 12:00:00 AM
+CloseTime : 12/10/2024 3:13:00 AM
+AccountID : 226
+--------------------------------------
+Balance : 13632.470578557113
+MaxEquity : 47.29250216550548
+MinEquity : -9.40248279682374
+AccountEquity : 36.324705785571076
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 11/8/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 227
+--------------------------------------
+Balance : 8917.272672865283
+MaxEquity : 0.6609552236784941
+MinEquity : -10.827273271347183
+AccountEquity : -10.827273271347183
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 11/11/2024 12:00:00 AM
+CloseTime : 12/10/2024 3:13:00 AM
+AccountID : 228
+--------------------------------------
+Balance : 13631.921326908814
+MaxEquity : 47.28700964902249
+MinEquity : -9.407975313306736
+AccountEquity : 36.31921326908808
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 11/12/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 229
+--------------------------------------
+Balance : 13827.07386931227
+MaxEquity : 49.23853507305704
+MinEquity : -7.4564498892721875
+AccountEquity : 38.27073869312263
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 11/13/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 230
+--------------------------------------
+Balance : 13935.794127749185
+MaxEquity : 50.32573765742617
+MinEquity : -6.369247304903051
+AccountEquity : 39.35794127749176
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 11/14/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 231
+--------------------------------------
+Balance : 14039.135241848271
+MaxEquity : 51.35914879841704
+MinEquity : -5.335836163912181
+AccountEquity : 40.39135241848263
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 11/15/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 232
+--------------------------------------
+Balance : 13702.11496171913
+MaxEquity : 47.98894599712561
+MinEquity : -8.706038965203602
+AccountEquity : 37.021149617191206
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 11/18/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 233
+--------------------------------------
+Balance : 8974.420542326727
+MaxEquity : 0
+MinEquity : -10.255794576732775
+AccountEquity : -10.255794576732775
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 11/19/2024 12:00:00 AM
+CloseTime : 12/9/2024 6:08:00 AM
+AccountID : 234
+--------------------------------------
+Balance : 8924.439387760101
+MaxEquity : 0.26951898836546095
+MinEquity : -10.75560612239901
+AccountEquity : -10.75560612239901
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 11/20/2024 12:00:00 AM
+CloseTime : 12/10/2024 3:13:00 AM
+AccountID : 235
+--------------------------------------
+Balance : 13702.59100444512
+MaxEquity : 47.99370642438551
+MinEquity : -8.70127853794371
+AccountEquity : 37.0259100444511
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 11/21/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 236
+--------------------------------------
+Balance : 8897.487488923556
+MaxEquity : 0
+MinEquity : -11.025125110764469
+AccountEquity : -11.025125110764469
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 11/22/2024 12:00:00 AM
+CloseTime : 12/10/2024 3:13:00 AM
+AccountID : 237
+--------------------------------------
+Balance : 13608.187450329842
+MaxEquity : 47.04967088323277
+MinEquity : -9.645314079096453
+AccountEquity : 36.081874503298366
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 11/25/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 238
+--------------------------------------
+Balance : 13700.535232434213
+MaxEquity : 47.973148704276454
+MinEquity : -8.721836258052761
+AccountEquity : 37.00535232434205
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 11/26/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 239
+--------------------------------------
+Balance : 14039.251715618673
+MaxEquity : 51.36031353612108
+MinEquity : -5.334671426208137
+AccountEquity : 40.39251715618668
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 11/27/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 240
+--------------------------------------
+Balance : 14125.233719534725
+MaxEquity : 52.2201335752816
+MinEquity : -4.474851387047616
+AccountEquity : 41.252337195347195
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 11/28/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 241
+--------------------------------------
+Balance : 14230.35414261404
+MaxEquity : 53.27133780607475
+MinEquity : -3.423647156254472
+AccountEquity : 42.30354142614034
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 11/29/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 242
+--------------------------------------
+Balance : 14334.165594933762
+MaxEquity : 54.309452329271984
+MinEquity : -2.3855326330572337
+AccountEquity : 43.34165594933758
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 12/2/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 243
+--------------------------------------
+Balance : 14215.844665880162
+MaxEquity : 53.12624303873596
+MinEquity : -3.5687419235932567
+AccountEquity : 42.15844665880155
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 12/3/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 244
+--------------------------------------
+Balance : 14297.252107270775
+MaxEquity : 53.94031745264209
+MinEquity : -2.754667509687132
+AccountEquity : 42.972521072707686
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 12/4/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 245
+--------------------------------------
+Balance : 14163.843862917296
+MaxEquity : 52.60623500910731
+MinEquity : -4.088749953221912
+AccountEquity : 41.6384386291729
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 12/5/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 246
+--------------------------------------
+Balance : 14298.77518529812
+MaxEquity : 53.955548232915554
+MinEquity : -2.7394367294136694
+AccountEquity : 42.98775185298115
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 12/9/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 247
+--------------------------------------
+Balance : 14449.475466410197
+MaxEquity : 55.46255104403632
+MinEquity : -1.2324339182929016
+AccountEquity : 44.49475466410191
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 12/10/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 248
+--------------------------------------
+Balance : 14572.718858239485
+MaxEquity : 56.694984962329215
+MinEquity : 0
+AccountEquity : 45.72718858239481
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 12/11/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 249
+--------------------------------------
+Balance : 13776.294453161394
+MaxEquity : 48.73074091154831
+MinEquity : -4.609645248063798
+AccountEquity : 37.762944531613904
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 12/12/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 250
+--------------------------------------
+Balance : 13902.53609885777
+MaxEquity : 49.99315736851207
+MinEquity : -3.347228791100034
+AccountEquity : 39.02536098857767
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 12/13/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 251
+--------------------------------------
+Balance : 14055.951703330265
+MaxEquity : 51.527313413237025
+MinEquity : -1.8130727463750786
+AccountEquity : 40.55951703330262
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 12/14/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 252
+--------------------------------------
+Balance : 14237.258977967773
+MaxEquity : 53.3403861596121
+MinEquity : 0
+AccountEquity : 42.372589779677696
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 12/16/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 253
+--------------------------------------
+Balance : 13891.784673693739
+MaxEquity : 49.88564311687178
+MinEquity : -1.9114314737339735
+AccountEquity : 38.91784673693738
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 12/17/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 254
+--------------------------------------
+Balance : 13810.991238946823
+MaxEquity : 49.07770876940261
+MinEquity : -2.7193658212031426
+AccountEquity : 38.10991238946821
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 12/18/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 255
+--------------------------------------
+Balance : 13892.448617241414
+MaxEquity : 49.892282552348526
+MinEquity : -1.904792038257231
+AccountEquity : 38.92448617241412
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 12/19/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 256
+--------------------------------------
+Balance : 13430.143743301101
+MaxEquity : 45.269233812945416
+MinEquity : -6.5278407776603435
+AccountEquity : 34.30143743301101
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 12/20/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 257
+--------------------------------------
+Balance : 13602.685508258306
+MaxEquity : 46.99465146251743
+MinEquity : -4.8024231280883285
+AccountEquity : 36.026855082583026
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 12/23/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 258
+--------------------------------------
+Balance : 13741.213956977914
+MaxEquity : 48.37993594971353
+MinEquity : -3.4171386408922317
+AccountEquity : 37.41213956977912
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 12/24/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 259
+--------------------------------------
+Balance : 13647.514536492301
+MaxEquity : 47.44294174485739
+MinEquity : -4.354132845748356
+AccountEquity : 36.47514536492299
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 12/25/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 260
+--------------------------------------
+Balance : 13735.839027418973
+MaxEquity : 48.326186654124136
+MinEquity : -3.4708879364816227
+AccountEquity : 37.35839027418973
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 12/26/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 261
+--------------------------------------
+Balance : 13640.092158915562
+MaxEquity : 47.36871796909002
+MinEquity : -4.428356621515738
+AccountEquity : 36.400921589155615
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 12/27/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 262
+--------------------------------------
+Balance : 13782.547970564952
+MaxEquity : 48.79327608558392
+MinEquity : -3.0037985050218396
+AccountEquity : 37.825479705649514
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 12/30/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 263
+--------------------------------------
+Balance : 13885.920588068755
+MaxEquity : 49.827002260621924
+MinEquity : -1.9700723299838325
+AccountEquity : 38.85920588068752
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 12/31/2024 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 264
+--------------------------------------
+Balance : 13909.759034974042
+MaxEquity : 50.065386729674806
+MinEquity : -1.7316878609309505
+AccountEquity : 39.0975903497404
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 1/1/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 265
+--------------------------------------
+Balance : 13808.074794174761
+MaxEquity : 49.04854432168199
+MinEquity : -2.748530268923771
+AccountEquity : 38.08074794174758
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 1/2/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 266
+--------------------------------------
+Balance : 13712.93412837429
+MaxEquity : 48.09713766367728
+MinEquity : -3.6999369269284714
+AccountEquity : 37.129341283742875
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 1/3/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 267
+--------------------------------------
+Balance : 13568.240854366322
+MaxEquity : 46.65020492359759
+MinEquity : -5.146869667008165
+AccountEquity : 35.682408543663186
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 1/4/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 268
+--------------------------------------
+Balance : 13647.827607705312
+MaxEquity : 47.4460724569875
+MinEquity : -4.351002133618247
+AccountEquity : 36.478276077053096
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 1/6/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 269
+--------------------------------------
+Balance : 13129.00492897781
+MaxEquity : 42.25784566971245
+MinEquity : -9.539228920893294
+AccountEquity : 31.290049289778047
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 1/8/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 270
+--------------------------------------
+Balance : 13237.85335679572
+MaxEquity : 43.34632994789154
+MinEquity : -8.45074464271421
+AccountEquity : 32.378533567957135
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 1/9/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 271
+--------------------------------------
+Balance : 13323.184895585851
+MaxEquity : 44.19964533579287
+MinEquity : -7.597429254812879
+AccountEquity : 33.23184895585847
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 1/10/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 272
+--------------------------------------
+Balance : 13105.757549004764
+MaxEquity : 42.025371869982024
+MinEquity : -9.771702720623729
+AccountEquity : 31.05757549004762
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 1/13/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 273
+--------------------------------------
+Balance : 8724.371079735794
+MaxEquity : 3.1744201920086628
+MinEquity : -12.756289202642073
+AccountEquity : -12.756289202642073
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/14/2025 12:00:00 AM
+CloseTime : 2/25/2025 6:04:00 AM
+AccountID : 274
+--------------------------------------
+Balance : 8630.37862228607
+MaxEquity : 2.234495617511433
+MinEquity : -13.696213777139302
+AccountEquity : -13.696213777139302
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/15/2025 12:00:00 AM
+CloseTime : 2/25/2025 6:04:00 AM
+AccountID : 275
+--------------------------------------
+Balance : 8757.84760161711
+MaxEquity : 3.5091854108218348
+MinEquity : -12.4215239838289
+AccountEquity : -12.4215239838289
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/16/2025 12:00:00 AM
+CloseTime : 2/25/2025 6:04:00 AM
+AccountID : 276
+--------------------------------------
+Balance : 8847.21895072916
+MaxEquity : 4.402898901942341
+MinEquity : -11.527810492708394
+AccountEquity : -11.527810492708394
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/17/2025 12:00:00 AM
+CloseTime : 2/25/2025 6:04:00 AM
+AccountID : 277
+--------------------------------------
+Balance : 8982.542372771115
+MaxEquity : 5.756133122361902
+MinEquity : -10.174576272288833
+AccountEquity : -10.174576272288833
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/20/2025 12:00:00 AM
+CloseTime : 2/25/2025 6:04:00 AM
+AccountID : 278
+--------------------------------------
+Balance : 13296.593730067743
+MaxEquity : 43.93373368061184
+MinEquity : -7.863340909993914
+AccountEquity : 32.96593730067743
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 1/21/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 279
+--------------------------------------
+Balance : 13379.852256927526
+MaxEquity : 44.7663189492097
+MinEquity : -7.030755641396058
+AccountEquity : 33.79852256927529
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 1/22/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 280
+--------------------------------------
+Balance : 8921.522919697822
+MaxEquity : 1.3785692885922884
+MinEquity : -10.784770803021779
+AccountEquity : -10.784770803021779
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/23/2025 12:00:00 AM
+CloseTime : 2/24/2025 12:37:00 AM
+AccountID : 281
+--------------------------------------
+Balance : 8627.986050889658
+MaxEquity : 2.210569903547314
+MinEquity : -13.72013949110342
+AccountEquity : -13.72013949110342
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/24/2025 12:00:00 AM
+CloseTime : 2/25/2025 6:04:00 AM
+AccountID : 282
+--------------------------------------
+Balance : 8984.960796745156
+MaxEquity : 0
+MinEquity : -10.150392032548435
+AccountEquity : -10.150392032548435
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/27/2025 12:00:00 AM
+CloseTime : 2/24/2025 12:37:00 AM
+AccountID : 283
+--------------------------------------
+Balance : 8798.886172870816
+MaxEquity : 1.0333758507721371
+MinEquity : -12.011138271291854
+AccountEquity : -12.011138271291854
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/28/2025 12:00:00 AM
+CloseTime : 2/25/2025 6:04:00 AM
+AccountID : 284
+--------------------------------------
+Balance : 8886.743810515023
+MaxEquity : 1.911952227214221
+MinEquity : -11.13256189484977
+AccountEquity : -11.13256189484977
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/29/2025 12:00:00 AM
+CloseTime : 2/25/2025 6:04:00 AM
+AccountID : 285
+--------------------------------------
+Balance : 8695.548587793603
+MaxEquity : 0
+MinEquity : -13.044514122063992
+AccountEquity : -13.044514122063992
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/30/2025 12:00:00 AM
+CloseTime : 2/25/2025 6:04:00 AM
+AccountID : 286
+--------------------------------------
+Balance : 8816.669853549118
+MaxEquity : 1.1250558874022922
+MinEquity : -11.833301464508844
+AccountEquity : -11.833301464508844
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 1/31/2025 12:00:00 AM
+CloseTime : 2/25/2025 6:04:00 AM
+AccountID : 287
+--------------------------------------
+Balance : 8916.764618917086
+MaxEquity : 2.126003541081977
+MinEquity : -10.83235381082916
+AccountEquity : -10.83235381082916
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 2/4/2025 12:00:00 AM
+CloseTime : 2/25/2025 6:04:00 AM
+AccountID : 288
+--------------------------------------
+Balance : 13107.703400636896
+MaxEquity : 42.04483038630333
+MinEquity : -9.75224420430242
+AccountEquity : 31.077034006368926
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/5/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 289
+--------------------------------------
+Balance : 8808.81596600495
+MaxEquity : 0
+MinEquity : -11.911840339950535
+AccountEquity : -11.911840339950535
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 2/6/2025 12:00:00 AM
+CloseTime : 2/25/2025 6:04:00 AM
+AccountID : 290
+--------------------------------------
+Balance : 8920.418955290343
+MaxEquity : 0
+MinEquity : -10.795810447096606
+AccountEquity : -10.795810447096606
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 2/10/2025 12:00:00 AM
+CloseTime : 2/25/2025 6:04:00 AM
+AccountID : 291
+--------------------------------------
+Balance : 13226.401674700068
+MaxEquity : 43.23181312693507
+MinEquity : -8.565261463670677
+AccountEquity : 32.26401674700067
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/11/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 292
+--------------------------------------
+Balance : 13363.313047150794
+MaxEquity : 44.60092685144233
+MinEquity : -7.196147739163422
+AccountEquity : 33.633130471507926
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/12/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 293
+--------------------------------------
+Balance : 8973.297094414109
+MaxEquity : 0
+MinEquity : -10.267029055858949
+AccountEquity : -10.267029055858949
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 2/13/2025 12:00:00 AM
+CloseTime : 2/25/2025 6:04:00 AM
+AccountID : 294
+--------------------------------------
+Balance : 13291.134010198995
+MaxEquity : 43.87913648192433
+MinEquity : -7.917938108681421
+AccountEquity : 32.91134010198992
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/14/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 295
+--------------------------------------
+Balance : 13263.648100322047
+MaxEquity : 43.60427738315485
+MinEquity : -8.192797207450898
+AccountEquity : 32.636481003220446
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/17/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 296
+--------------------------------------
+Balance : 13211.128067109788
+MaxEquity : 43.07907705103228
+MinEquity : -8.71799753957347
+AccountEquity : 32.11128067109787
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/18/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 297
+--------------------------------------
+Balance : 13442.2101709923
+MaxEquity : 45.389898089857404
+MinEquity : -6.407176500748356
+AccountEquity : 34.422101709923
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/19/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 298
+--------------------------------------
+Balance : 13403.374841482193
+MaxEquity : 45.00154479475633
+MinEquity : -6.795529795849431
+AccountEquity : 34.03374841482192
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/20/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 299
+--------------------------------------
+Balance : 13459.691543613611
+MaxEquity : 45.56471181607053
+MinEquity : -6.232362774535227
+AccountEquity : 34.59691543613612
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/21/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 300
+--------------------------------------
+Balance : 13595.827644931687
+MaxEquity : 46.92607282925128
+MinEquity : -4.871001761354476
+AccountEquity : 35.95827644931688
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/24/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 301
+--------------------------------------
+Balance : 13706.190890763468
+MaxEquity : 48.02970528756908
+MinEquity : -3.767369303036668
+AccountEquity : 37.061908907634674
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/25/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 302
+--------------------------------------
+Balance : 14082.927821067133
+MaxEquity : 51.79707459060575
+MinEquity : 0
+AccountEquity : 40.82927821067135
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/26/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 303
+--------------------------------------
+Balance : 14007.547917966076
+MaxEquity : 51.04327555959518
+MinEquity : 0
+AccountEquity : 40.075479179660775
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/27/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 304
+--------------------------------------
+Balance : 13440.80534314927
+MaxEquity : 45.37584981142713
+MinEquity : 0
+AccountEquity : 34.408053431492725
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 2/28/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 305
+--------------------------------------
+Balance : 13017.52043510132
+MaxEquity : 41.14300073094765
+MinEquity : 0
+AccountEquity : 30.175204351013242
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/3/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 306
+--------------------------------------
+Balance : 12594.274186073242
+MaxEquity : 36.91053824066685
+MinEquity : -0.9416728918207474
+AccountEquity : 25.942741860732447
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/4/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 307
+--------------------------------------
+Balance : 12688.441475255317
+MaxEquity : 37.852211132487604
+MinEquity : 0
+AccountEquity : 26.884414752553198
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/5/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 308
+--------------------------------------
+Balance : 12004.914531382372
+MaxEquity : 31.01694169375814
+MinEquity : 0
+AccountEquity : 20.04914531382373
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/6/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 309
+--------------------------------------
+Balance : 11551.450785650737
+MaxEquity : 26.48230423644181
+MinEquity : -2.1892690809039212
+AccountEquity : 15.514507856507395
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/7/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 310
+--------------------------------------
+Balance : 8964.047603427136
+MaxEquity : 2.2271630191233545
+MinEquity : -10.359523965728636
+AccountEquity : -10.359523965728636
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 3/10/2025 12:00:00 AM
+CloseTime : 3/12/2025 5:10:00 PM
+AccountID : 311
+--------------------------------------
+Balance : 10856.38458868249
+MaxEquity : 19.531642266759338
+MinEquity : -9.1399310505864
+AccountEquity : 8.563845886824925
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/11/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 312
+--------------------------------------
+Balance : 11233.854848295072
+MaxEquity : 23.306344862885165
+MinEquity : -5.365228454460569
+AccountEquity : 12.33854848295075
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/12/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 313
+--------------------------------------
+Balance : 11426.53988263214
+MaxEquity : 25.233195206255836
+MinEquity : -3.4383781110898974
+AccountEquity : 14.265398826321421
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/13/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 314
+--------------------------------------
+Balance : 11534.104205937012
+MaxEquity : 26.308838439304566
+MinEquity : -2.362734878041167
+AccountEquity : 15.341042059370151
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/14/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 315
+--------------------------------------
+Balance : 11770.377693741131
+MaxEquity : 28.671573317345732
+MinEquity : 0
+AccountEquity : 17.70377693741132
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/17/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 316
+--------------------------------------
+Balance : 11653.242454178206
+MaxEquity : 27.500220921716483
+MinEquity : -0.5292868353493414
+AccountEquity : 16.53242454178207
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/18/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 317
+--------------------------------------
+Balance : 11491.097662083823
+MaxEquity : 25.878773000772654
+MinEquity : -0.5425210410048015
+AccountEquity : 14.91097662083824
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/19/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 318
+--------------------------------------
+Balance : 11333.949837318549
+MaxEquity : 24.307294753119912
+MinEquity : -2.096699269864053
+AccountEquity : 13.339498373185497
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/20/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 319
+--------------------------------------
+Balance : 11497.711437447437
+MaxEquity : 25.944910754408802
+MinEquity : -0.45908326857516035
+AccountEquity : 14.977114374474388
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/21/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 320
+--------------------------------------
+Balance : 11335.91339896043
+MaxEquity : 24.326930369538754
+MinEquity : -0.563088603218959
+AccountEquity : 13.35913398960434
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/24/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 321
+--------------------------------------
+Balance : 11250.414115957803
+MaxEquity : 23.471937539512474
+MinEquity : -1.4180814332452387
+AccountEquity : 12.50414115957806
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/25/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 322
+--------------------------------------
+Balance : 11349.496533566853
+MaxEquity : 24.46276171560297
+MinEquity : -0.4272572571547407
+AccountEquity : 13.494965335668555
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/26/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 323
+--------------------------------------
+Balance : 10916.634576036815
+MaxEquity : 20.134142140302572
+MinEquity : -0.08125825181115442
+AccountEquity : 9.16634576036816
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/27/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 324
+--------------------------------------
+Balance : 10854.991706708955
+MaxEquity : 19.51771344702398
+MinEquity : 0
+AccountEquity : 8.549917067089567
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/28/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 325
+--------------------------------------
+Balance : 10540.357760197125
+MaxEquity : 16.371373981905656
+MinEquity : -1.0163814361082997
+AccountEquity : 5.4035776019712465
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 3/31/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 326
+--------------------------------------
+Balance : 10641.995903807954
+MaxEquity : 17.387755418013953
+MinEquity : 0
+AccountEquity : 6.419959038079542
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/1/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 327
+--------------------------------------
+Balance : 10001.51538778758
+MaxEquity : 10.982950257810202
+MinEquity : 0
+AccountEquity : 0.015153877875793142
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/2/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 328
+--------------------------------------
+Balance : 9393.628506257157
+MaxEquity : 4.904081442505975
+MinEquity : -6.063714937428436
+AccountEquity : -6.063714937428436
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/3/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 329
+--------------------------------------
+Balance : 8903.22036200656
+MaxEquity : 0
+MinEquity : -10.967796379934411
+AccountEquity : -10.967796379934411
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 4/4/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 330
+--------------------------------------
+Balance : 9037.356585565438
+MaxEquity : 0
+MinEquity : -9.626434144345627
+AccountEquity : -9.626434144345627
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/5/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 331
+--------------------------------------
+Balance : 9152.302201550163
+MaxEquity : 0
+MinEquity : -8.476977984498369
+AccountEquity : -8.476977984498369
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/7/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 332
+--------------------------------------
+Balance : 9338.611570314879
+MaxEquity : 0
+MinEquity : -6.613884296851216
+AccountEquity : -6.613884296851216
+DailyEquity : 0
+CloseReason : Daily Draw Down
+OpenTime : 4/8/2025 12:00:00 AM
+CloseTime : 4/8/2025 6:13:00 AM
+AccountID : 333
+--------------------------------------
+Balance : 12710.888210619449
+MaxEquity : 32.94905694181151
+MinEquity : -4.626943030994918
+AccountEquity : 27.108882106194432
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 4/9/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 334
+--------------------------------------
+Balance : 12868.86059802185
+MaxEquity : 34.52878081583553
+MinEquity : -3.047219156970895
+AccountEquity : 28.68860598021845
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 4/10/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 335
+--------------------------------------
+Balance : 12658.792176426736
+MaxEquity : 32.42809659988441
+MinEquity : -5.147903372922025
+AccountEquity : 26.587921764267332
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 4/11/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 336
+--------------------------------------
+Balance : 12905.94096144894
+MaxEquity : 34.89958445010644
+MinEquity : -2.676415522699975
+AccountEquity : 29.05940961448936
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 4/14/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 337
+--------------------------------------
+Balance : 13173.582513718937
+MaxEquity : 37.57599997280642
+MinEquity : 0
+AccountEquity : 31.73582513718934
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 4/15/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 338
+--------------------------------------
+Balance : 12946.100617158403
+MaxEquity : 35.30118100720105
+MinEquity : -1.6229582849213413
+AccountEquity : 29.461006171583982
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 4/16/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 339
+--------------------------------------
+Balance : 12467.71301287721
+MaxEquity : 30.517304964389112
+MinEquity : -6.406834327733276
+AccountEquity : 24.67713012877203
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 4/17/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 340
+--------------------------------------
+Balance : 12627.060134950649
+MaxEquity : 32.1107761851235
+MinEquity : -4.813363106998905
+AccountEquity : 26.270601349506418
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 4/18/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 341
+--------------------------------------
+Balance : 12410.088983945798
+MaxEquity : 29.94106467507499
+MinEquity : -6.983074617047403
+AccountEquity : 24.10088983945791
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 4/21/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 342
+--------------------------------------
+Balance : 12556.886947110075
+MaxEquity : 31.40904430671779
+MinEquity : -5.515094985404606
+AccountEquity : 25.568869471100708
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 4/22/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 343
+--------------------------------------
+Balance : 12656.899166112586
+MaxEquity : 32.4091664967429
+MinEquity : -4.514972795379504
+AccountEquity : 26.568991661125818
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 4/23/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 344
+--------------------------------------
+Balance : 12824.816221669504
+MaxEquity : 34.088337052312056
+MinEquity : -2.835802239810347
+AccountEquity : 28.248162216694976
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 4/24/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 345
+--------------------------------------
+Balance : 12977.02225779851
+MaxEquity : 35.61039741360211
+MinEquity : -1.3137418785202923
+AccountEquity : 29.77022257798503
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 4/25/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 346
+--------------------------------------
+Balance : 12325.059484417017
+MaxEquity : 29.090769679787165
+MinEquity : -7.833369612335222
+AccountEquity : 23.250594844170084
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 4/28/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 347
+--------------------------------------
+Balance : 12349.306353695594
+MaxEquity : 29.333238372572957
+MinEquity : -7.590900919549435
+AccountEquity : 23.493063536955876
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 4/29/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 348
+--------------------------------------
+Balance : 12295.948763417904
+MaxEquity : 28.799662469796054
+MinEquity : -8.124476822326336
+AccountEquity : 22.959487634178974
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 4/30/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 349
+--------------------------------------
+Balance : 12445.56832340637
+MaxEquity : 30.295858069680712
+MinEquity : -6.628281222441681
+AccountEquity : 24.45568323406363
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 5/1/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 350
+--------------------------------------
+Balance : 12321.931262600474
+MaxEquity : 29.059487461621757
+MinEquity : -7.864651830500627
+AccountEquity : 23.219312626004676
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 5/2/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 351
+--------------------------------------
+Balance : 12412.080077869503
+MaxEquity : 29.960975614312034
+MinEquity : -6.96316367781036
+AccountEquity : 24.120800778694953
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 5/5/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 352
+--------------------------------------
+Balance : 12495.943301961825
+MaxEquity : 30.79960785523525
+MinEquity : -6.1245314368871355
+AccountEquity : 24.95943301961817
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 5/6/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 353
+--------------------------------------
+Balance : 12552.068142085109
+MaxEquity : 31.360856256468118
+MinEquity : -5.563283035654282
+AccountEquity : 25.520681420851037
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 5/7/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 354
+--------------------------------------
+Balance : 12519.24222689064
+MaxEquity : 31.032597104523433
+MinEquity : -5.891542187598965
+AccountEquity : 25.192422268906352
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 5/9/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 355
+--------------------------------------
+Balance : 12648.822513160927
+MaxEquity : 32.32839996722631
+MinEquity : -4.595739324896095
+AccountEquity : 26.48822513160923
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 5/12/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 356
+--------------------------------------
+Balance : 12789.93262379119
+MaxEquity : 33.739501073528935
+MinEquity : -3.184638218593477
+AccountEquity : 27.899326237911854
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 5/13/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 357
+--------------------------------------
+Balance : 12875.599269190205
+MaxEquity : 34.596167527519064
+MinEquity : -2.327971764603337
+AccountEquity : 28.755992691901984
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 5/14/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 358
+--------------------------------------
+Balance : 12974.699310589147
+MaxEquity : 35.58716794150848
+MinEquity : -1.3369713506139191
+AccountEquity : 29.746993105891406
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 5/15/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 359
+--------------------------------------
+Balance : 13108.396445650536
+MaxEquity : 36.9241392921224
+MinEquity : 0
+AccountEquity : 31.08396445650532
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 5/16/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 360
+--------------------------------------
+Balance : 12622.117043732325
+MaxEquity : 32.06134527294028
+MinEquity : 0
+AccountEquity : 26.2211704373232
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 5/19/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 361
+--------------------------------------
+Balance : 12125.51222757833
+MaxEquity : 27.095297111400363
+MinEquity : -4.466968264898331
+AccountEquity : 21.255122275783283
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 5/20/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 362
+--------------------------------------
+Balance : 12257.43114266225
+MaxEquity : 28.41448626223952
+MinEquity : -3.1477791140591664
+AccountEquity : 22.57431142662244
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 5/21/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 363
+--------------------------------------
+Balance : 12354.691515899007
+MaxEquity : 29.387089994607095
+MinEquity : -2.1751753816915995
+AccountEquity : 23.546915158990014
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 5/22/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 364
+--------------------------------------
+Balance : 12314.882456809557
+MaxEquity : 28.98899940371259
+MinEquity : -2.5732659725861007
+AccountEquity : 23.14882456809551
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 5/23/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 365
+--------------------------------------
+Balance : 12326.874541975312
+MaxEquity : 29.1089202553701
+MinEquity : -2.453345120928586
+AccountEquity : 23.26874541975302
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 5/26/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 366
+--------------------------------------
+Balance : 12283.15404487759
+MaxEquity : 28.671715284392903
+MinEquity : -2.890550091905788
+AccountEquity : 22.831540448775822
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 5/27/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 367
+--------------------------------------
+Balance : 12295.941419523731
+MaxEquity : 28.799589030854307
+MinEquity : -2.7626763454443877
+AccountEquity : 22.959414195237226
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 5/28/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 368
+--------------------------------------
+Balance : 12446.510777045287
+MaxEquity : 30.30528260606988
+MinEquity : -1.2569827702288072
+AccountEquity : 24.4651077704528
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 5/29/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 369
+--------------------------------------
+Balance : 11878.837449780845
+MaxEquity : 24.62854933342546
+MinEquity : -6.9337160428732325
+AccountEquity : 18.78837449780838
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 5/30/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 370
+--------------------------------------
+Balance : 11976.753380053962
+MaxEquity : 25.607708636156637
+MinEquity : -5.954556740142062
+AccountEquity : 19.767533800539557
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 6/2/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 371
+--------------------------------------
+Balance : 12108.674843953113
+MaxEquity : 26.926923275148134
+MinEquity : -4.635342101150557
+AccountEquity : 21.086748439531053
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 6/3/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 372
+--------------------------------------
+Balance : 12254.532370425533
+MaxEquity : 28.385498539872344
+MinEquity : -3.1767668364263395
+AccountEquity : 22.545323704255264
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 6/4/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 373
+--------------------------------------
+Balance : 12383.984232120327
+MaxEquity : 29.680017156820277
+MinEquity : -1.8822482194784134
+AccountEquity : 23.839842321203196
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 6/5/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 374
+--------------------------------------
+Balance : 12565.319142399128
+MaxEquity : 31.493366259608294
+MinEquity : -0.06889911669040105
+AccountEquity : 25.653191423991213
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 6/6/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 375
+--------------------------------------
+Balance : 12397.491186067482
+MaxEquity : 29.815086696291857
+MinEquity : -1.7471786800068334
+AccountEquity : 23.974911860674776
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 6/9/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 376
+--------------------------------------
+Balance : 12215.374373977405
+MaxEquity : 27.993918575391092
+MinEquity : -3.5683468009076025
+AccountEquity : 22.15374373977401
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 6/10/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 377
+--------------------------------------
+Balance : 8925.03739419678
+MaxEquity : 8.074164788561049
+MinEquity : -10.749626058032215
+AccountEquity : -10.749626058032215
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 6/11/2025 12:00:00 AM
+CloseTime : 7/15/2025 9:02:00 AM
+AccountID : 378
+--------------------------------------
+Balance : 8889.96176134965
+MaxEquity : 5.830971720408132
+MinEquity : -11.100382386503522
+AccountEquity : -11.100382386503522
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 6/12/2025 12:00:00 AM
+CloseTime : 7/11/2025 9:05:00 AM
+AccountID : 379
+--------------------------------------
+Balance : 8977.365167373175
+MaxEquity : 6.705005780643369
+MinEquity : -10.226348326268285
+AccountEquity : -10.226348326268285
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 6/13/2025 12:00:00 AM
+CloseTime : 7/11/2025 9:05:00 AM
+AccountID : 380
+--------------------------------------
+Balance : 8996.008730182364
+MaxEquity : 7.900462943942929
+MinEquity : -10.03991269817637
+AccountEquity : -10.03991269817637
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 6/16/2025 12:00:00 AM
+CloseTime : 7/14/2025 9:05:00 AM
+AccountID : 381
+--------------------------------------
+Balance : 8973.073678063101
+MaxEquity : 0
+MinEquity : -10.26926321936896
+AccountEquity : -10.26926321936896
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 6/17/2025 12:00:00 AM
+CloseTime : 6/24/2025 9:07:00 AM
+AccountID : 382
+--------------------------------------
+Balance : 8932.511968276931
+MaxEquity : 0
+MinEquity : -10.67488031723066
+AccountEquity : -10.67488031723066
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 6/18/2025 12:00:00 AM
+CloseTime : 6/25/2025 1:01:00 PM
+AccountID : 383
+--------------------------------------
+Balance : 8955.390283709137
+MaxEquity : 1.0412576279833001
+MinEquity : -10.44609716290857
+AccountEquity : -10.44609716290857
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 6/19/2025 12:00:00 AM
+CloseTime : 6/26/2025 1:29:00 AM
+AccountID : 384
+--------------------------------------
+Balance : 8984.075476809792
+MaxEquity : 2.099106696210386
+MinEquity : -10.159245231902048
+AccountEquity : -10.159245231902048
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 6/20/2025 12:00:00 AM
+CloseTime : 6/27/2025 5:01:00 PM
+AccountID : 385
+--------------------------------------
+Balance : 11579.523734387358
+MaxEquity : 21.6354121794906
+MinEquity : -9.926853196808112
+AccountEquity : 15.795237343873522
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 6/23/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 386
+--------------------------------------
+Balance : 11729.474359718462
+MaxEquity : 23.13491843280162
+MinEquity : -8.427346943497088
+AccountEquity : 17.29474359718454
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 6/24/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 387
+--------------------------------------
+Balance : 11816.255578624668
+MaxEquity : 24.002730621863677
+MinEquity : -7.559534754435021
+AccountEquity : 18.162555786246596
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 6/25/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 388
+--------------------------------------
+Balance : 11969.463587317676
+MaxEquity : 25.53481070879372
+MinEquity : -6.02745466750498
+AccountEquity : 19.69463587317664
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 6/26/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 389
+--------------------------------------
+Balance : 12077.745488765426
+MaxEquity : 26.61762972327123
+MinEquity : -4.944635653027461
+AccountEquity : 20.777454887654148
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 6/27/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 390
+--------------------------------------
+Balance : 12154.845202487484
+MaxEquity : 27.388626860491797
+MinEquity : -4.173638515806895
+AccountEquity : 21.548452024874717
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 6/28/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 391
+--------------------------------------
+Balance : 12020.391944332494
+MaxEquity : 26.0440942789419
+MinEquity : -5.518171097356797
+AccountEquity : 20.203919443324818
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 6/30/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 392
+--------------------------------------
+Balance : 11907.022429413957
+MaxEquity : 24.91039912975655
+MinEquity : -6.651866246542146
+AccountEquity : 19.070224294139468
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 7/1/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 393
+--------------------------------------
+Balance : 12039.9847937939
+MaxEquity : 26.240022773555964
+MinEquity : -5.322242602742736
+AccountEquity : 20.399847937938883
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 7/2/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 394
+--------------------------------------
+Balance : 12053.817566224572
+MaxEquity : 26.378350497862698
+MinEquity : -5.183914878435997
+AccountEquity : 20.538175662245617
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 7/3/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 395
+--------------------------------------
+Balance : 11920.82316732265
+MaxEquity : 25.048406508843485
+MinEquity : -6.5138588674552125
+AccountEquity : 19.208231673226404
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 7/4/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 396
+--------------------------------------
+Balance : 11724.596681713401
+MaxEquity : 23.086141652751017
+MinEquity : -8.476123723547689
+AccountEquity : 17.245966817133937
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 7/7/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 397
+--------------------------------------
+Balance : 11810.133470305356
+MaxEquity : 23.94150953867056
+MinEquity : -7.620755837628137
+AccountEquity : 18.101334703053478
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 7/8/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 398
+--------------------------------------
+Balance : 11957.587290972077
+MaxEquity : 25.416047745337757
+MinEquity : -6.14621763096094
+AccountEquity : 19.575872909720676
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 7/9/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 399
+--------------------------------------
+Balance : 12149.432589853468
+MaxEquity : 27.334500734151682
+MinEquity : -4.22776464214701
+AccountEquity : 21.4943258985346
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 7/10/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 400
+--------------------------------------
+Balance : 12254.14453683953
+MaxEquity : 28.381620204012314
+MinEquity : -3.1806451722863684
+AccountEquity : 22.541445368395234
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 7/11/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 401
+--------------------------------------
+Balance : 12382.965380100008
+MaxEquity : 29.669828636617076
+MinEquity : -1.892436739681609
+AccountEquity : 23.829653800999996
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 7/14/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 402
+--------------------------------------
+Balance : 12483.867533620773
+MaxEquity : 30.67885017182472
+MinEquity : -0.8834152044739654
+AccountEquity : 24.83867533620764
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 7/15/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 403
+--------------------------------------
+Balance : 12572.20905406817
+MaxEquity : 31.562265376298697
+MinEquity : 0
+AccountEquity : 25.722090540681616
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 7/16/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 404
+--------------------------------------
+Balance : 12381.371047177387
+MaxEquity : 29.65388530739088
+MinEquity : -0.8321830143737725
+AccountEquity : 23.8137104717738
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 7/17/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 405
+--------------------------------------
+Balance : 12464.589348614763
+MaxEquity : 30.486068321764648
+MinEquity : 0
+AccountEquity : 24.645893486147568
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 7/18/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 406
+--------------------------------------
+Balance : 12171.50515671999
+MaxEquity : 27.55522640281692
+MinEquity : 0
+AccountEquity : 21.71505156719984
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 7/21/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 407
+--------------------------------------
+Balance : 11542.584483745917
+MaxEquity : 21.266019673076208
+MinEquity : -0.5469337910626886
+AccountEquity : 15.42584483745913
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 7/22/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 408
+--------------------------------------
+Balance : 11344.563817160391
+MaxEquity : 19.285813007220924
+MinEquity : -2.527140456917973
+AccountEquity : 13.445638171603845
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 7/23/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 409
+--------------------------------------
+Balance : 11432.253485238738
+MaxEquity : 20.16270968800439
+MinEquity : -1.6502437761345023
+AccountEquity : 14.322534852387308
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 7/24/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 410
+--------------------------------------
+Balance : 11082.670996039977
+MaxEquity : 16.66688479601678
+MinEquity : -5.146068668122111
+AccountEquity : 10.826709960399702
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 7/25/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 411
+--------------------------------------
+Balance : 11152.435416110106
+MaxEquity : 17.36452899671806
+MinEquity : -4.448424467420831
+AccountEquity : 11.524354161100982
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 7/28/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 412
+--------------------------------------
+Balance : 10907.07034223915
+MaxEquity : 14.910878258008509
+MinEquity : -6.902075206130386
+AccountEquity : 9.07070342239143
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 7/29/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 413
+--------------------------------------
+Balance : 11008.435814238363
+MaxEquity : 15.924532978000624
+MinEquity : -5.888420486138266
+AccountEquity : 10.084358142383545
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 7/30/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 414
+--------------------------------------
+Balance : 11153.969810288561
+MaxEquity : 17.37987293850261
+MinEquity : -4.433080525636281
+AccountEquity : 11.539698102885533
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 7/31/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 415
+--------------------------------------
+Balance : 11205.614807632772
+MaxEquity : 17.896322911944722
+MinEquity : -3.916630552194171
+AccountEquity : 12.056148076327643
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 8/1/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 416
+--------------------------------------
+Balance : 8994.296307740791
+MaxEquity : 2.298555466973463
+MinEquity : -10.05703692259212
+AccountEquity : -10.05703692259212
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 8/4/2025 12:00:00 AM
+CloseTime : 9/4/2025 9:02:00 AM
+AccountID : 417
+--------------------------------------
+Balance : 8980.400402196165
+MaxEquity : 3.158237671737563
+MinEquity : -10.195995978038397
+AccountEquity : -10.195995978038397
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 8/5/2025 12:00:00 AM
+CloseTime : 9/5/2025 9:17:00 PM
+AccountID : 418
+--------------------------------------
+Balance : 8992.738031908855
+MaxEquity : 0
+MinEquity : -10.072619680911453
+AccountEquity : -10.072619680911453
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 8/6/2025 12:00:00 AM
+CloseTime : 8/29/2025 1:31:00 PM
+AccountID : 419
+--------------------------------------
+Balance : 8975.225900463423
+MaxEquity : 0.8712109123575218
+MinEquity : -10.24774099536578
+AccountEquity : -10.24774099536578
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 8/7/2025 12:00:00 AM
+CloseTime : 9/2/2025 9:01:00 AM
+AccountID : 420
+--------------------------------------
+Balance : 8956.485707581063
+MaxEquity : 1.8841001052900683
+MinEquity : -10.435142924189389
+AccountEquity : -10.435142924189389
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 8/8/2025 12:00:00 AM
+CloseTime : 9/5/2025 1:24:00 AM
+AccountID : 421
+--------------------------------------
+Balance : 8944.012160925215
+MaxEquity : 0
+MinEquity : -10.559878390747876
+AccountEquity : -10.559878390747876
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 8/11/2025 12:00:00 AM
+CloseTime : 9/1/2025 1:37:00 AM
+AccountID : 422
+--------------------------------------
+Balance : 8986.512322402445
+MaxEquity : 0.838505999686207
+MinEquity : -10.134876775975572
+AccountEquity : -10.134876775975572
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 8/12/2025 12:00:00 AM
+CloseTime : 9/2/2025 9:01:00 AM
+AccountID : 423
+--------------------------------------
+Balance : 8987.498470350252
+MaxEquity : 2.304741529660584
+MinEquity : -10.125015296497505
+AccountEquity : -10.125015296497505
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 8/13/2025 12:00:00 AM
+CloseTime : 9/5/2025 9:17:00 PM
+AccountID : 424
+--------------------------------------
+Balance : 8972.56175292926
+MaxEquity : 0
+MinEquity : -10.274382470707417
+AccountEquity : -10.274382470707417
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 8/14/2025 12:00:00 AM
+CloseTime : 9/2/2025 9:01:00 AM
+AccountID : 425
+--------------------------------------
+Balance : 8984.771990693274
+MaxEquity : 0.8197158959968754
+MinEquity : -10.152280093067272
+AccountEquity : -10.152280093067272
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 8/15/2025 12:00:00 AM
+CloseTime : 9/5/2025 1:24:00 AM
+AccountID : 426
+--------------------------------------
+Balance : 8951.151839864737
+MaxEquity : 1.6818368747895256
+MinEquity : -10.488481601352667
+AccountEquity : -10.488481601352667
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 8/18/2025 12:00:00 AM
+CloseTime : 9/9/2025 10:31:00 AM
+AccountID : 427
+--------------------------------------
+Balance : 8984.886301843944
+MaxEquity : 0
+MinEquity : -10.151136981560587
+AccountEquity : -10.151136981560587
+DailyEquity : 0
+CloseReason : max Draw Down
+OpenTime : 8/19/2025 12:00:00 AM
+CloseTime : 9/9/2025 10:31:00 AM
+AccountID : 428
+--------------------------------------
+Balance : 10663.008389035766
+MaxEquity : 12.470258725974677
+MinEquity : -9.342694738164216
+AccountEquity : 6.630083890357598
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 8/20/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 429
+--------------------------------------
+Balance : 10781.307895602682
+MaxEquity : 13.653253791643841
+MinEquity : -8.159699672495051
+AccountEquity : 7.813078956026763
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 8/21/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 430
+--------------------------------------
+Balance : 10781.513011260477
+MaxEquity : 13.655304948221787
+MinEquity : -8.157648515917105
+AccountEquity : 7.815130112604708
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 8/22/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 431
+--------------------------------------
+Balance : 10890.09255317435
+MaxEquity : 14.741100367360524
+MinEquity : -7.071853096778369
+AccountEquity : 8.900925531743445
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 8/25/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 432
+--------------------------------------
+Balance : 10653.357901559013
+MaxEquity : 12.373753851207152
+MinEquity : -9.439199612931741
+AccountEquity : 6.533579015590073
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 8/26/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 433
+--------------------------------------
+Balance : 10747.40701456271
+MaxEquity : 13.31424498124414
+MinEquity : -8.49870848289475
+AccountEquity : 7.474070145627062
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 8/27/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 434
+--------------------------------------
+Balance : 10865.642628591811
+MaxEquity : 14.496601121535136
+MinEquity : -7.316352342603757
+AccountEquity : 8.656426285918057
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 8/28/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 435
+--------------------------------------
+Balance : 11012.140612249606
+MaxEquity : 15.961580958113078
+MinEquity : -5.851372506025813
+AccountEquity : 10.121406122496
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 8/29/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 436
+--------------------------------------
+Balance : 11097.873949376923
+MaxEquity : 16.81891432938623
+MinEquity : -4.994039134752658
+AccountEquity : 10.978739493769153
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 9/1/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 437
+--------------------------------------
+Balance : 11224.4905895162
+MaxEquity : 18.085080730779005
+MinEquity : -3.727872733359887
+AccountEquity : 12.244905895161926
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 9/2/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 438
+--------------------------------------
+Balance : 11280.39794121374
+MaxEquity : 18.644154247754432
+MinEquity : -3.1687992163844605
+AccountEquity : 12.803979412137354
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 9/3/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 439
+--------------------------------------
+Balance : 11234.692930265259
+MaxEquity : 18.187104138269625
+MinEquity : -3.625849325869268
+AccountEquity : 12.346929302652546
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 9/4/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 440
+--------------------------------------
+Balance : 11326.171220242331
+MaxEquity : 19.101887038040367
+MinEquity : -2.7110664260985264
+AccountEquity : 13.261712202423288
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 9/5/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 441
+--------------------------------------
+Balance : 11426.03534626337
+MaxEquity : 20.100528298250744
+MinEquity : -1.7124251658881509
+AccountEquity : 14.260353462633661
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 9/8/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 442
+--------------------------------------
+Balance : 11397.123500618958
+MaxEquity : 19.811409841806636
+MinEquity : -2.001543622332254
+AccountEquity : 13.971235006189554
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 9/9/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 443
+--------------------------------------
+Balance : 11520.259302097156
+MaxEquity : 21.042767856588632
+MinEquity : -0.7701856075502618
+AccountEquity : 15.202593020971554
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 9/10/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 444
+--------------------------------------
+Balance : 11597.277862852183
+MaxEquity : 21.8129534641389
+MinEquity : 0
+AccountEquity : 15.972778628521821
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 9/11/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 445
+--------------------------------------
+Balance : 11231.343870462208
+MaxEquity : 18.15361354023913
+MinEquity : -1.86463981229707
+AccountEquity : 12.313438704622053
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 9/12/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 446
+--------------------------------------
+Balance : 11179.48700073224
+MaxEquity : 17.635044842939458
+MinEquity : -2.383208509596743
+AccountEquity : 11.794870007322379
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 9/15/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 447
+--------------------------------------
+Balance : 11225.74839496959
+MaxEquity : 18.09765878531298
+MinEquity : -1.9205945672232212
+AccountEquity : 12.257483949695901
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 9/16/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 448
+--------------------------------------
+Balance : 11312.911072081906
+MaxEquity : 18.969285556436127
+MinEquity : -1.0489677961000754
+AccountEquity : 13.129110720819048
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 9/17/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 449
+--------------------------------------
+Balance : 11417.80785169191
+MaxEquity : 20.0182533525362
+MinEquity : 0
+AccountEquity : 14.178078516919117
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 9/18/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 450
+--------------------------------------
+Balance : 11413.404459639392
+MaxEquity : 19.974219432011004
+MinEquity : 0
+AccountEquity : 14.134044596393922
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 9/19/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 451
+--------------------------------------
+Balance : 11301.10111403889
+MaxEquity : 18.85118597600597
+MinEquity : -0.6990369535580374
+AccountEquity : 13.01101114038889
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 9/23/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 452
+--------------------------------------
+Balance : 11265.469151101335
+MaxEquity : 18.494866346630445
+MinEquity : -1.0553565829335618
+AccountEquity : 12.654691511013366
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 9/24/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 453
+--------------------------------------
+Balance : 11371.004809394692
+MaxEquity : 19.550222929564008
+MinEquity : 0
+AccountEquity : 13.710048093946929
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 9/25/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 454
+--------------------------------------
+Balance : 10944.95636111872
+MaxEquity : 15.289738446804307
+MinEquity : 0
+AccountEquity : 9.449563611187228
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 9/26/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 455
+--------------------------------------
+Balance : 10742.39349105768
+MaxEquity : 13.264109746193913
+MinEquity : -1.603879149804684
+AccountEquity : 7.423934910576834
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 9/29/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 456
+--------------------------------------
+Balance : 10740.02334574664
+MaxEquity : 13.240408293083522
+MinEquity : -1.6275806029150777
+AccountEquity : 7.4002334574664435
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 9/30/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 457
+--------------------------------------
+Balance : 10720.227254371017
+MaxEquity : 13.042447379327278
+MinEquity : -1.825541516671322
+AccountEquity : 7.202272543710199
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 10/1/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 458
+--------------------------------------
+Balance : 10902.78140603815
+MaxEquity : 14.8679888959986
+MinEquity : 0
+AccountEquity : 9.027814060381521
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 10/2/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 459
+--------------------------------------
+Balance : 10665.221571563488
+MaxEquity : 12.492390551251983
+MinEquity : -0.42050429729112065
+AccountEquity : 6.652215715634904
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 10/3/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 460
+--------------------------------------
+Balance : 10502.256740840121
+MaxEquity : 10.862742244018307
+MinEquity : -1.060789186005796
+AccountEquity : 5.02256740840123
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 10/4/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 461
+--------------------------------------
+Balance : 10608.335659440701
+MaxEquity : 11.923531430024102
+MinEquity : 0
+AccountEquity : 6.083356594407023
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 10/6/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 462
+--------------------------------------
+Balance : 10133.940745380347
+MaxEquity : 7.179582289420565
+MinEquity : -1.8073999661016615
+AccountEquity : 1.3394074538034855
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 10/7/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 463
+--------------------------------------
+Balance : 10314.680741990513
+MaxEquity : 8.986982255522225
+MinEquity : 0
+AccountEquity : 3.1468074199051457
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 10/8/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 464
+--------------------------------------
+Balance : 9931.257156935435
+MaxEquity : 5.152746404971447
+MinEquity : -0.6874284306456322
+AccountEquity : -0.6874284306456322
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 10/9/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 465
+--------------------------------------
+Balance : 9853.36612111252
+MaxEquity : 4.37383604674229
+MinEquity : -1.4663387888747896
+AccountEquity : -1.4663387888747896
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 10/10/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 466
+--------------------------------------
+Balance : 9742.178323822483
+MaxEquity : 3.2619580738419325
+MinEquity : -2.5782167617751472
+AccountEquity : -2.5782167617751472
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 10/13/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 467
+--------------------------------------
+Balance : 9741.137168849304
+MaxEquity : 1.5250813732984758
+MinEquity : -2.588628311506958
+AccountEquity : -2.588628311506958
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 10/14/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 468
+--------------------------------------
+Balance : 9896.248566506652
+MaxEquity : 3.0761953498719716
+MinEquity : -1.0375143349334617
+AccountEquity : -1.0375143349334617
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 10/15/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 469
+--------------------------------------
+Balance : 9864.648248606143
+MaxEquity : 1.8055832566884003
+MinEquity : -1.3535175139385478
+AccountEquity : -1.3535175139385478
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 10/16/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 470
+--------------------------------------
+Balance : 9958.81637241698
+MaxEquity : 2.7472644947967706
+MinEquity : -0.41183627583017746
+AccountEquity : -0.41183627583017746
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 10/17/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 471
+--------------------------------------
+Balance : 9684.089922937304
+MaxEquity : 0
+MinEquity : -3.159100770626948
+AccountEquity : -3.159100770626948
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 10/20/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 472
+--------------------------------------
+Balance : 9842.793336643785
+MaxEquity : 0
+MinEquity : -1.5720666335621434
+AccountEquity : -1.5720666335621434
+DailyEquity : -1.5720666335621434
+CloseReason : Active
+OpenTime : 10/21/2025 12:00:00 AM
+CloseTime : 1/1/0001 12:00:00 AM
+AccountID : 473
+--------------------------------------
