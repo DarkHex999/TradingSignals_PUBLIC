@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Signals | AI-Powered Trading Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lightweight-charts@4.0.0/dist/lightweight-charts.standalone.production.js"></script>
+
+    <style>
+        :root {
+            --dark-blue: #0a1a35;
+            --blue: #1a3a6c;
+            --light-blue: #2a5a9c;
+            --yellow: #ffcc00;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --medium-gray: #e9ecef;
+            --dark-gray: #333333;
+            --text-gray: #6c757d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--dark-blue);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--light-blue);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+
+            header.shrink {
+                padding: 10px 0;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s ease;
+        }
+
+        header.shrink .header-content {
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            transition: all 0.4s ease;
+        }
+
+        header.shrink .logo h1 {
+            font-size: 20px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            transition: all 0.4s ease;
+        }
+
+        .logo span {
+            color: var(--yellow);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            transition: all 0.4s ease;
+        }
+
+        header.shrink nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+            transition: all 0.4s ease;
+        }
+
+            nav ul li a {
+                color: var(--white);
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s;
+            }
+
+                nav ul li a:hover {
+                    color: var(--yellow);
+                }
+
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+            transition: all 0.4s ease;
+        }
+
+        header.shrink .auth-buttons .btn {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            transform: scale(1);
+        }
+
+        header .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            background: transparent;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--blue);
+            color: var(--blue);
+            background: transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--yellow);
+            color: var(--dark-blue);
+            border: 2px solid var(--yellow);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        header .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(26, 58, 108, 0.1);
+            border-color: var(--blue);
+            color: var(--blue);
+        }
+
+        .btn-primary:hover {
+            background-color: #e6b800;
+            border-color: #e6b800;
+            color: var(--dark-blue);
+        }
+
+        .hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
+            text-align: center;
+            margin-top: 80px;
+        }
+
+            .hero h2 {
+                font-size: 48px;
+                margin-bottom: 20px;
+                font-weight: 800;
+                color: var(--dark-blue);
+            }
+
+            .hero p {
+                font-size: 20px;
+                max-width: 700px;
+                margin: 0 auto 40px;
+                color: var(--text-gray);
+            }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .funding-section {
+            background-color: var(--light-gray);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .funding-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+            .funding-content h3 {
+                font-size: 36px;
+                margin-bottom: 20px;
+                color: var(--dark-blue);
+            }
+
+            .funding-content p {
+                font-size: 18px;
+                margin-bottom: 40px;
+                color: var(--text-gray);
+            }
+
+        .funding-options {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            align-items: stretch;
+        }
+
+        .funding-option {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            flex: 1;
+            max-width: 350px;
+            border: 1px solid var(--medium-gray);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .funding-option:hover {
+                transform: translateY(-5px);
+            }
+
+            .funding-option h4 {
+                font-size: 24px;
+                margin-bottom: 15px;
+                color: var(--dark-blue);
+            }
+
+            .funding-option .amount {
+                font-size: 32px;
+                font-weight: 700;
+                margin-bottom: 20px;
+                color: var(--blue);
+                text-align: center;
+            }
+
+            .funding-option p {
+                text-align: left;
+                margin: 22px 0;
+                padding-left: 20px;
+            }
+
+        .pro-locked {
+            pointer-events: none;
+            position: relative;
+        }
+
+        .pro-content {
+            filter: blur(3px);
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .coming-soon-text {
+            color: rgb(255 255 0 / 0.30);
+            font-weight: bold;
+        }
+
+        .locked-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            border-radius: 10px;
+            z-index: 2;
+            background-color: rgba(10, 26, 53, 0.7);
+        }
+
+            .locked-overlay i {
+                font-size: 40px;
+                margin-bottom: 15px;
+                color: var(--yellow);
+            }
+
+            .locked-overlay h5 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+        .features {
+            padding: 80px 0;
+            background-color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+            .features h3 {
+                text-align: center;
+                font-size: 36px;
+                margin-bottom: 50px;
+                color: var(--dark-blue);
+            }
+
+        .features-container {
+            position: relative;
+            overflow: hidden;
+            height: 165px;
+        }
+
+        .features-track {
+            display: flex;
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation: slideFeatures 30s linear infinite;
+            width: max-content;
+        }
+
+        .feature-card {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid var(--medium-gray);
+            min-width: 10px;
+            margin: 0 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.7s;
+            flex-shrink: 0;
+        }
+
+            .feature-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .feature-card.highlighted {
+                border: 2px solid rgba(230, 184, 0, 0.5);
+                box-shadow: 0 5px 20px rgba(230, 184, 0, 0.2);
+                position: relative;
+            }
+
+        .feature-icon {
+            font-size: 32px;
+            color: var(--yellow);
+            margin-bottom: 15px;
+        }
+
+        .feature-card h4 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--dark-blue);
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 5px;
+        }
+
+        @keyframes slideFeatures {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .backtest {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+
+        .backtest-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .backtest-text {
+            flex: 1;
+        }
+
+            .backtest-text h3 {
+                font-size: 36px;
+                margin-bottom: 20px;
+                color: var(--dark-blue);
+            }
+
+            .backtest-text p {
+                margin-bottom: 30px;
+                color: var(--text-gray);
+            }
+
+        .backtest-visual {
+            flex: 1;
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid var(--medium-gray);
+            position: relative;
+        }
+
+        .pass-rate {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+
+        .pass-rate-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .pass-rate-text {
+            flex: 1;
+        }
+
+            .pass-rate-text h3 {
+                font-size: 34px;
+                margin-bottom: 20px;
+                color: var(--dark-blue);
+            }
+
+            .pass-rate-text p {
+                margin-bottom: 30px;
+                color: var(--text-gray);
+            }
+
+        .pass-rate-visual {
+            flex: 1;
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid var(--medium-gray);
+            position: relative;
+        }
+
+        .chart-placeholder {
+            height: 300px;
+            background-color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            color: var(--text-gray);
+            font-size: 18px;
+            border: 1px solid var(--medium-gray);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rate-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 15px;
+        }
+
+            .stat-item .stat-value {
+                font-size: 36px;
+                font-weight: 700;
+                color: var(--blue);
+                margin-bottom: 5px;
+            }
+
+            .stat-item .stat-label {
+                font-size: 14px;
+                color: var(--text-gray);
+            }
+
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+            text-align: center;
+        }
+
+            .cta h3 {
+                font-size: 36px;
+                margin-bottom: 20px;
+                color: var(--dark-blue);
+            }
+
+            .cta p {
+                font-size: 18px;
+                max-width: 700px;
+                margin: 0 auto 40px;
+                color: var(--text-gray);
+            }
+
+        footer {
+            background-color: var(--dark-blue);
+            padding: 50px 0 20px;
+            color: var(--white);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+
+            .footer-column h4 {
+                font-size: 18px;
+                margin-bottom: 20px;
+                color: var(--yellow);
+            }
+
+            .footer-column ul {
+                list-style: none;
+            }
+
+                .footer-column ul li {
+                    margin-bottom: 10px;
+                }
+
+                    .footer-column ul li a {
+                        color: var(--light-gray);
+                        text-decoration: none;
+                        transition: color 0.3s;
+                    }
+
+                        .footer-column ul li a:hover {
+                            color: var(--yellow);
+                        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-blue);
+            color: var(--medium-gray);
+            font-size: 14px;
+        }
+
+        /* New styles for info icon and tooltip */
+        .info-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+            .info-icon i {
+                font-size: 16px;
+                color: var(--text-gray);
+                transition: color 0.3s, transform 0.3s;
+            }
+
+            .info-icon:hover i {
+                color: var(--yellow);
+                transform: scale(1.2);
+            }
+
+        .info-tooltip {
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            z-index: 20;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 5px;
+        }
+
+            .info-tooltip::after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                right: 10px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: var(--dark-blue) transparent transparent transparent;
+            }
+
+        .info-icon:hover .info-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+                nav ul li {
+                    margin: 5px 10px;
+                }
+
+            .hero h2 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .funding-options {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .backtest-content, .pass-rate-content {
+                flex-direction: column;
+            }
+
+            .feature-card {
+                min-width: 220px;
+            }
+
+            .rate-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            header.shrink .header-content {
+                flex-direction: row;
+            }
+
+            header.shrink nav ul li {
+                margin-left: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>QUANTUM <span>SIGNALS</span></h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Backtest</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="#" class="btn btn-outline">Login</a>
+                    <a href="#" class="btn btn-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>AI-POWERED TRADING SIGNALS</h2>
+            <p>Advanced machine learning algorithms deliver precise trading signals with transparent public backtesting</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">Start Free Trial</a>
+                <a href="#" class="btn btn-outline">View Backtest Results</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="funding-section">
+        <div class="container">
+            <div class="funding-content">
+                <h3>BETTER FUNDING FOR TRADERS</h3>
+                <p>Get Qualified By Our AI System And Access Premium Trading Signals</p>
+                <div class="funding-options">
+                    <div class="funding-option">
+                        <h4>BASIC PLAN</h4>
+                        <div class="amount">$99/MONTH</div>
+                        <p>● Stable Backtesting Result</p>
+                        <p>● Passing Funded Accounts</p>
+                        <p>● Crypto signals</p>
+                        <p>● Email support</p>
+                        <a href="#" class="btn btn-outline" style="margin-top: 20px;">Get Started</a>
+                    </div>
+                    <div class="funding-option pro-locked">
+                        <div class="pro-content">
+                            <h4>PRO PLAN</h4>
+                            <div class="amount">$299/MONTH</div>
+                            <p>All Basic features plus:</p>
+                            <p>All asset classes</p>
+                            <p>Advanced backtesting</p>
+                            <p>Priority support</p>
+                            <a href="#" class="btn btn-primary" style="margin-top: 20px;">Get Started</a>
+                        </div>
+                        <div class="locked-overlay">
+                            <i class="fas fa-lock"></i>
+                            <h5>Currently Locked</h5>
+                            <span class="coming-soon-text">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h3>WHY CHOOSE QUANTUM SIGNALS</h3>
+            <div class="features-container">
+                <div class="features-track">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>Advanced AI Algorithms</h4>
+                    </div>
+                    <div class="feature-card highlighted">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Public Backtesting</h4>
+                    </div>
+                    <div class="feature-card highlighted">
+                        <div class="feature-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h4>Passing Funded Accounts</h4>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h4>Real-time Alerts</h4>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Risk Management</h4>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>Advanced AI Algorithms</h4>
+                    </div>
+                    <div class="feature-card highlighted">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Public Backtesting</h4>
+                    </div>
+                    <div class="feature-card highlighted">
+                        <div class="feature-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h4>Passing Funded Accounts</h4>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h4>Real-time Alerts</h4>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Risk Management</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="backtest">
+        <div class="container">
+            <div class="backtest-content">
+                <div class="backtest-text">
+                    <h3>PUBLIC BACKTESTING</h3>
+                    <p>We believe in complete transparency. Our public backtesting allows you to verify our AI trading signals' performance across various market conditions.</p>
+                    <p>Analyze historical performance, drawdown periods, and risk metrics before making any trading decisions.</p>
+                    <a href="#" class="btn btn-primary">Explore Backtest Results</a>
+                </div>
+                <div class="backtest-visual">
+                    <div class="info-icon">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <div class="info-tooltip">
+                            This chart shows the historical performance of our AI trading signals based on backtesting data from the past 24 months.
+                        </div>
+                    </div>
+                    <h4>Percentage Return Summary (Last 24 Months)</h4>
+                    <div class="chart-placeholder" id="backtestChart">
+                        Interactive Performance Chart Would Appear Here
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+                        <div>
+                            <p>Total Return: <strong style="color: var(--blue);">+42.7%</strong></p>
+                            <p>Win Rate: <strong style="color: var(--blue);">76.3%</strong></p>
+                        </div>
+                        <div>
+                            <p>Max Drawdown: <strong style="color: var(--blue);">-8.2%</strong></p>
+                            <p>Sharpe Ratio: <strong style="color: var(--blue);">2.1</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pass-rate">
+        <div class="container">
+            <div class="pass-rate-content">
+                <div class="pass-rate-text">
+                    <h3>FUNDED ACCOUNTS PASS RATE</h3>
+                    <p>Our proven track record speaks for itself. With our AI-powered signals and risk management strategies, our users achieve exceptional success rates in passing funded account challenges.</p>
+                    <p>Join the growing community of traders who have successfully secured funding and get PAYOUTS through our system.</p>
+                    <a href="#" class="btn btn-primary">Explore Pass Rate</a>
+                </div>
+                <div class="pass-rate-visual">
+                    <div class="info-icon">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <div class="info-tooltip">
+                            This visualization shows the success rate of our users in passing funded account challenges across different metrics.
+                        </div>
+                    </div>
+                    <h4>Our Success Metrics</h4>
+                    <div class="chart-placeholder" id="FundChart">
+                        Funded Accounts Pass Rate Visualization
+                    </div>
+                    <div class="rate-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">89%</div>
+                            <div class="stat-label">Overall Pass Rate</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">72%</div>
+                            <div class="stat-label">First-Time Pass Rate</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">94%</div>
+                            <div class="stat-label">With Risk Management</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h3>READY TO TRANSFORM YOUR TRADING?</h3>
+            <p>Join thousands of traders who use Quantum Signals to make informed trading decisions with confidence.</p>
+            <a href="#" class="btn btn-primary">Start Your Free Trial Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>QUANTUM SIGNALS</h4>
+                    <p>Advanced AI-powered trading signals with transparent public backtesting for confident trading decisions.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>PRODUCT</h4>
+                    <ul>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Backtesting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>RESOURCES</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>COMPANY</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Legal</a></li>
+                        <li><a href="#">‎   </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Quantum Signals. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        class FundedAccount {
+            constructor(balance, maxEquity, minEquity, accountEquity, dailyEquity, closeReason, openTime, closeTime, accountID) {
+                this.balance = balance;
+                this.maxEquity = maxEquity;
+                this.minEquity = minEquity;
+                this.accountEquity = accountEquity;
+                this.dailyEquity = dailyEquity;
+                this.closeReason = closeReason;
+                this.openTime = openTime;
+                this.closeTime = closeTime;
+                this.accountID = accountID;
+            }
+        }
+
+        class Trade {
+            constructor(result, type, id, closeReason, tp, sl, entryTime, closeTime, entryPrice, profit) {
+                this.result = result;
+                this.type = type;
+                this.id = id;
+                this.closeReason = closeReason;
+                this.tp = tp;
+                this.sl = sl;
+                this.entryTime = entryTime;
+                this.closeTime = closeTime;
+                this.entryPrice = entryPrice;
+                this.profit = profit;
+            }
+        }
+
+        let fundedAccountsList = [];
+        let tradesList = [];
+        let chartsInitialized = {
+            backtestChart: false,
+            FundChart: false
+        };
+
+        async function loadFundedAccounts() {
+            try {
+                const response = await fetch('https://raw.githubusercontent.com/DarkHex999/TradingSignals_PUBLIC/refs/heads/main/FundedAccounts.txt');
+                const text = await response.text();
+                return parseFundedAccounts(text);
+            } catch (error) {
+                console.error('Error loading funded accounts:', error);
+                return [];
+            }
+        }
+
+        async function loadTrades() {
+            try {
+                const response = await fetch('https://raw.githubusercontent.com/DarkHex999/TradingSignals_PUBLIC/refs/heads/main/backtest.txt');
+                const text = await response.text();
+                return parseTrades(text);
+            } catch (error) {
+                console.error('Error loading trades:', error);
+                return [];
+            }
+        }
+
+        function parseFundedAccounts(text) {
+            const accounts = [];
+            const blocks = text.split('--------------------------------------');
+
+            for (const block of blocks) {
+                if (block.trim() === '') continue;
+
+                const lines = block.trim().split('\n');
+                const accountData = {};
+
+                for (const line of lines) {
+                    if (line.includes(':')) {
+                        const [key, ...rest] = line.split(':');
+                        const value = rest.join(':').trim();
+                        accountData[key.trim()] = value;
+                    }
+                }
+
+                if (accountData.Balance && accountData.AccountID) {
+                    accounts.push(new FundedAccount(
+                        parseFloat(accountData.Balance),
+                        parseFloat(accountData.MaxEquity),
+                        parseFloat(accountData.MinEquity),
+                        parseFloat(accountData.AccountEquity),
+                        parseFloat(accountData.DailyEquity),
+                        accountData.CloseReason,
+                        accountData.OpenTime,
+                        accountData.CloseTime,
+                        parseInt(accountData.AccountID)
+                    ));
+                }
+            }
+
+            return accounts;
+        }
+
+        function parseTrades(text) {
+            const trades = [];
+            const tradeBlocks = text.match(/\{[^}]+\}/g) || [];
+            let TradesCount = 0;
+            for (const block of tradeBlocks) {
+                try {
+                    const resultMatch = block.match(/\{(Win|Lose)\s*,/);
+                    const typeMatch = block.match(/,\s*(Buy|Sell)\s*,/);
+                    const idMatch = block.match(/ID\s*:\s*(\d+)/);
+                    const closeReasonMatch = block.match(/Close Reson\s*:\s*([^,]+)/);
+                    const tpMatch = block.match(/TP\s*:\s*([\d.]+)/);
+                    const slMatch = block.match(/SL\s*:\s*([\d.]+)/);
+                    const entryTimeMatch = block.match(/Entry Time\s*:\s*([^,]+)/);
+                    const closeTimeMatch = block.match(/Close Time\s*:\s*([^,]+)/);
+                    const entryPriceMatch = block.match(/Entry Price\s*:\s*([\d.]+)/);
+                    const profitMatch = block.match(/Profit\s*:\s*([-\d.]+)/);
+
+                    if (resultMatch && typeMatch && idMatch) {
+                        let currentTrade = new Trade(
+                            resultMatch[1].trim(),
+                            typeMatch[1].trim(),
+                            parseInt(idMatch[1]),
+                            closeReasonMatch ? closeReasonMatch[1].trim() : 'N/A',
+                            tpMatch ? parseFloat(tpMatch[1]) : 0,
+                            slMatch ? parseFloat(slMatch[1]) : 0,
+                            entryTimeMatch ? entryTimeMatch[1].trim() : 'N/A',
+                            closeTimeMatch ? closeTimeMatch[1].trim() : 'N/A',
+                            entryPriceMatch ? parseFloat(entryPriceMatch[1]) : 0,
+                            profitMatch ? parseFloat(profitMatch[1]) : 0
+                        );
+                        TradesCount++;
+
+                        trades.push(currentTrade);
+
+                    }
+
+                } catch (error) {
+                    console.error('Error parsing trade block:', error, block);
+                }
+            }
+
+            return trades;
+        }
+
+        async function init() {
+            fundedAccountsList = await loadFundedAccounts();
+            tradesList = await loadTrades();
+
+            tradesList.sort((a, b) => new Date(a.closeTime) - new Date(b.closeTime));
+
+            console.log('Funded Accounts List:', fundedAccountsList.length);
+            console.log('Trades List:', tradesList.length);
+
+            // Initialize Intersection Observer for charts
+            initChartObserver();
+        }
+
+        function initChartObserver() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const chartObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const chartId = entry.target.id;
+                        if (!chartsInitialized[chartId]) {
+                            if (chartId === 'backtestChart') {
+                                loadBacktestChart(chartId, tradesList, {
+                                    getTime: t => Date.parse(t.entryTime) / 1000,
+                                    getValue: t => +t.profit || 0,
+                                    pointCalc: (cum, val) => cum + val
+                                });
+                            } else if (chartId === 'FundChart') {
+                                loadBacktestChart(chartId, fundedAccountsList, {
+                                    getTime: t => Date.parse(t.openTime) / 1000,
+                                    getValue: t => + ((t.maxEquity > 15) ? 1 : -1) || 0,
+                                    pointCalc: (cum, val) => cum + val
+                                });
+                            }
+                            chartsInitialized[chartId] = true;
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            // Observe both chart containers
+            const backtestChart = document.getElementById('backtestChart');
+            const fundChart = document.getElementById('FundChart');
+
+            if (backtestChart) chartObserver.observe(backtestChart);
+            if (fundChart) chartObserver.observe(fundChart);
+        }
+
+        window.addEventListener('scroll', function () {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('shrink');
+            } else {
+                header.classList.remove('shrink');
+            }
+        });
+
+        const header = document.getElementById('main-header');
+        header.addEventListener('mouseenter', function () {
+            this.classList.remove('shrink');
+        });
+
+        header.addEventListener('mouseleave', function () {
+            if (window.scrollY > 50) {
+                this.classList.add('shrink');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', init);
+
+        function loadBacktestChart(parentID, list, options = {}) {
+            const container = document.getElementById(parentID);
+            if (!container) return console.error('Invalid parentID');
+
+            function toEpochSeconds(s) {
+                const t = Date.parse(s);
+                return isNaN(t) ? null : Math.floor(t / 1000);
+            }
+
+            // خيارات قابلة للتخصيص
+            const {
+                getTime = item => toEpochSeconds(item.entryTime), // كيف تجيب الوقت
+                getValue = item => +item.profit || 0,             // كيف تجيب القيمة
+                pointCalc = (cum, val) => cum + val,              // طريقة حساب النقطة
+                cell = 1.5                                        // كل كم نقطة تُعرض
+            } = options;
+
+            function buildPoints(data) {
+                const mapped = data
+                    .map(t => ({ time: getTime(t), val: getValue(t) }))
+                    .filter(x => x.time)
+                    .sort((a, b) => a.time - b.time);
+
+                let cum = 0;
+                const pts = mapped.map(m => {
+                    cum = pointCalc(cum, m.val);
+                    return { time: m.time, value: cum };
+                });
+
+                return pts.filter((_, i) => i % cell === 0);
+            }
+
+            function showMsg(msg) {
+                container.innerHTML = `<div style="padding:16px;color:#6c757d">${msg}</div>`;
+            }
+
+            const data = list || [];
+            if (!data.length) return showMsg('No data to plot.');
+
+            // Clear container and set height
+            container.innerHTML = '';
+            container.style.height = '360px';
+
+            // Create chart
+            const chart = LightweightCharts.createChart(container, {
+                width: container.clientWidth,
+                height: 360,
+                layout: { background: { color: '#ffffff' }, textColor: '#333' },
+                grid: { vertLines: { visible: true }, horzLines: { visible: true } },
+                timeScale: {
+                    timeVisible: true,
+                    secondsVisible: false,
+                    rightOffset: 0,
+                    tickMarkFormatter: () => ''
+                },
+                handleScroll: { mouseWheel: false, pressedMouseMove: false },
+                handleScale: { mouseWheel: false, axisPressedMouseMove: false, pinch: false },
+                localization: { locale: 'en-US' }
+            });
+
+            const series = chart.addLineSeries({
+                color: '#D1AE00',
+                lineWidth: 2,
+                lastValueVisible: false,
+                priceLineVisible: false
+            });
+
+            const points = buildPoints(data);
+            if (!points.length) return showMsg('No valid time values.');
+
+            // Animate chart drawing
+            if (points.length > 0) {
+                const totalPoints = points.length;
+                let currentIndex = 0;
+
+                const drawNextPoint = () => {
+                    if (currentIndex < totalPoints) {
+                        series.setData(points.slice(0, currentIndex + 1));
+                        chart.timeScale().fitContent();
+
+                        currentIndex++;
+                        setTimeout(drawNextPoint, 500 / totalPoints);
+                    }
+                };
+
+                drawNextPoint();
+            }
+
+            const canvas = container.querySelector('canvas');
+            if (canvas) canvas.style.pointerEvents = 'none';
+
+            window.addEventListener('resize', () => chart.resize(container.clientWidth, 360));
+        }
+    </script>
+</body>
+</html>
