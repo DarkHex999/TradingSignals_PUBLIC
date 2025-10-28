@@ -17,6 +17,8 @@
             --medium-gray: #e9ecef;
             --dark-gray: #333333;
             --text-gray: #6c757d;
+            --profit-green: #28a745;
+            --loss-red: #dc3545;
         }
 
         * {
@@ -304,61 +306,21 @@
             overflow: hidden;
         }
 
-        .leverage-control {
+        /* إضافة ملاحظة بدلاً من Leverage Ratio */
+        .notice-container {
             margin-top: 20px;
-            padding: 20px;
-            background-color: var(--light-gray);
+            padding: 15px;
+            background-color: rgba(255, 0, 0, 0.05);
             border-radius: 8px;
-            border: 1px solid var(--medium-gray);
-        }
-
-        .leverage-slider-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .leverage-label {
-            font-weight: 600;
-            color: var(--dark-blue);
-            min-width: 120px;
-        }
-
-        .leverage-slider {
-            flex: 1;
-            -webkit-appearance: none;
-            width: 100%;
-            height: 8px;
-            border-radius: 4px;
-            background: var(--medium-gray);
-            outline: none;
-        }
-
-            .leverage-slider::-webkit-slider-thumb {
-                -webkit-appearance: none;
-                appearance: none;
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
-                background: var(--yellow);
-                cursor: pointer;
-                border: 2px solid var(--dark-blue);
-            }
-
-            .leverage-slider::-moz-range-thumb {
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
-                background: var(--yellow);
-                cursor: pointer;
-                border: 2px solid var(--dark-blue);
-            }
-
-        .leverage-value {
-            font-weight: 700;
-            color: var(--dark-blue);
-            min-width: 40px;
+            border: 1px solid var(--loss-red);
             text-align: center;
+        }
+
+        .notice-text {
+            color: var(--loss-red);
+            font-weight: 600;
+            font-size: 16px;
+            margin: 0;
         }
 
         .calendar-section {
@@ -427,7 +389,6 @@
         }
 
         .period-cell {
-            background-color: var(--light-gray);
             border: 1px solid var(--medium-gray);
             border-radius: 8px;
             padding: 20px;
@@ -438,12 +399,23 @@
             justify-content: space-between;
             min-height: 120px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            /* إضافة خلفية متدرجة بناءً على الربح/الخسارة */
+            background: linear-gradient(to bottom right, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
         }
+
+            .period-cell.profit-positive {
+                border-left: 4px solid var(--profit-green);
+                background: linear-gradient(to bottom right, rgba(40, 167, 69, 0.1), rgba(255,255,255,0.7));
+            }
+
+            .period-cell.profit-negative {
+                border-left: 4px solid var(--loss-red);
+                background: linear-gradient(to bottom right, rgba(220, 53, 69, 0.1), rgba(255,255,255,0.7));
+            }
 
             .period-cell:hover {
                 transform: translateY(-5px);
                 box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-                border-color: var(--yellow);
             }
 
         .period-date {
@@ -476,11 +448,11 @@
         }
 
         .profit-positive {
-            color: #28a745;
+            color: var(--profit-green);
         }
 
         .profit-negative {
-            color: #dc3545;
+            color: var(--loss-red);
         }
 
         .period-wins {
@@ -665,11 +637,11 @@
             }
 
         .win-trade {
-            color: #28a745;
+            color: var(--profit-green);
         }
 
         .lose-trade {
-            color: #dc3545;
+            color: var(--loss-red);
         }
 
         footer {
@@ -902,12 +874,9 @@
                     <div class="performance-chart" id="performanceChart">
                         Loading performance chart...
                     </div>
-                    <div class="leverage-control">
-                        <div class="leverage-slider-container">
-                            <div class="leverage-label">Leverage Ratio:</div>
-                            <input type="range" min="1" max="10" value="1" class="leverage-slider" id="leverageSlider">
-                            <div class="leverage-value" id="leverageValue">1:1</div>
-                        </div>
+                    <!-- استبدال Leverage Control بالملاحظة -->
+                    <div class="notice-container">
+                        <p class="notice-text">Note: Results are recorded in percentage terms only, with no specific currency and without any financial leverage '1:1'</p>
                     </div>
                 </div>
             </div>
@@ -1458,20 +1427,27 @@
             const winRate = totalTrades > 0 ?
                 (winTrades / totalTrades * 100).toFixed(1) : 0;
 
+            // إضافة فئة بناءً على الربح/الخسارة
+            if (totalProfit > 0) {
+                cell.classList.add('profit-positive');
+            } else if (totalProfit < 0) {
+                cell.classList.add('profit-negative');
+            }
+
             cell.innerHTML = `
-                            <div class="period-date">${periodName}</div>
-                            <div class="period-stats">
-                                <div class="trades-count">
-                                    <i class="fas fa-chart-bar"></i> ${totalTrades} trades
-                                </div>
-                                <div class="period-profit ${totalProfit >= 0 ? 'profit-positive' : 'profit-negative'}">
-                                    ${totalProfit >= 0 ? '+' : ''}${totalProfit.toFixed(2)}
-                                </div>
-                            </div>
-                            <div class="period-wins">
-                                <i class="fas fa-trophy"></i> ${winRate}% win rate
-                            </div>
-                        `;
+                                    <div class="period-date">${periodName}</div>
+                                    <div class="period-stats">
+                                        <div class="trades-count">
+                                            <i class="fas fa-chart-bar"></i> ${totalTrades} trades
+                                        </div>
+                                        <div class="period-profit ${totalProfit >= 0 ? 'profit-positive' : 'profit-negative'}">
+                                            ${totalProfit >= 0 ? '+' : ''}${totalProfit.toFixed(2)}
+                                        </div>
+                                    </div>
+                                    <div class="period-wins">
+                                        <i class="fas fa-trophy"></i> ${winRate}% win rate
+                                    </div>
+                                `;
 
             // إضافة حدث النقر بشكل صحيح
             cell.addEventListener('click', (e) => {
@@ -1495,19 +1471,19 @@
 
             // Set modal stats
             modalStats.innerHTML = `
-                            <div class="modal-stat">
-                                <div class="modal-stat-value">${totalTrades}</div>
-                                <div class="modal-stat-label">Total Trades</div>
-                            </div>
-                            <div class="modal-stat">
-                                <div class="modal-stat-value">${winRate}%</div>
-                                <div class="modal-stat-label">Win Rate</div>
-                            </div>
-                            <div class="modal-stat">
-                                <div class="modal-stat-value ${totalProfit >= 0 ? 'profit-positive' : 'profit-negative'}">${totalProfit >= 0 ? '+' : ''}${totalProfit.toFixed(2)}</div>
-                                <div class="modal-stat-label">Total Profit</div>
-                            </div>
-                        `;
+                                    <div class="modal-stat">
+                                        <div class="modal-stat-value">${totalTrades}</div>
+                                        <div class="modal-stat-label">Total Trades</div>
+                                    </div>
+                                    <div class="modal-stat">
+                                        <div class="modal-stat-value">${winRate}%</div>
+                                        <div class="modal-stat-label">Win Rate</div>
+                                    </div>
+                                    <div class="modal-stat">
+                                        <div class="modal-stat-value ${totalProfit >= 0 ? 'profit-positive' : 'profit-negative'}">${totalProfit >= 0 ? '+' : ''}${totalProfit.toFixed(2)}</div>
+                                        <div class="modal-stat-label">Total Profit</div>
+                                    </div>
+                                `;
 
             // Populate trades table
             modalTradesTableBody.innerHTML = '';
@@ -1526,13 +1502,13 @@
                     const profitSign = trade.profit >= 0 ? '+' : '';
 
                     row.innerHTML = `
-                                    <td>${trade.id}</td>
-                                    <td>${trade.type}</td>
-                                    <td class="${trade.result === 'Win' ? 'win-trade' : 'lose-trade'}">${trade.result}</td>
-                                    <td>${formatDate(trade.entryTime)}</td>
-                                    <td>${formatDate(trade.closeTime)}</td>
-                                    <td class="${profitClass}">${profitSign}${trade.profit.toFixed(2)}</td>
-                                `;
+                                            <td>${trade.id}</td>
+                                            <td>${trade.type}</td>
+                                            <td class="${trade.result === 'Win' ? 'win-trade' : 'lose-trade'}">${trade.result}</td>
+                                            <td>${formatDate(trade.entryTime)}</td>
+                                            <td>${formatDate(trade.closeTime)}</td>
+                                            <td class="${profitClass}">${profitSign}${trade.profit.toFixed(2)}</td>
+                                        `;
 
                     modalTradesTableBody.appendChild(row);
                 });
@@ -1555,21 +1531,6 @@
 
             // إعادة تمكين التمرير عند إغلاق المودال
             document.body.style.overflow = '';
-        }
-
-        function updateLeverage(value) {
-            leverage = parseInt(value);
-            document.getElementById('leverageValue').textContent = `${leverage}:1`;
-
-            // Update statistics with new leverage
-            const stats = calculateStatistics(tradesList, leverage);
-            updateStatistics(stats);
-
-            // Update chart with new leverage
-            loadPerformanceChart(tradesList, leverage);
-
-            // Update calendar with new leverage
-            renderCalendar(tradesList, currentTimeframe, leverage);
         }
 
         async function init() {
@@ -1621,12 +1582,6 @@
                 if (e.key === 'Escape') {
                     closeModal();
                 }
-            });
-
-            // Setup leverage slider
-            const leverageSlider = document.getElementById('leverageSlider');
-            leverageSlider.addEventListener('input', function () {
-                updateLeverage(this.value);
             });
         }
 
