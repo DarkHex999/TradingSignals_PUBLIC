@@ -626,7 +626,10 @@
             opacity: 1;
             visibility: visible;
         }
-
+        .active-link {
+            color: rgba(249, 205, 0, 1);
+            text-shadow: 0 0 8px rgba(249, 205, 0, 0.6);
+        }
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -692,11 +695,11 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Backtest</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="" class="active-link">Home</a></li>
+                        <li><a href="/Backtest">Backtest</a></li>
+                        <li><a href="#funding-section">Pricing</a></li>
+                        <li><a href="/FAQs">FAQs</a></li>
+                        <li><a href="/About">About</a></li>
                     </ul>
                 </nav>
                 <div class="auth-buttons">
@@ -718,7 +721,7 @@
         </div>
     </section>
 
-    <section class="funding-section">
+    <section class="funding-section"id="funding-section">
         <div class="container">
             <div class="funding-content">
                 <h3>BETTER FUNDING FOR TRADERS</h3>
@@ -846,12 +849,12 @@
                     </div>
                     <div style="display: flex; justify-content: space-between; margin-top: 20px;">
                         <div>
-                            <p>Total Return: <strong style="color: var(--blue);">+42.7%</strong></p>
-                            <p>Win Rate: <strong style="color: var(--blue);">76.3%</strong></p>
+                            <p>Total Return: <strong id="TotalReturn" style="color: var(--blue);">+42.7%</strong></p>
+                            <p>Win Rate: <strong id="WinRate" style="color: var(--blue);">76.3%</strong></p>
                         </div>
                         <div>
-                            <p>Max Drawdown: <strong style="color: var(--blue);">-8.2%</strong></p>
-                            <p>Sharpe Ratio: <strong style="color: var(--blue);">2.1</strong></p>
+                            <p>Max Drawdown: <strong id="MaxDrawdown" style="color: var(--blue);">-8.2%</strong></p>
+                            <p>Avg RR: <strong id="AvgRR" style="color: var(--blue);">1.5</strong></p>
                         </div>
                     </div>
                 </div>
@@ -881,16 +884,16 @@
                     </div>
                     <div class="rate-stats">
                         <div class="stat-item">
-                            <div class="stat-value">89%</div>
-                            <div class="stat-label">Overall Pass Rate</div>
+                            <div class="stat-value" id="TotalAccounts">00</div>
+                            <div class="stat-label">Total Accounts</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-value">72%</div>
-                            <div class="stat-label">First-Time Pass Rate</div>
+                            <div class="stat-value" id="PassRate">00%</div>
+                            <div class="stat-label">Pass Rate</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-value">94%</div>
-                            <div class="stat-label">With Risk Management</div>
+                            <div class="stat-value" id="AvgMaxEquity">00%</div>
+                            <div class="stat-label">Avg Max Equity</div>
                         </div>
                     </div>
                 </div>
@@ -1114,13 +1117,13 @@
                                     getTime: t => Date.parse(t.entryTime) / 1000,
                                     getValue: t => +t.profit || 0,
                                     pointCalc: (cum, val) => cum + val
-                                });
+                                }, "trades");
                             } else if (chartId === 'FundChart') {
                                 loadBacktestChart(chartId, fundedAccountsList, {
                                     getTime: t => Date.parse(t.openTime) / 1000,
                                     getValue: t => + ((t.maxEquity > 15) ? 1 : -1) || 0,
                                     pointCalc: (cum, val) => cum + val
-                                });
+                                }, "FundingAccounts");
                             }
                             chartsInitialized[chartId] = true;
                         }
@@ -1158,7 +1161,7 @@
 
         document.addEventListener('DOMContentLoaded', init);
 
-        function loadBacktestChart(parentID, list, options = {}) {
+        function loadBacktestChart(parentID, list, options = {} , type = "trades") {
             const container = document.getElementById(parentID);
             if (!container) return console.error('Invalid parentID');
 
@@ -1233,12 +1236,62 @@
                 const totalPoints = points.length;
                 let currentIndex = 0;
 
+                let PassRate = 0;
+                let AvgMaxEquity = 0;
+
+                let TotalReturn = 0;
+                let WinRate = 0;
+                let MaxDrawdown = 0;
+                let MaxEquity = 0;
+                let AvgRR = 0;
+                if (type === "trades") {
+                    let winTrades = [];
+                    let allRR = 0;
+                    list.sort((a, b) => new Date(a.entryTime) - new Date(b.entryTime)).forEach(trade => {
+                        TotalReturn += trade.profit;
+                        allRR += (trade.tp / trade.sl);
+                        if (trade.profit >= 0) {
+                            winTrades.push(trade);
+                        }
+                        if (TotalReturn > MaxEquity) {
+                            MaxEquity = TotalReturn;
+                        }
+                        if ((MaxEquity - TotalReturn) > MaxDrawdown) {
+                            MaxDrawdown = (MaxEquity - TotalReturn);
+                        }
+                    });
+                    WinRate = (winTrades.length / list.length) * 100;
+                    AvgRR = (allRR / list.length);
+                }
+                else if (type === "FundingAccounts") {
+                    let PassedAccounts = [];
+                    list.forEach(account => { if (account.maxEquity >= 15) PassedAccounts.push(account); });
+                    PassRate = (PassedAccounts.length / list.length) * 100;
+
+                    let TotalMaxEquity = 0;
+                    list.forEach(account => { TotalMaxEquity += account.maxEquity; });
+                    AvgMaxEquity = (TotalMaxEquity / list.length);
+                }
+
                 const drawNextPoint = () => {
-                    if (currentIndex < totalPoints) {
+
+                    if (currentIndex <= totalPoints) {
+                        const loadingEquity = currentIndex / totalPoints;
                         series.setData(points.slice(0, currentIndex + 1));
                         chart.timeScale().fitContent();
-
                         currentIndex++;
+                        if (type === "trades") {
+                            document.getElementById("TotalReturn").innerText = (TotalReturn * loadingEquity).toFixed(2) + "%";
+                            document.getElementById("WinRate").innerText = (WinRate * loadingEquity).toFixed(2) + "%";
+                            document.getElementById("MaxDrawdown").innerText = (MaxDrawdown * loadingEquity).toFixed(2) + "%";
+                            document.getElementById("AvgRR").innerText = (AvgRR * loadingEquity).toFixed(2);
+                        }
+                        else if (type === "FundingAccounts") {
+                            
+                            document.getElementById("TotalAccounts").innerHTML = (list.length * loadingEquity).toFixed(0);
+                            document.getElementById("PassRate").innerHTML = (PassRate * loadingEquity).toFixed(0) + "%";
+                            document.getElementById("AvgMaxEquity").innerHTML = (AvgMaxEquity * loadingEquity).toFixed(2) + "%";
+                        }
                         setTimeout(drawNextPoint, 500 / totalPoints);
                     }
                 };
