@@ -467,6 +467,204 @@
             position: relative;
         }
 
+        /* NEW FAQ SECTION STYLES */
+        .faqs-section {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .faqs-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .faqs-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: var(--dark-blue);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+            .faqs-title::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background: linear-gradient(90deg, transparent, var(--yellow), transparent);
+                border-radius: 2px;
+            }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .faq-card {
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            border-radius: 15px;
+            padding: 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(255, 204, 0, 0.1);
+            cursor: pointer;
+        }
+
+            .faq-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                background: linear-gradient(90deg, var(--yellow), var(--blue));
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.4s ease;
+            }
+
+            .faq-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            }
+
+            .faq-card:hover::before {
+                transform: scaleX(1);
+            }
+
+            .faq-card.active {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            }
+
+            .faq-card.active::before {
+                transform: scaleX(1);
+            }
+
+        .faq-header {
+            padding: 25px 25px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--dark-blue);
+            line-height: 1.4;
+            flex: 1;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+
+        .faq-card:hover .faq-question {
+            color: var(--blue);
+        }
+
+        .faq-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--yellow), #e6b800);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-blue);
+            font-size: 14px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
+        }
+
+        .faq-card.active .faq-icon {
+            transform: rotate(180deg);
+            background: linear-gradient(135deg, var(--blue), var(--light-blue));
+            color: white;
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .faq-answer {
+            padding: 0 25px 25px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            font-size: 15px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease 0.1s;
+        }
+
+        .faq-card.active .faq-content {
+            max-height: 300px;
+        }
+
+        .faq-card.active .faq-answer {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .faq-decoration {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 204, 0, 0.1) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .decoration-1 {
+            top: -50px;
+            right: -50px;
+        }
+
+        .decoration-2 {
+            bottom: -60px;
+            left: -60px;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(26, 58, 108, 0.08) 0%, transparent 70%);
+        }
+
+        /* Animation for cards when they appear */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .faq-card {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .faq-card:nth-child(1) { animation-delay: 0.1s; }
+        .faq-card:nth-child(2) { animation-delay: 0.2s; }
+        .faq-card:nth-child(3) { animation-delay: 0.3s; }
+        .faq-card:nth-child(4) { animation-delay: 0.4s; }
+        .faq-card:nth-child(5) { animation-delay: 0.5s; }
+        .faq-card:nth-child(6) { animation-delay: 0.6s; }
+
         .chart-placeholder {
             height: 300px;
             background-color: var(--white);
@@ -683,6 +881,27 @@
             header.shrink nav ul li {
                 margin-left: 15px;
             }
+
+            /* Responsive FAQ styles */
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .faq-card {
+                margin-bottom: 15px;
+            }
+            
+            .faqs-title {
+                font-size: 28px;
+            }
+            
+            .faq-question {
+                font-size: 16px;
+            }
+            
+            .faq-answer {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -698,7 +917,7 @@
                         <li><a href="" class="active-link">Home</a></li>
                         <li><a href="/Backtest">Backtest</a></li>
                         <li><a href="#funding-section">Pricing</a></li>
-                        <li><a href="/FAQs">FAQs</a></li>
+                        <li><a href="#faqs-section">FAQs</a></li>
                         <li><a href="/About">About</a></li>
                     </ul>
                 </nav>
@@ -901,6 +1120,99 @@
         </div>
     </section>
 
+    <!-- NEW FAQ SECTION -->
+    <section class="faqs-section"id="faqs-section">
+        <div class="container">
+            <div class="faqs-container">
+                <h3 class="faqs-title">FREQUENTLY ASKED QUESTIONS</h3>
+                <div class="faq-grid">
+                    <div class="faq-card">
+                        <div class="faq-header">
+                            <div class="faq-question">How does Quantum Signals AI technology work?</div>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-answer">
+                                <p>Our AI system uses advanced machine learning algorithms trained on vast amounts of historical market data to identify patterns and predict market movements. The system continuously learns and adapts to changing market conditions, providing you with accurate trading signals.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-card">
+                        <div class="faq-header">
+                            <div class="faq-question">What is the minimum capital required to start?</div>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-answer">
+                                <p id="Answer_FundedAccount"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-card">
+                        <div class="faq-header">
+                            <div class="faq-question">How accurate are your trading signals?</div>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-answer">
+                                <p>Our signals have demonstrated a consistent win rate of 76.3% in backtesting over the past 24 months. However, past performance is not indicative of future results, and we recommend using proper risk management with all trades.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-card">
+                        <div class="faq-header">
+                            <div class="faq-question">Do you offer a free trial?</div>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-answer">
+                                <p>Yes, we offer a lifetime limited trial for our Basic plan. Once you log in, you are considered to be on the free plan and will receive our free email signals.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-card">
+                        <div class="faq-header">
+                            <div class="faq-question">What markets do your signals cover?</div>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-answer">
+                                <p>
+                                    The current plan is the basic one, It only includes Ethereum crypto signals Many more markets will be included in the future.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-card">
+                        <div class="faq-header">
+                            <div class="faq-question">How do I access the signals?</div>
+                            <div class="faq-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="faq-content">
+                            <div class="faq-answer">
+                                <p>After signing up, you'll gain access to our dashboard where you can view signals, set up notifications via email , Then subscribe to the paid plan to access Premium signals.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="faq-decoration decoration-1"></div>
+        <div class="faq-decoration decoration-2"></div>
+    </section>
+
     <section class="cta">
         <div class="container">
             <h3>READY TO TRANSFORM YOUR TRADING?</h3>
@@ -919,7 +1231,7 @@
                 <div class="footer-column">
                     <h4>PRODUCT</h4>
                     <ul>
-                        <li><a href="/FAQs">FAQs</a></li>
+                        <li><a href="#faqs-section">FAQs</a></li>
                         <li><a href="#funding-section">Pricing</a></li>
                         <li><a href="/Backtest">Backtesting</a></li>
                     </ul>
@@ -1086,6 +1398,25 @@
             return trades;
         }
 
+        // NEW FAQS functionality
+        function initFAQs() {
+            const faqCards = document.querySelectorAll('.faq-card');
+            
+            faqCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    // Close all other FAQ cards
+                    faqCards.forEach(otherCard => {
+                        if (otherCard !== card && otherCard.classList.contains('active')) {
+                            otherCard.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current card
+                    card.classList.toggle('active');
+                });
+            });
+        }
+
         async function init() {
             fundedAccountsList = await loadFundedAccounts();
             tradesList = await loadTrades();
@@ -1094,6 +1425,9 @@
 
             console.log('Funded Accounts List:', fundedAccountsList.length);
             console.log('Trades List:', tradesList.length);
+
+            // Initialize FAQs functionality
+            initFAQs();
 
             // Initialize Intersection Observer for charts
             initChartObserver();
@@ -1105,7 +1439,8 @@
                 rootMargin: '0px',
                 threshold: 0.1
             };
-
+            const passRate = caculatePassRate(fundedAccountsList).toFixed(2);
+            document.getElementById("Answer_FundedAccount").innerText = "The minimum capital required depends on the user. However, if your budget is limited, we recommend starting with a funded account from a Prop Firm. You can also check our Funded Accounts section, which has achieved a passing rate of over " + passRate + "% and successfully received the first payout.";
             const chartObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -1159,7 +1494,11 @@
         });
 
         document.addEventListener('DOMContentLoaded', init);
-
+        function caculatePassRate(funddedAccounts) {
+            let PassedAccounts = [];
+            funddedAccounts.forEach(account => { if (account.maxEquity >= 15) PassedAccounts.push(account); });
+            return ((PassedAccounts.length / funddedAccounts.length) * 100);
+        }
         function loadBacktestChart(parentID, list, options = {} , type = "trades") {
             const container = document.getElementById(parentID);
             if (!container) return console.error('Invalid parentID');
@@ -1195,7 +1534,6 @@
             function showMsg(msg) {
                 container.innerHTML = `<div style="padding:16px;color:#6c757d">${msg}</div>`;
             }
-
             const data = list || [];
             if (!data.length) return showMsg('No data to plot.');
 
@@ -1237,7 +1575,6 @@
 
                 let PassRate = 0;
                 let AvgMaxEquity = 0;
-
                 let TotalReturn = 0;
                 let WinRate = 0;
                 let MaxDrawdown = 0;
@@ -1263,10 +1600,7 @@
                     AvgRR = (allRR / list.length);
                 }
                 else if (type === "FundingAccounts") {
-                    let PassedAccounts = [];
-                    list.forEach(account => { if (account.maxEquity >= 15) PassedAccounts.push(account); });
-                    PassRate = (PassedAccounts.length / list.length) * 100;
-
+                    PassRate = caculatePassRate(list);
                     let TotalMaxEquity = 0;
                     list.forEach(account => { TotalMaxEquity += account.maxEquity; });
                     AvgMaxEquity = (TotalMaxEquity / list.length);
