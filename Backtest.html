@@ -20,10 +20,12 @@
             --profit-green: #28a745;
             --loss-red: #dc3545;
         }
+
         .active-link {
             color: rgba(249, 205, 0, 1);
             text-shadow: 0 0 8px rgba(249, 205, 0, 0.6);
         }
+
         * {
             margin: 0;
             padding: 0;
@@ -799,8 +801,7 @@
                         </ul>
                     </nav>
                     <div class="auth-buttons">
-                        <a href="#" class="btn btn-outline">Login</a>
-                        <a href="#" class="btn btn-primary">Sign Up</a>
+                        <a href="#" class="btn btn-primary">Join in</a>
                     </div>
                 </div>
             </div>
@@ -1427,19 +1428,19 @@
             }
 
             cell.innerHTML = `
-                                    <div class="period-date">${periodName}</div>
-                                    <div class="period-stats">
-                                        <div class="trades-count">
-                                            <i class="fas fa-chart-bar"></i> ${totalTrades} trades
+                                        <div class="period-date">${periodName}</div>
+                                        <div class="period-stats">
+                                            <div class="trades-count">
+                                                <i class="fas fa-chart-bar"></i> ${totalTrades} trades
+                                            </div>
+                                            <div class="period-profit ${totalProfit >= 0 ? 'profit-positive' : 'profit-negative'}">
+                                                ${totalProfit >= 0 ? '+' : ''}${totalProfit.toFixed(2)}
+                                            </div>
                                         </div>
-                                        <div class="period-profit ${totalProfit >= 0 ? 'profit-positive' : 'profit-negative'}">
-                                            ${totalProfit >= 0 ? '+' : ''}${totalProfit.toFixed(2)}
+                                        <div class="period-wins">
+                                            <i class="fas fa-trophy"></i> ${winRate}% win rate
                                         </div>
-                                    </div>
-                                    <div class="period-wins">
-                                        <i class="fas fa-trophy"></i> ${winRate}% win rate
-                                    </div>
-                                `;
+                                    `;
 
             // إضافة حدث النقر بشكل صحيح
             cell.addEventListener('click', (e) => {
@@ -1463,19 +1464,19 @@
 
             // Set modal stats
             modalStats.innerHTML = `
-                                    <div class="modal-stat">
-                                        <div class="modal-stat-value">${totalTrades}</div>
-                                        <div class="modal-stat-label">Total Trades</div>
-                                    </div>
-                                    <div class="modal-stat">
-                                        <div class="modal-stat-value">${winRate}%</div>
-                                        <div class="modal-stat-label">Win Rate</div>
-                                    </div>
-                                    <div class="modal-stat">
-                                        <div class="modal-stat-value ${totalProfit >= 0 ? 'profit-positive' : 'profit-negative'}">${totalProfit >= 0 ? '+' : ''}${totalProfit.toFixed(2)}</div>
-                                        <div class="modal-stat-label">Total Profit</div>
-                                    </div>
-                                `;
+                                        <div class="modal-stat">
+                                            <div class="modal-stat-value">${totalTrades}</div>
+                                            <div class="modal-stat-label">Total Trades</div>
+                                        </div>
+                                        <div class="modal-stat">
+                                            <div class="modal-stat-value">${winRate}%</div>
+                                            <div class="modal-stat-label">Win Rate</div>
+                                        </div>
+                                        <div class="modal-stat">
+                                            <div class="modal-stat-value ${totalProfit >= 0 ? 'profit-positive' : 'profit-negative'}">${totalProfit >= 0 ? '+' : ''}${totalProfit.toFixed(2)}</div>
+                                            <div class="modal-stat-label">Total Profit</div>
+                                        </div>
+                                    `;
 
             // Populate trades table
             modalTradesTableBody.innerHTML = '';
@@ -1494,13 +1495,13 @@
                     const profitSign = trade.profit >= 0 ? '+' : '';
 
                     row.innerHTML = `
-                                            <td>${trade.id}</td>
-                                            <td>${trade.type}</td>
-                                            <td class="${trade.result === 'Win' ? 'win-trade' : 'lose-trade'}">${trade.result}</td>
-                                            <td>${formatDate(trade.entryTime)}</td>
-                                            <td>${formatDate(trade.closeTime)}</td>
-                                            <td class="${profitClass}">${profitSign}${trade.profit.toFixed(2)}</td>
-                                        `;
+                                                <td>${trade.id}</td>
+                                                <td>${trade.type}</td>
+                                                <td class="${trade.result === 'Win' ? 'win-trade' : 'lose-trade'}">${trade.result}</td>
+                                                <td>${formatDate(trade.entryTime)}</td>
+                                                <td>${formatDate(trade.closeTime)}</td>
+                                                <td class="${profitClass}">${profitSign}${trade.profit.toFixed(2)}</td>
+                                            `;
 
                     modalTradesTableBody.appendChild(row);
                 });
