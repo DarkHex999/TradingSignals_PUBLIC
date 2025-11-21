@@ -281,6 +281,7 @@
             pointer-events: none;
             position: relative;
         }
+
         .pro-content {
             filter: blur(3px);
             user-select: none;
@@ -539,18 +540,18 @@
                 box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
             }
 
-            .faq-card:hover::before {
-                transform: scaleX(1);
-            }
+                .faq-card:hover::before {
+                    transform: scaleX(1);
+                }
 
             .faq-card.active {
                 transform: translateY(-5px);
                 box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
             }
 
-            .faq-card.active::before {
-                transform: scaleX(1);
-            }
+                .faq-card.active::before {
+                    transform: scaleX(1);
+                }
 
         .faq-header {
             padding: 25px 25px 15px;
@@ -647,6 +648,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -658,12 +660,29 @@
             opacity: 0;
         }
 
-        .faq-card:nth-child(1) { animation-delay: 0.1s; }
-        .faq-card:nth-child(2) { animation-delay: 0.2s; }
-        .faq-card:nth-child(3) { animation-delay: 0.3s; }
-        .faq-card:nth-child(4) { animation-delay: 0.4s; }
-        .faq-card:nth-child(5) { animation-delay: 0.5s; }
-        .faq-card:nth-child(6) { animation-delay: 0.6s; }
+            .faq-card:nth-child(1) {
+                animation-delay: 0.1s;
+            }
+
+            .faq-card:nth-child(2) {
+                animation-delay: 0.2s;
+            }
+
+            .faq-card:nth-child(3) {
+                animation-delay: 0.3s;
+            }
+
+            .faq-card:nth-child(4) {
+                animation-delay: 0.4s;
+            }
+
+            .faq-card:nth-child(5) {
+                animation-delay: 0.5s;
+            }
+
+            .faq-card:nth-child(6) {
+                animation-delay: 0.6s;
+            }
 
         .chart-placeholder {
             height: 300px;
@@ -824,10 +843,12 @@
             opacity: 1;
             visibility: visible;
         }
+
         .active-link {
             color: rgba(249, 205, 0, 1);
             text-shadow: 0 0 8px rgba(249, 205, 0, 0.6);
         }
+
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -886,19 +907,19 @@
             .faq-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .faq-card {
                 margin-bottom: 15px;
             }
-            
+
             .faqs-title {
                 font-size: 28px;
             }
-            
+
             .faq-question {
                 font-size: 16px;
             }
-            
+
             .faq-answer {
                 font-size: 14px;
             }
@@ -922,8 +943,7 @@
                     </ul>
                 </nav>
                 <div class="auth-buttons">
-                    <a href="#" class="btn btn-outline">Login</a>
-                    <a href="#" class="btn btn-primary">Sign Up</a>
+                    <a href="#" class="btn btn-primary">Join in</a>
                 </div>
             </div>
         </div>
@@ -940,7 +960,7 @@
         </div>
     </section>
 
-    <section class="funding-section"id="funding-section">
+    <section class="funding-section" id="funding-section">
         <div class="container">
             <div class="funding-content">
                 <h3>BETTER FUNDING FOR TRADERS</h3>
@@ -1121,7 +1141,7 @@
     </section>
 
     <!-- NEW FAQ SECTION -->
-    <section class="faqs-section"id="faqs-section">
+    <section class="faqs-section" id="faqs-section">
         <div class="container">
             <div class="faqs-container">
                 <h3 class="faqs-title">FREQUENTLY ASKED QUESTIONS</h3>
@@ -1307,7 +1327,7 @@
             }
         }
 
-      async function loadTrades() {
+        async function loadTrades() {
             try {
                 const response = await fetch('https://raw.githubusercontent.com/DarkHex999/TradingSignals_PUBLIC/refs/heads/main/backtest.txt');
                 const text = await response.text();
@@ -1316,7 +1336,7 @@
                 console.error('Error loading trades:', error);
                 return [];
             }
-        }  
+        }
 
         function parseFundedAccounts(text) {
             const accounts = [];
@@ -1401,7 +1421,7 @@
         // NEW FAQS functionality
         function initFAQs() {
             const faqCards = document.querySelectorAll('.faq-card');
-            
+
             faqCards.forEach(card => {
                 card.addEventListener('click', () => {
                     // Close all other FAQ cards
@@ -1410,7 +1430,7 @@
                             otherCard.classList.remove('active');
                         }
                     });
-                    
+
                     // Toggle current card
                     card.classList.toggle('active');
                 });
@@ -1499,7 +1519,7 @@
             funddedAccounts.forEach(account => { if (account.maxEquity >= 15) PassedAccounts.push(account); });
             return ((PassedAccounts.length / funddedAccounts.length) * 100);
         }
-        function loadBacktestChart(parentID, list, options = {} , type = "trades") {
+        function loadBacktestChart(parentID, list, options = {}, type = "trades") {
             const container = document.getElementById(parentID);
             if (!container) return console.error('Invalid parentID');
 
@@ -1620,7 +1640,7 @@
                             document.getElementById("AvgRR").innerText = (AvgRR * loadingEquity).toFixed(2);
                         }
                         else if (type === "FundingAccounts") {
-                            
+
                             document.getElementById("TotalAccounts").innerHTML = (list.length * loadingEquity).toFixed(0);
                             document.getElementById("PassRate").innerHTML = (PassRate * loadingEquity).toFixed(0) + "%";
                             document.getElementById("AvgMaxEquity").innerHTML = (AvgMaxEquity * loadingEquity).toFixed(2) + "%";
