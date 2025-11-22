@@ -385,6 +385,17 @@
                 -webkit-text-fill-color: transparent;
             }
 
+        .logout-red {
+            color: #ff0000 !important;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+            .logout-red:hover {
+                text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+                transform: scale(1.05);
+            }
+
         .google-login-container {
             display: flex;
             justify-content: center;
@@ -901,7 +912,8 @@
             <div class="content-section right-content">
                 <div class="login-container right-card">
                     <div class="login-content">
-                        <h2 class="login-title">QUANTUM <span>JOIN IN</span></h2>
+                        <!-- أضفنا id للعنوان الرئيسي للتحكم به -->
+                        <h2 class="login-title" id="quantum-action">QUANTUM <span>JOIN IN</span></h2>
                         <div class="google-login-container">
                             <div id="g_id_onload"
                                  data-client_id="888973814591-mib9u4c91snbhcbbu8800qp48ebh5u2b.apps.googleusercontent.com"
@@ -921,8 +933,6 @@
             <div class="account-details-container">
                 <h3 class="faqs-title">Account Details</h3>
 
-                <!-- الملاحظة الحمراء المضافة -->
-
                 <div class="account-card">
                     <!-- أيقونة المستخدم مع دائرة حولها في أعلى يسار البطاقة -->
                     <div class="account-icon">
@@ -930,7 +940,7 @@
                     </div>
                     <div class="user-info">
                         <div class="user-label">Trader name</div>
-                        <div class="user-value">-</div>
+                        <div class="user-value" id="trader-name">-</div>
                     </div>
                     <div class="account-stats">
                         <div class="account-stat">
@@ -955,11 +965,13 @@
                         </div>
                         <div class="account-stat">
                             <div class="stat-label">Member From</div>
-                            <div class="stat-value">-</div>
+                            <div class="stat-value" id="member-from">-</div>
                         </div>
                     </div>
                 </div>
-                <div class="login-notice">⚠ login to show your statics ⚠</div>
+
+                <!-- الملاحظة الحمراء المضافة -->
+                <div class="login-notice" id="login-notice">⚠ login to show your statics ⚠</div>
 
             </div>
         </section>
@@ -1014,12 +1026,171 @@
 
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script>
-        // معالج استجابة بيانات الاعتماد
-        function handleCredentialResponse(response) {
-            console.log("Encoded JWT ID token: " + response.credential);
-            // هنا يمكنك إضافة منطق تسجيل الدخول
-            alert('Login successful!');
+        // دوال التخزين المحلي باستخدام localStorage
+        async function GetKey(key) {
+            return localStorage.getItem(key);
         }
+
+        function SetValue(key, value) {
+            localStorage.setItem(key, value);
+        }
+
+        function RemoveKey(key) {
+            localStorage.removeItem(key);
+        }
+
+        // دالة مساعدة (مفترضة) لمقارنة التواريخ
+        function compareTimeStaWithNow(timestamp) {
+            const now = new Date().getTime();
+            const diff = now - timestamp;
+            return diff / (1000 * 60 * 60 * 24); // تحويل إلى أيام
+        }
+
+        // دالة للتحقق من حالة تسجيل الدخول
+        async function checkLoginStatus() {
+            const email = await GetKey("email");
+            const name = await GetKey("name");
+            const username = await GetKey("username");
+            const UID = await GetKey("UID");
+
+            if (email && username && UID && name) {
+                try {
+                    // التحقق من صحة البيانات عبر الـ API
+                    const response = await fetch('https://trading-signals-private.vercel.app/api/Login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            email: email,
+                            username: username,
+                            UID: UID
+                        })
+                    });
+
+                    const result = await response.json();
+                    console.log('result : ', result);
+
+                    if (response.ok && result.ok) {
+                        // تحديث واجهة المستخدم لحالة تسجيل الدخول
+                        updateUIForLoggedInUser(result.account);
+                    } else {
+                        clearLocalStorage();
+                        updateUIForLoggedOutUser();
+                    }
+                } catch (error) {
+                    console.error('Error verifying login status:', error);
+                    clearLocalStorage();
+                    updateUIForLoggedOutUser();
+                }
+            } else {
+                clearLocalStorage();
+                updateUIForLoggedOutUser();
+            }
+        }
+
+        // دالة لتحديث واجهة المستخدم عند تسجيل الدخول
+        function updateUIForLoggedInUser(account) {
+            // تبديل QUANTUM JOIN IN إلى QUANTUM LOGOUT بالأحمر
+            const quantumAction = document.getElementById('quantum-action');
+            quantumAction.innerHTML = 'QUANTUM <span class="logout-red">LOGOUT</span>';
+
+            // إضافة حدث النقر على LOGOUT
+            quantumAction.onclick = handleLogout;
+
+            // إخفاء ملاحظة تسجيل الدخول
+            document.getElementById('login-notice').style.display = 'none';
+
+            // تحديث بيانات الحساب
+            if (account) {
+                document.getElementById('trader-name').textContent = account.name || '-';
+
+                let memberFrom = account.signupTimestamp;
+                if (memberFrom) {
+                    memberFrom = compareTimeStaWithNow(memberFrom).toFixed(0);
+                    document.getElementById('member-from').textContent = (memberFrom > 1) ? memberFrom + " days" : memberFrom + " day";
+                }
+            }
+        }
+
+        // دالة لتحديث واجهة المستخدم عند تسجيل الخروج
+        function updateUIForLoggedOutUser() {
+            // إعادة QUANTUM JOIN IN
+            const quantumAction = document.getElementById('quantum-action');
+            quantumAction.innerHTML = 'QUANTUM <span>JOIN IN</span>';
+
+            // إزالة حدث النقر
+            quantumAction.onclick = null;
+
+            // إظهار ملاحظة تسجيل الدخول
+            document.getElementById('login-notice').style.display = 'block';
+
+            // إعادة تعيين بيانات الحساب
+            document.getElementById('trader-name').textContent = '-';
+            document.getElementById('member-from').textContent = '-';
+        }
+
+        // دالة معالجة تسجيل الخروج
+        function handleLogout() {
+            clearLocalStorage();
+            location.reload(); // إعادة تحميل الصفحة
+        }
+
+        // دالة حفظ بيانات تسجيل الدخول
+        function saveLoginData(account) {
+            SetValue("email", account.email);
+            SetValue("username", account.username);
+            SetValue("UID", account.UID);
+            SetValue("name", account.name);
+            SetValue("signupTimestamp", account.signupTimestamp);
+        }
+
+        // دالة مسح بيانات المستخدم من التخزين المحلي
+        function clearLocalStorage() {
+            RemoveKey("email");
+            RemoveKey("username");
+            RemoveKey("UID");
+            RemoveKey("name");
+            RemoveKey("signupTimestamp");
+        }
+
+        // معالج استجابة بيانات الاعتماد
+        window.handleCredentialResponse = async function (response) {
+            const idToken = response?.credential || null;
+            if (!idToken) {
+                console.error('لم يتم استلام رمز JWT');
+                return;
+            }
+
+            try {
+                const r = await fetch('https://trading-signals-private.vercel.app/api/SignIn', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ idToken })
+                });
+
+                const text = await r.text();
+                console.log('raw response:', text);
+
+                let data = null;
+                try { data = JSON.parse(text); }
+                catch (e) { console.error('خطأ في تحويل JSON:', e); }
+
+                console.log('تم الإرسال:', data);
+
+                if (data && data.account) {
+                    saveLoginData(data.account);
+                    updateUIForLoggedInUser(data.account);
+                } else {
+                    console.error('لا توجد بيانات حساب في الاستجابة');
+                    updateUIForLoggedOutUser();
+                }
+
+            } catch (err) {
+                console.error('خطأ في الإرسال:', err);
+                updateUIForLoggedOutUser();
+            }
+        };
 
         // تأثير التمرير على الـ Header (من الهيدر الجديد)
         window.addEventListener('scroll', function () {
@@ -1040,6 +1211,11 @@
             if (window.scrollY > 50) {
                 this.classList.add('shrink');
             }
+        });
+
+        // عند تحميل الصفحة، التحقق من حالة تسجيل الدخول
+        document.addEventListener('DOMContentLoaded', function () {
+            checkLoginStatus();
         });
     </script>
 </body>
