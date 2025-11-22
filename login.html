@@ -1,0 +1,1046 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Signals | AI-Powered Trading Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-blue: #0a1a35;
+            --blue: #1a3a6c;
+            --light-blue: #2a5a9c;
+            --yellow: #ffcc00;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --medium-gray: #edeff0;
+            --dark-gray: #333333;
+            --text-gray: #6c757d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            width: 100%;
+            background: var(--light-gray);
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding-top: 80px; /* لإعطاء مساحة للهيدر الثابت */
+        }
+
+        /* التعديلات على الـ Header */
+        header {
+            background-color: var(--dark-blue);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--light-blue);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+
+            header.shrink {
+                padding: 10px 0;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between; /* توزيع العناصر بين اليسار واليمين */
+            align-items: center;
+            transition: all 0.4s ease;
+            position: relative; /* إضافة لتحسين المحاذاة */
+        }
+
+        header.shrink .header-content {
+            align-items: center;
+        }
+
+        .header-welcome {
+            text-align: left;
+            font-size: 28px;
+            margin-bottom: 0;
+            color: var(--white);
+            position: relative;
+            display: inline-block;
+            font-weight: 700;
+            transition: all 0.4s ease;
+            opacity: 1;
+            transform: translateX(0);
+            margin-left: 2%; /* تأكد من أنه في أقصى اليسار */
+            flex-shrink: 0; /* منع التقلص */
+        }
+
+            .header-welcome::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background: linear-gradient(90deg, transparent, var(--yellow), transparent);
+                border-radius: 2px;
+                transition: all 0.4s ease;
+            }
+
+        header.shrink .header-welcome {
+            font-size: 22px;
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+
+            header.shrink .header-welcome::after {
+                opacity: 0;
+            }
+
+        /* التعديلات الجديدة لمحاذاة القائمة في المنتصف */
+        nav {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+            nav ul {
+                display: flex;
+                list-style: none;
+                transition: all 0.4s ease;
+                justify-content: center; /* محاذاة العناصر في المنتصف */
+            }
+
+        header.shrink nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+            transition: all 0.4s ease;
+        }
+
+            nav ul li a {
+                color: var(--white);
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s;
+                padding: 8px 12px;
+                border-radius: 4px;
+            }
+
+                nav ul li a:hover {
+                    color: var(--yellow);
+                    background: rgba(255, 255, 255, 0.1);
+                }
+
+        .active-link {
+            color: rgba(249, 205, 0, 1);
+            text-shadow: 0 0 8px rgba(249, 205, 0, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 120px; /* زيادة المساحة للهيدر في الشاشات الصغيرة */
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .header-welcome {
+                text-align: center;
+                font-size: 24px;
+            }
+
+            nav {
+                position: static; /* إعادة القائمة لوضعها الطبيعي في الشاشات الصغيرة */
+                left: auto;
+                transform: none;
+            }
+
+                nav ul {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+
+                    nav ul li {
+                        margin: 5px 10px;
+                    }
+
+            header.shrink .header-content {
+                flex-direction: column;
+            }
+
+            header.shrink nav ul li {
+                margin: 5px 10px;
+            }
+
+            header.shrink .header-welcome {
+                font-size: 20px;
+            }
+        }
+
+        /* بقية الأنماط من الكود الرئيسي */
+        .main-container {
+            display: flex;
+            min-height: 100vh;
+            position: relative;
+            flex-direction: column;
+            transition: padding-top 0.3s ease;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex: 1;
+        }
+
+        .content-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10%;
+            transition: all 0.5s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .left-content {
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .right-content {
+            align-items: flex-end;
+            text-align: right;
+        }
+
+        .hero-text {
+            font-size: 200%;
+            font-weight: 800;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            display: block;
+            white-space: nowrap;
+            background: linear-gradient(135deg, #ffffff 0%, #ffcc00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 20px rgba(255, 204, 0, 0.3);
+        }
+
+        .highlight {
+            color: var(--yellow);
+            display: inline-block;
+            position: relative;
+            height: 1.2em;
+            vertical-align: bottom;
+            overflow: hidden;
+        }
+
+        .rotating-words {
+            font-size: 100%;
+            display: inline-block;
+            position: relative;
+            height: 1.2em;
+            width: 200px;
+            vertical-align: bottom;
+        }
+
+        .rotating-word {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: wordRotate 6s infinite;
+            white-space: nowrap;
+            background: linear-gradient(135deg, #ffcc00 0%, #ffaa00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+            .rotating-word:nth-child(1) {
+                animation-delay: 0s;
+            }
+
+            .rotating-word:nth-child(2) {
+                animation-delay: 3s;
+            }
+
+        @keyframes wordRotate {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            10% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            40% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            50% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 500px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .login-container {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.98) 100%);
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+            width: 100%;
+            transition: all 0.5s ease;
+            border: 1px solid rgba(255, 204, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+            .login-container::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 6px;
+                background: linear-gradient(90deg, #ffcc00, #1a3a6c, #ffcc00);
+                background-size: 200% 100%;
+                animation: shimmer 3s infinite linear;
+            }
+
+            .login-container::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+                transition: left 0.5s ease;
+            }
+
+            .login-container:hover {
+                box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 204, 0, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+            }
+
+                .login-container:hover::after {
+                    left: 100%;
+                }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        .login-content {
+            transform: none;
+        }
+
+        .login-title {
+            font-size: 2.2em;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #0a1a35;
+            font-weight: 800;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+            .login-title span {
+                background: linear-gradient(135deg, #ffcc00 0%, #ffaa00 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+        .google-login-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .g_id_signin {
+            margin: 0 auto;
+            border-radius: 8px !important;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .tagline {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.4em;
+            font-weight: 700;
+            color: #0a1a35;
+            background: linear-gradient(135deg, #0a1a35 0%, #1a3a6c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100px) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* تأثيرات البطاقات */
+        .card {
+            background: linear-gradient(135deg, rgba(10, 26, 53, 0.9) 0%, rgba(26, 58, 108, 0.9) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 204, 0, 0.1);
+            transition: all 0.5s ease;
+            border: 1px solid rgba(255, 204, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .left-card {
+            transform: perspective(1000px) rotateX(5deg) rotateY(5deg) translateX(60%);
+            opacity: 0.7;
+        }
+
+        .right-card {
+            transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateX(-60%);
+            opacity: 0.7;
+        }
+
+        /* التعديلات الجديدة */
+        .content-wrapper:not(:has(.left-card:hover)) .right-card {
+            transform: translateX(-50%) scale(1.3) !important;
+            opacity: 1;
+        }
+
+        .left-card:hover {
+            transform: translateX(50%) scale(1.1) !important;
+            opacity: 1;
+        }
+
+        .content-section:not(:has(.left-card:hover)) {
+            transform: scale(0.8);
+        }
+
+        /* تصميم متجاوب */
+        @media (max-width: 900px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+
+            .content-section {
+                padding: 20px;
+                align-items: center !important;
+                text-align: center !important;
+            }
+
+            .hero-text {
+                font-size: 2.5em;
+            }
+
+            .login-container {
+                width: 100%;
+                max-width: 400px;
+                margin-top: 30px;
+                transform: none;
+            }
+
+                .login-container:hover {
+                    transform: translateY(-5px);
+                }
+
+            .card {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+
+            /* تعديلات للهواتف */
+            .content-wrapper:not(:has(.left-card:hover)) .right-card {
+                transform: translateY(-50%) scale(1.1) !important;
+            }
+
+            .left-card:hover {
+                transform: translateY(50%) scale(1.1) !important;
+            }
+        }
+
+        /* التعديلات الجديدة لحل المشكلات */
+        .page-title-container {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+        }
+
+        .faqs-title {
+            text-align: center;
+            font-size: 36px;
+            color: var(--dark-blue);
+            position: relative;
+            margin-top: 0;
+            margin-bottom: 5%;
+        }
+
+            .faqs-title::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background: linear-gradient(90deg, transparent, var(--yellow), transparent);
+                border-radius: 2px;
+            }
+
+        /* قسم التحميل الجديد */
+        .download-section {
+            background-color: var(--light-gray);
+            padding: 60px 20px;
+        }
+
+        .download-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .download-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .download-title {
+            font-size: 2.5em;
+            color: var(--dark-blue);
+            margin-right: 15px;
+            font-weight: 700;
+        }
+
+        .exclamation-icon {
+            background-color: var(--yellow);
+            color: var(--dark-blue);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.6em;
+            width: 250px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+            .tooltip::after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                border-width: 8px;
+                border-style: solid;
+                border-color: var(--dark-blue) transparent transparent transparent;
+            }
+
+        .exclamation-icon:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .platforms-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .platform-card {
+            background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            width: 200px;
+            border: 1px solid rgba(255, 204, 0, 0.3);
+        }
+
+            .platform-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            }
+
+        .platform-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: var(--text-gray);
+            transition: all 0.3s ease;
+        }
+
+        .platform-card:hover .platform-icon {
+            color: var(--dark-blue);
+        }
+
+        .platform-name {
+            font-size: 1.2em;
+            color: var(--dark-blue);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--light-blue) 100%);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+            .download-btn:hover {
+                background: linear-gradient(135deg, var(--light-blue) 0%, var(--blue) 100%);
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(26, 58, 108, 0.4);
+            }
+
+        /* تصميم متجاوب لقسم التحميل */
+        @media (max-width: 768px) {
+            .download-title {
+                font-size: 2em;
+            }
+
+            .platforms-container {
+                gap: 20px;
+            }
+
+            .platform-card {
+                width: 160px;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .download-title {
+                font-size: 1.7em;
+            }
+
+            .platforms-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .platform-card {
+                width: 100%;
+                max-width: 250px;
+            }
+        }
+
+        /* بطاقة تفاصيل الحساب - التعديلات الجديدة */
+        .account-details-section {
+            background-color: var(--medium-gray);
+            padding: 60px 20px;
+            margin-top: 0;
+        }
+
+        .account-details-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .account-details-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        /* التعديلات على بطاقة الحساب لجعلها مستطيلة بالعرض */
+        .account-card {
+            background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 204, 0, 0.3);
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            /* التعديل لجعل البطاقة مستطيلة بالعرض */
+            display: flex;
+            flex-direction: column;
+            min-height: 200px; /* ارتفاع مناسب للشكل المستطيل */
+        }
+
+            .account-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            }
+
+        /* أيقونة المستخدم مع دائرة حولها في أعلى يسار البطاقة */
+        .account-icon {
+            position: absolute;
+            top: -25px;
+            left: -25px;
+            width: 70px;
+            height: 70px;
+            background-color: var(--text-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 2em;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* تعديلات على تخطيط الإحصائيات */
+        .account-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+            margin-top: 10px; /* تعديل لتعويض وجود الأيقونة */
+        }
+
+        .account-stat {
+            text-align: left;
+            padding: 15px;
+            border-radius: 8px;
+            background: rgba(10, 26, 53, 0.05);
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: var(--text-gray);
+            margin-bottom: 5px;
+        }
+
+        .stat-value {
+            font-size: 1.4em;
+            color: var(--dark-blue);
+            font-weight: 700;
+        }
+
+        .user-info {
+            text-align: left;
+            padding: 15px;
+            border-radius: 8px;
+            background: rgba(10, 26, 53, 0.05);
+            margin-top: 20px;
+        }
+
+        .user-label {
+            font-size: 0.9em;
+            color: var(--text-gray);
+            margin-bottom: 5px;
+        }
+
+        .user-value {
+            font-size: 1.2em;
+            color: var(--dark-blue);
+            font-weight: 600;
+        }
+
+        /* تصميم متجاوب لبطاقة الحساب */
+        @media (max-width: 768px) {
+            .account-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .account-card {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .account-card {
+                padding: 20px;
+            }
+
+            .account-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .login-notice {
+            color: #ff0000;
+            font-size: 1.2em;
+            font-weight: 600;
+            text-align: center;
+            margin: 15px 0 25px 0;
+            padding: 10px 20px;
+            border-radius: 8px;
+            background-color: rgba(255, 0, 0, 0.05);
+            animation: pulse-glow 1s infinite alternate;
+            text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+        }
+
+        @keyframes pulse-glow {
+            0% {
+                box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+            }
+
+            100% {
+                box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط العنوان الجديد -->
+    <header id="main-header">
+        <div class="header-content">
+            <div class="header-welcome">Welcome To Quantom Signals</div>
+            <nav>
+                <ul>
+                    <li><a href="https://aitradingsignals.netlify.app/" class="active-link">Home</a></li>
+                    <li><a href="/Backtest">Backtest</a></li>
+                    <li><a href="#funding-section">Pricing</a></li>
+                    <li><a href="#faqs-section">FAQs</a></li>
+                    <li><a href="/About">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="main-container">
+        <div class="content-wrapper">
+            <!-- الجزء الأيسر -->
+            <div class="content-section left-content">
+                <div class="card left-card">
+                    <h1 class="hero-text">
+                        Better Trading for
+                        <span class="rotating-words">
+                            <span class="rotating-word">Funders</span>
+                            <span class="rotating-word">CFDs</span>
+                        </span>
+                    </h1>
+                    <p class="subtitle">
+                        Let AI Watch Markets For You NOW! Our advanced algorithms analyze market trends 24/7 to provide you with the most accurate trading signals.
+                    </p>
+                </div>
+            </div>
+
+            <!-- الجزء الأيمن -->
+            <div class="content-section right-content">
+                <div class="login-container right-card">
+                    <div class="login-content">
+                        <h2 class="login-title">QUANTUM <span>JOIN IN</span></h2>
+                        <div class="google-login-container">
+                            <div id="g_id_onload"
+                                 data-client_id="888973814591-mib9u4c91snbhcbbu8800qp48ebh5u2b.apps.googleusercontent.com"
+                                 data-callback="handleCredentialResponse"
+                                 data-auto_prompt="false">
+                            </div>
+                            <div class="g_id_signin" data-type="standard" data-theme="filled_blue" data-size="large" data-text="signin_with" data-shape="rectangular" data-logo_alignment="left"></div>
+                        </div>
+                        <div class="tagline">Let AI Watch Markets For You NOW!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- بطاقة تفاصيل الحساب -->
+        <section class="account-details-section">
+            <div class="account-details-container">
+                <h3 class="faqs-title">Account Details</h3>
+
+                <!-- الملاحظة الحمراء المضافة -->
+
+                <div class="account-card">
+                    <!-- أيقونة المستخدم مع دائرة حولها في أعلى يسار البطاقة -->
+                    <div class="account-icon">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <div class="user-info">
+                        <div class="user-label">Trader name</div>
+                        <div class="user-value">-</div>
+                    </div>
+                    <div class="account-stats">
+                        <div class="account-stat">
+                            <div class="stat-label">Trades Count</div>
+                            <div class="stat-value">-</div>
+                        </div>
+                        <div class="account-stat">
+                            <div class="stat-label">Win Trades</div>
+                            <div class="stat-value">-</div>
+                        </div>
+                        <div class="account-stat">
+                            <div class="stat-label">Losing Trades</div>
+                            <div class="stat-value">-</div>
+                        </div>
+                        <div class="account-stat">
+                            <div class="stat-label">Win Rate</div>
+                            <div class="stat-value">-</div>
+                        </div>
+                        <div class="account-stat">
+                            <div class="stat-label">Avg RR</div>
+                            <div class="stat-value">-</div>
+                        </div>
+                        <div class="account-stat">
+                            <div class="stat-label">Member From</div>
+                            <div class="stat-value">-</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="login-notice">⚠ login to show your statics ⚠</div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- قسم Download Our Software -->
+    <section class="download-section">
+        <div class="download-container">
+            <div class="download-header">
+                <h2 class="download-title">Download Our Software</h2>
+                <div class="exclamation-icon">
+                    !
+                    <div class="tooltip">download the software to gain access for the signals</div>
+                </div>
+            </div>
+
+            <div class="platforms-container">
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-windows"></i>
+                    </div>
+                    <div class="platform-name">Windows</div>
+                    <button class="download-btn">Download</button>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <div class="platform-name">Mac OS</div>
+                    <button class="download-btn">Download</button>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-linux"></i>
+                    </div>
+                    <div class="platform-name">Linux</div>
+                    <button class="download-btn">Download</button>
+                </div>
+
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-android"></i>
+                    </div>
+                    <div class="platform-name">Android</div>
+                    <button class="download-btn">Download</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+        // معالج استجابة بيانات الاعتماد
+        function handleCredentialResponse(response) {
+            console.log("Encoded JWT ID token: " + response.credential);
+            // هنا يمكنك إضافة منطق تسجيل الدخول
+            alert('Login successful!');
+        }
+
+        // تأثير التمرير على الـ Header (من الهيدر الجديد)
+        window.addEventListener('scroll', function () {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('shrink');
+            } else {
+                header.classList.remove('shrink');
+            }
+        });
+
+        const header = document.getElementById('main-header');
+        header.addEventListener('mouseenter', function () {
+            this.classList.remove('shrink');
+        });
+
+        header.addEventListener('mouseleave', function () {
+            if (window.scrollY > 50) {
+                this.classList.add('shrink');
+            }
+        });
+    </script>
+</body>
+</html>
