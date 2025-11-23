@@ -1247,7 +1247,7 @@
                 console.log('تم الإرسال:', data);
 
                 if (data && data.account) {
-                    data.picture = profilePictureUrl;
+                    data.account.picture = profilePictureUrl;
                     saveLoginData(data.account);
                     updateUIForLoggedInUser(data.account);
                 } else {
@@ -1299,3 +1299,4 @@
     </script>
 </body>
 </html>
+
