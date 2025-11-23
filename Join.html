@@ -1081,6 +1081,7 @@
             const name = await GetKey("name");
             const username = await GetKey("username");
             const UID = await GetKey("UID");
+            const pic = await GetKey("picture");
 
             if (email && username && UID && name) {
                 try {
@@ -1098,14 +1099,24 @@
                     });
 
                     const result = await response.json();
+                    const ok = await loadImage(pic);
                     console.log('result : ', result);
-
                     if (response.ok && result.ok) {
                         // تحديث واجهة المستخدم لحالة تسجيل الدخول
                         updateUIForLoggedInUser(result.account);
                     } else {
                         clearLocalStorage();
                         updateUIForLoggedOutUser();
+                    }
+
+                    const icon = document.getElementById("accountIcon");
+                    const fallbackIcon = icon.querySelector("i");
+
+                    if (ok) {
+                        icon.style.backgroundImage = `url('${pic}')`;
+                        fallbackIcon.style.display = "none";
+                    } else {
+                        fallbackIcon.style.display = "block";
                     }
                 } catch (error) {
                     console.error('Error verifying login status:', error);
@@ -1191,6 +1202,7 @@
             RemoveKey("UID");
             RemoveKey("name");
             RemoveKey("signupTimestamp");
+            RemoveKey("picture");
         }
 
         // معالج استجابة بيانات الاعتماد
@@ -1208,16 +1220,6 @@
                 const profilePictureUrl = decodedToken.picture;
                 const icon = document.getElementById("accountIcon");
                 const fallbackIcon = icon.querySelector("i");
-
-                function loadImage(src) {
-                    return new Promise((resolve) => {
-                        if (!src) return resolve(false);
-                        const img = new Image();
-                        img.onload = () => resolve(true);
-                        img.onerror = () => resolve(false);
-                        img.src = src;
-                    });
-                }
 
                 const ok = await loadImage(profilePictureUrl);
 
@@ -1270,7 +1272,15 @@
                 updateUIForLoggedOutUser();
             }
         };
-
+        function loadImage(src) {
+            return new Promise((resolve) => {
+                if (!src) return resolve(false);
+                const img = new Image();
+                img.onload = () => resolve(true);
+                img.onerror = () => resolve(false);
+                img.src = src;
+            });
+        }
         // تأثير التمرير على الـ Header (من الهيدر الجديد)
         window.addEventListener('scroll', function () {
             const header = document.getElementById('main-header');
@@ -1299,5 +1309,3 @@
     </script>
 </body>
 </html>
-
-
