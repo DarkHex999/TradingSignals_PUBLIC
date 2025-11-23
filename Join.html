@@ -894,9 +894,117 @@
                 box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
             }
         }
+
+        /* أنيميشن التحميل الجديد */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 26, 53, 0.95);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+            .loading-overlay.hidden {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+        .loading-spinner {
+            width: 80px;
+            height: 80px;
+            border: 6px solid rgba(255, 204, 0, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--yellow);
+            animation: spin 1.5s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        .loading-text {
+            color: var(--white);
+            font-size: 1.5em;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .loading-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .loading-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--yellow);
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+
+            .loading-dot:nth-child(1) {
+                animation-delay: -0.32s;
+            }
+
+            .loading-dot:nth-child(2) {
+                animation-delay: -0.16s;
+            }
+        .body-no-scroll {
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+        }
+
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 80%, 100% {
+                transform: scale(0);
+            }
+
+            40% {
+                transform: scale(1);
+            }
+        }
+
+        .main-content {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+            .main-content.loaded {
+                opacity: 1;
+            }
     </style>
 </head>
 <body>
+    <!-- أنيميشن التحميل -->
+    <div id="loading-animation" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading</div>
+        <div class="loading-dots">
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+        </div>
+    </div>
+
     <!-- شريط العنوان الجديد -->
     <header id="main-header">
         <div class="header-content">
@@ -914,7 +1022,7 @@
     </header>
 
     <!-- المحتوى الرئيسي -->
-    <div class="main-container">
+    <div class="main-container main-content" id="main-content">
         <div class="content-wrapper">
             <!-- الجزء الأيسر -->
             <div class="content-section left-content">
@@ -1077,6 +1185,8 @@
 
         // دالة للتحقق من حالة تسجيل الدخول
         async function checkLoginStatus() {
+            showLoadingAnimation(); // إظهار أنيميشن التحميل
+
             const email = await GetKey("email");
             const name = await GetKey("name");
             const username = await GetKey("username");
@@ -1127,6 +1237,8 @@
                 clearLocalStorage();
                 updateUIForLoggedOutUser();
             }
+
+            hideLoadingAnimation(); // إخفاء أنيميشن التحميل بعد الانتهاء
         }
 
         // دالة لتحديث واجهة المستخدم عند تسجيل الدخول
@@ -1178,8 +1290,11 @@
 
         // دالة معالجة تسجيل الخروج
         function handleLogout() {
-            clearLocalStorage();
-            location.reload(); // إعادة تحميل الصفحة
+            showLoadingAnimation(); // إظهار أنيميشن التحميل أثناء تسجيل الخروج
+            setTimeout(() => {
+                clearLocalStorage();
+                location.reload(); // إعادة تحميل الصفحة
+            }, 1000);
         }
 
         // إضافة حدث النقر على زر Logout
@@ -1207,9 +1322,12 @@
 
         // معالج استجابة بيانات الاعتماد
         window.handleCredentialResponse = async function (response) {
+            showLoadingAnimation(); // إظهار أنيميشن التحميل أثناء تسجيل الدخول
+
             const idToken = response?.credential || null;
             if (!idToken) {
                 console.error('لم يتم استلام رمز JWT');
+                hideLoadingAnimation();
                 return;
             }
 
@@ -1229,9 +1347,6 @@
                 } else {
                     fallbackIcon.style.display = "block";
                 }
-
-
-                
 
                 const r = await fetch('https://trading-signals-private.vercel.app/api/SignIn', {
                     method: 'POST',
@@ -1271,7 +1386,10 @@
                 console.error('خطأ في الإرسال:', err);
                 updateUIForLoggedOutUser();
             }
+
+            hideLoadingAnimation(); // إخفاء أنيميشن التحميل بعد الانتهاء
         };
+
         function loadImage(src) {
             return new Promise((resolve) => {
                 if (!src) return resolve(false);
@@ -1281,6 +1399,7 @@
                 img.src = src;
             });
         }
+
         // تأثير التمرير على الـ Header (من الهيدر الجديد)
         window.addEventListener('scroll', function () {
             const header = document.getElementById('main-header');
@@ -1301,6 +1420,39 @@
                 this.classList.add('shrink');
             }
         });
+
+        // دوال التحكم في أنيميشن التحميل
+        function showLoadingAnimation() {
+            const loadingElement = document.getElementById('loading-animation');
+            const mainContent = document.getElementById('main-content');
+
+            // إضافة هذا السطر لقفل الـ scroll
+            document.body.classList.add('body-no-scroll');
+
+            if (loadingElement) {
+                loadingElement.classList.remove('hidden');
+            }
+            if (mainContent) {
+                mainContent.classList.remove('loaded');
+            }
+        }
+
+        function hideLoadingAnimation() {
+            const loadingElement = document.getElementById('loading-animation');
+            const mainContent = document.getElementById('main-content');
+
+            // إضافة هذا السطر لفك قفل الـ scroll
+            document.body.classList.remove('body-no-scroll');
+
+            if (loadingElement) {
+                loadingElement.classList.add('hidden');
+            }
+            if (mainContent) {
+                setTimeout(() => {
+                    mainContent.classList.add('loaded');
+                }, 300);
+            }
+        }
 
         // عند تحميل الصفحة، التحقق من حالة تسجيل الدخول
         document.addEventListener('DOMContentLoaded', function () {
