@@ -1181,6 +1181,7 @@
             SetValue("UID", account.UID);
             SetValue("name", account.name);
             SetValue("signupTimestamp", account.signupTimestamp);
+            SetValue("picture", data.picture);
         }
 
         // دالة مسح بيانات المستخدم من التخزين المحلي
@@ -1208,19 +1209,25 @@
                 const icon = document.getElementById("accountIcon");
                 const fallbackIcon = icon.querySelector("i");
 
-                if (profilePictureUrl) {
-                    const img = new Image();
-                    img.src = profilePictureUrl;
-
-                    img.onload = () => {
-                        icon.style.backgroundImage = `url('${profilePictureUrl}')`;
-                        fallbackIcon.style.display = "none";
-                    };
-
-                    img.onerror = () => {
-                        fallbackIcon.style.display = "block";
-                    };
+                function loadImage(src) {
+                    return new Promise((resolve) => {
+                        if (!src) return resolve(false);
+                        const img = new Image();
+                        img.onload = () => resolve(true);
+                        img.onerror = () => resolve(false);
+                        img.src = src;
+                    });
                 }
+
+                const ok = await loadImage(profilePictureUrl);
+
+                if (ok) {
+                    icon.style.backgroundImage = `url('${profilePictureUrl}')`;
+                    fallbackIcon.style.display = "none";
+                } else {
+                    fallbackIcon.style.display = "block";
+                }
+
 
                 
 
@@ -1240,6 +1247,7 @@
                 console.log('تم الإرسال:', data);
 
                 if (data && data.account) {
+                    data.picture = profilePictureUrl;
                     saveLoginData(data.account);
                     updateUIForLoggedInUser(data.account);
                 } else {
