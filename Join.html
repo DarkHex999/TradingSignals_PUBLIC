@@ -1542,7 +1542,8 @@
             const UID = await GetKey("UID");
 
             if (!username || !email || !UID) {
-                alert('Error: Missing account information.');
+                clearLocalStorage();
+                location.reload();
                 return;
             }
 
@@ -1562,15 +1563,14 @@
 
                 const result = await response.json();
                 if (response.ok && result.ok) {
-                    alert('Account deleted successfully.');
                     clearLocalStorage();
                     location.reload();
                 } else {
-                    alert('Error: ' + (result.error || 'Failed to delete account.'));
+                    location.reload();
                 }
             } catch (error) {
                 console.error('Error deleting account:', error);
-                alert('Error deleting account. Please try again.');
+                location.reload();
             } finally {
                 hideLoadingAnimation();
             }
