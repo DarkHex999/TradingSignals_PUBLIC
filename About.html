@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Signals | About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-blue: #0a1a35;
+            --blue: #1a3a6c;
+            --light-blue: #2a5a9c;
+            --yellow: #ffcc00;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --medium-gray: #e9ecef;
+            --dark-gray: #333333;
+            --text-gray: #6c757d;
+            --profit-green: #28a745;
+            --loss-red: #dc3545;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--dark-blue);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--light-blue);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+
+            header.shrink {
+                padding: 10px 0;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s ease;
+        }
+
+        header.shrink .header-content {
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            transition: all 0.4s ease;
+        }
+
+        header.shrink .logo h1 {
+            font-size: 20px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            transition: all 0.4s ease;
+        }
+
+        .logo span {
+            color: var(--yellow);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            transition: all 0.4s ease;
+        }
+
+        header.shrink nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+            transition: all 0.4s ease;
+        }
+
+            nav ul li a {
+                color: var(--white);
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s;
+            }
+
+                nav ul li a:hover {
+                    color: var(--yellow);
+                }
+
+        .active-link {
+            color: var(--yellow);
+            text-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+            transition: all 0.4s ease;
+        }
+
+        header.shrink .auth-buttons .btn {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            transform: scale(1);
+        }
+
+        header .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            background: transparent;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--dark-blue);
+            color: var(--dark-blue);
+            background: transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--yellow);
+            color: var(--dark-blue);
+            border: 2px solid var(--yellow);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        header .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(10, 26, 53, 0.1);
+            border-color: var(--dark-blue);
+            color: var(--dark-blue);
+        }
+
+        .btn-primary:hover {
+            background-color: #e6b800;
+            border-color: #e6b800;
+            color: var(--dark-blue);
+        }
+
+        .page-hero {
+            padding: 150px 0 80px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
+            text-align: center;
+            margin-top: 80px;
+        }
+
+            .page-hero h2 {
+                font-size: 48px;
+                margin-bottom: 20px;
+                font-weight: 800;
+                color: var(--dark-blue);
+            }
+
+            .page-hero p {
+                font-size: 20px;
+                max-width: 700px;
+                margin: 0 auto 40px;
+                color: var(--text-gray);
+            }
+
+        .mission-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--dark-blue);
+            font-weight: 700;
+        }
+
+        .mission-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .mission-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--dark-gray);
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.1) 0%, rgba(255, 204, 0, 0.05) 100%);
+            border-left: 4px solid var(--yellow);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+            .highlight-box h3 {
+                font-size: 24px;
+                margin-bottom: 15px;
+                color: var(--dark-blue);
+            }
+
+        .values-section {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .value-card {
+            background-color: var(--white);
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            border: 1px solid var(--medium-gray);
+        }
+
+            .value-card:hover {
+                transform: translateY(-10px);
+            }
+
+            .value-card .value-icon {
+                font-size: 50px;
+                color: var(--yellow);
+                margin-bottom: 20px;
+            }
+
+            .value-card h3 {
+                font-size: 22px;
+                margin-bottom: 15px;
+                color: var(--dark-blue);
+            }
+
+            .value-card p {
+                color: var(--text-gray);
+                line-height: 1.6;
+            }
+
+            .value-card.pre-animate {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+        .technology-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .tech-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            align-items: center;
+        }
+
+        .tech-text {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--dark-gray);
+        }
+
+            .tech-text ul {
+                margin: 20px 0;
+                padding-left: 20px;
+            }
+
+            .tech-text li {
+                margin-bottom: 10px;
+                color: var(--dark-gray);
+            }
+
+        .tech-visual {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--blue) 100%);
+            border-radius: 10px;
+            padding: 40px;
+            color: var(--white);
+            text-align: center;
+        }
+
+            .tech-visual h3 {
+                font-size: 24px;
+                margin-bottom: 20px;
+                color: var(--yellow);
+            }
+
+            .tech-visual p {
+                line-height: 1.6;
+                margin-bottom: 30px;
+            }
+
+        .tech-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .tech-stat {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+            .tech-stat .stat-value {
+                font-size: 24px;
+                font-weight: 700;
+                color: var(--yellow);
+                margin-bottom: 5px;
+            }
+
+            .tech-stat .stat-label {
+                font-size: 14px;
+                color: var(--light-gray);
+            }
+
+        .leadership-section {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .leader-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            border: 1px solid var(--medium-gray);
+            transition: transform 0.3s, opacity 0.5s;
+        }
+
+            .leader-card:hover {
+                transform: translateY(-10px);
+            }
+            .leader-card.pre-animate {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+        .leader-header {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--blue) 100%);
+            padding: 30px;
+            color: var(--white);
+            text-align: center;
+        }
+
+            .leader-header h3 {
+                font-size: 22px;
+                margin-bottom: 5px;
+            }
+
+            .leader-header .position {
+                color: var(--yellow);
+                font-weight: 500;
+            }
+
+        .leader-body {
+            padding: 30px;
+        }
+
+            .leader-body p {
+                color: var(--text-gray);
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+
+        .leader-quote {
+            font-style: italic;
+            border-left: 3px solid var(--yellow);
+            padding-left: 15px;
+            color: var(--dark-gray);
+            margin-top: 20px;
+        }
+
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--blue) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+            .cta-section h2 {
+                font-size: 36px;
+                margin-bottom: 20px;
+                font-weight: 700;
+            }
+
+            .cta-section p {
+                font-size: 18px;
+                max-width: 700px;
+                margin: 0 auto 40px;
+                color: var(--light-gray);
+            }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+            .btn-secondary:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                border-color: var(--white);
+                color: var(--white);
+            }
+
+        footer {
+            background-color: var(--dark-blue);
+            padding: 50px 0 20px;
+            color: var(--white);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+
+            .footer-column h4 {
+                font-size: 18px;
+                margin-bottom: 20px;
+                color: var(--yellow);
+            }
+
+            .footer-column ul {
+                list-style: none;
+            }
+
+                .footer-column ul li {
+                    margin-bottom: 10px;
+                }
+
+                    .footer-column ul li a {
+                        color: var(--light-gray);
+                        text-decoration: none;
+                        transition: color 0.3s;
+                    }
+
+                        .footer-column ul li a:hover {
+                            color: var(--yellow);
+                        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-blue);
+            color: var(--medium-gray);
+            font-size: 14px;
+        }
+
+        @media (max-width: 1024px) {
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .leadership-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+                nav ul li {
+                    margin: 5px 10px;
+                }
+
+            .page-hero h2 {
+                font-size: 36px;
+            }
+
+            .page-hero p {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+
+            header.shrink .header-content {
+                flex-direction: row;
+            }
+
+            header.shrink nav ul li {
+                margin-left: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-hero h2 {
+                font-size: 28px;
+            }
+
+            .section-title {
+                font-size: 26px;
+            }
+
+            .value-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="main-content">
+        <header id="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>QUANTUM <span>SIGNALS</span></h1>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/Backtest">Backtest</a></li>
+                            <li><a href="https://aitradingsignals.netlify.app/#funding-section">Pricing</a></li>
+                            <li><a href="https://aitradingsignals.netlify.app/#faqs-section">FAQs</a></li>
+                            <li><a href="/About" class="active-link">About</a></li>
+                        </ul>
+                    </nav>
+                    <div class="auth-buttons">
+                        <a href="/Join" class="btn btn-primary">Join in</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="page-hero">
+            <div class="container">
+                <h2>About Quantum Signals</h2>
+                <p>Pioneering the future of algorithmic trading with cutting-edge AI technology and transparent performance metrics</p>
+                <a href="#mission" class="btn btn-primary">Discover Our Mission</a>
+            </div>
+        </section>
+
+        <section class="mission-section" id="mission">
+            <div class="container">
+                <h2 class="section-title">Our Mission & Vision</h2>
+                <div class="mission-content">
+                    <div class="mission-text">
+                        <p>At Quantum Signals, we're revolutionizing the trading industry by combining advanced machine learning algorithms with transparent, publicly-verifiable performance data. Our mission is to democratize access to institutional-grade trading signals, empowering traders of all levels to make data-driven decisions with confidence.</p>
+                    </div>
+                    
+                    <div class="highlight-box">
+                        <h3>QUANTUM SIGNALS: THE ALGORITHMIC EDGE</h3>
+                        <p>Our advanced machine learning algorithms deliver precise predictive signals with transparent public backtesting. We believe in complete transparency, allowing our community to verify every claim through publicly accessible performance data.</p>
+                    </div>
+                    
+                    <div class="mission-text">
+                        <p>Founded by a team of quantitative analysts, data scientists, and seasoned traders, Quantum Signals represents the convergence of finance and technology. We're committed to continuous innovation, evolving our models with the markets to maintain our competitive edge.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="values-section">
+            <div class="container">
+                <h2 class="section-title">Our Core Values</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Accuracy & Transparency</h3>
+                        <p>Every signal is backed by rigorous testing and publicly available backtest results. We believe in complete transparency as the foundation of trust.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3>Continuous Innovation</h3>
+                        <p>Our algorithms evolve with market dynamics. We're constantly refining our models to adapt to changing market conditions and maintain performance.</p>
+                    </div>
+                    
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Reliability & Security</h3>
+                        <p>We prioritize the security of our users' data and the reliability of our systems. Our infrastructure is built with enterprise-grade security protocols.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="technology-section">
+            <div class="container">
+                <h2 class="section-title">The Technology Behind Our Success</h2>
+                <div class="tech-content">
+                    <div class="tech-grid">
+                        <div class="tech-text">
+                            <p>Our signals are powered by a sophisticated ensemble of machine learning models, including:</p>
+                            <ul>
+                                <li><strong>Deep Learning Neural Networks:</strong> Advanced architectures that identify complex patterns in market data</li>
+                                <li><strong>Reinforcement Learning:</strong> Self-improving algorithms that adapt to market changes</li>
+                                <li><strong>Quantitative Models:</strong> Statistical arbitrage and mean reversion strategies</li>
+                            </ul>
+                            <p>We combine these technologies with live market data feeds and proprietary optimization algorithms to generate high-probability trading signals.</p>
+                        </div>
+                        
+                        <div class="tech-visual">
+                            <h3>Technology Stack</h3>
+                            <p>Our infrastructure is built on cutting-edge technologies to ensure maximum performance and reliability</p>
+                            
+                            <div class="tech-stats">
+                                <div class="tech-stat">
+                                    <div class="stat-value">99.9%</div>
+                                    <div class="stat-label">System Uptime</div>
+                                </div>
+                                <div class="tech-stat">
+                                    <div class="stat-value">&lt;50ms</div>
+                                    <div class="stat-label">Signal Latency</div>
+                                </div>
+                                <div class="tech-stat">
+                                    <div class="stat-value">24/7</div>
+                                    <div class="stat-label">Monitoring</div>
+                                </div>
+                                <div class="tech-stat">
+                                    <div class="stat-value">10+</div>
+                                    <div class="stat-label">Data Sources</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="leadership-section">
+            <div class="container">
+                <h2 class="section-title">Trade With Confidence</h2> <div class="leadership-grid">
+                    <div  class="leader-card" >
+                        <div class="leader-header">
+                            <h3>Strategic Vision</h3>
+                            <div class="position">Core Strategy</div>
+                        </div>
+                        <div class="leader-body">
+                            <p>
+                                The strategy is built on over thousands of data, designed to bridge the gap between institutional trading technology and individual traders.
+                            </p>
+                            <p>Rooted in deep knowledge of statistical arbitrage and machine learning applications in finance, the approach ensures robust and transparent methodologies.</p>
+                            <div class="leader-quote">
+                                "The mission is to democratize access to institutional-grade trading technology. Transparency isn't just a feature - it's the foundational principle."
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="leader-card">
+                        <div class="leader-header">
+                            <h3>Market Evolution</h3>
+                            <div class="position">Data Science Focus</div>
+                        </div>
+                        <div class="leader-body">
+                            <p>The data science team specializes in deep learning and natural language processing for financial markets, prioritizing continuous alignment with shifting market trends.</p>
+                            <p>Efforts concentrate on extracting actionable signals from unstructured data sources and refining model robustness to maintain relevance in dynamic environments.</p>
+                            <div class="leader-quote">
+                                "The markets are constantly evolving. Our algorithms must not just adapt, but anticipate. That's the edge we're building."
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Join the Quantum Signals Community</h2>
+                <p>Experience the algorithmic edge with transparent, backtested trading signals. Join thousands of traders who trust Quantum Signals for their trading decisions.</p>
+                <div class="cta-buttons">
+                    <a href="/Join" class="btn btn-primary">Start Your Free Trial</a>
+                    <a href="/Backtest" class="btn btn-secondary">View Backtest Results</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h4>QUANTUM SIGNALS</h4>
+                        <p>Advanced AI-powered trading signals with transparent public backtesting for confident trading decisions.</p>
+                    </div>
+                    <div class="footer-column">
+                        <h4>PRODUCT</h4>
+                        <ul>
+                            <li><a href="https://aitradingsignals.netlify.app/#faqs-section">FAQs</a></li>
+                            <li><a href="https://aitradingsignals.netlify.app/#funding-section">Pricing</a></li>
+                            <li><a href="/Backtest">Backtesting</a></li>
+                            <li><a href="/FundedAccounts">Funded Accounts</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>RESOURCES</h4>
+                        <ul>
+                            <li><a href="/Tutorials">Tutorials</a></li>
+                            <li><a href="/Support">Support</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>COMPANY</h4>
+                        <ul>
+                            <li><a href="/About">About Us</a></li>
+                            <li><a href="/Contact">Contact Us</a></li>
+                            <li><a href="/Legal">Legal</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2023 Quantum Signals. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function () {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('shrink');
+            } else {
+                header.classList.remove('shrink');
+            }
+        });
+
+        const header = document.getElementById('main-header');
+        header.addEventListener('mouseenter', function () {
+            this.classList.remove('shrink');
+        });
+
+        header.addEventListener('mouseleave', function () {
+            if (window.scrollY > 50) {
+                this.classList.add('shrink');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add animation to value cards on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            const values = document.querySelectorAll('.value-card');
+
+            values.forEach(v => v.classList.add('pre-animate'));
+
+            const obs2 = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.remove('pre-animate');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            values.forEach(v => obs2.observe(v));
+
+
+            const cards = document.querySelectorAll('.leader-card');
+
+            cards.forEach(c => c.classList.add('pre-animate'));
+
+            const obs = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.remove('pre-animate');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach(c => obs.observe(c));
+
+        });
+    </script>
+</body>
+</html>
