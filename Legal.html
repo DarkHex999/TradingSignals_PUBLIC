@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Agreements & Terms | Quantum Signals</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lightweight-charts@4.0.0/dist/lightweight-charts.standalone.production.js"></script>
+
+    <style>
+        :root {
+            --dark-blue: #0a1a35;
+            --blue: #1a3a6c;
+            --light-blue: #2a5a9c;
+            --yellow: #ffcc00;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --medium-gray: #e9ecef;
+            --dark-gray: #333333;
+            --text-gray: #6c757d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--dark-blue);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--light-blue);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+
+            header.shrink {
+                padding: 10px 0;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s ease;
+        }
+
+        header.shrink .header-content {
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            transition: all 0.4s ease;
+        }
+
+        header.shrink .logo h1 {
+            font-size: 20px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            transition: all 0.4s ease;
+        }
+
+        .logo span {
+            color: var(--yellow);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            transition: all 0.4s ease;
+        }
+
+        header.shrink nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+            transition: all 0.4s ease;
+        }
+
+            nav ul li a {
+                color: var(--white);
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s;
+            }
+
+                nav ul li a:hover {
+                    color: var(--yellow);
+                }
+
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+            transition: all 0.4s ease;
+        }
+
+        header.shrink .auth-buttons .btn {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            transform: scale(1);
+        }
+
+        header .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            background: transparent;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--blue);
+            color: var(--blue);
+            background: transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--yellow);
+            color: var(--dark-blue);
+            border: 2px solid var(--yellow);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        header .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(26, 58, 108, 0.1);
+            border-color: var(--blue);
+            color: var(--blue);
+        }
+
+        .btn-primary:hover {
+            background-color: #e6b800;
+            border-color: #e6b800;
+            color: var(--dark-blue);
+        }
+
+        /* Legal Page Styles */
+        .legal-hero {
+            padding: 180px 0 80px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
+            text-align: center;
+            margin-top: 80px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+            .legal-hero h1 {
+                font-size: 42px;
+                margin-bottom: 15px;
+                font-weight: 800;
+                color: var(--dark-blue);
+            }
+
+            .legal-hero p {
+                font-size: 18px;
+                max-width: 700px;
+                margin: 0 auto;
+                color: var(--text-gray);
+            }
+
+        .legal-container {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .legal-section {
+            margin-bottom: 60px;
+            padding: 40px;
+            background-color: var(--light-gray);
+            border-radius: 10px;
+            border-left: 5px solid var(--yellow);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+            .legal-section:last-child {
+                margin-bottom: 0;
+            }
+
+            .legal-section h2 {
+                font-size: 32px;
+                margin-bottom: 25px;
+                color: var(--dark-blue);
+                padding-bottom: 10px;
+                border-bottom: 2px solid rgba(26, 58, 108, 0.1);
+            }
+
+            .legal-section p {
+                margin-bottom: 20px;
+                color: var(--dark-gray);
+                font-size: 16px;
+                line-height: 1.7;
+            }
+
+            .legal-section ul {
+                margin: 20px 0 30px 40px;
+            }
+
+                .legal-section ul li {
+                    margin-bottom: 15px;
+                    color: var(--dark-gray);
+                    line-height: 1.6;
+                    position: relative;
+                }
+
+                    .legal-section ul li:before {
+                        content: "•";
+                        color: var(--yellow);
+                        font-weight: bold;
+                        font-size: 20px;
+                        position: absolute;
+                        left: -20px;
+                        top: -2px;
+                    }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--medium-gray), transparent);
+            margin: 40px 0;
+        }
+
+        footer {
+            background-color: var(--dark-blue);
+            padding: 50px 0 20px;
+            color: var(--white);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+
+            .footer-column h4 {
+                font-size: 18px;
+                margin-bottom: 20px;
+                color: var(--yellow);
+            }
+
+            .footer-column ul {
+                list-style: none;
+            }
+
+                .footer-column ul li {
+                    margin-bottom: 10px;
+                }
+
+                    .footer-column ul li a {
+                        color: var(--light-gray);
+                        text-decoration: none;
+                        transition: color 0.3s;
+                    }
+
+                        .footer-column ul li a:hover {
+                            color: var(--yellow);
+                        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-blue);
+            color: var(--medium-gray);
+            font-size: 14px;
+        }
+
+        .active-link {
+            color: var(--yellow);
+            text-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+                nav ul li {
+                    margin: 5px 10px;
+                }
+
+            .legal-hero {
+                padding: 150px 0 60px;
+            }
+
+                .legal-hero h1 {
+                    font-size: 32px;
+                }
+
+                .legal-hero p {
+                    font-size: 16px;
+                }
+
+            .legal-container {
+                padding: 60px 0;
+            }
+
+            .legal-section {
+                padding: 25px;
+            }
+
+                .legal-section h2 {
+                    font-size: 26px;
+                }
+
+            header.shrink .header-content {
+                flex-direction: row;
+            }
+
+            header.shrink nav ul li {
+                margin-left: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>QUANTUM <span>SIGNALS</span></h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/Backtest">Backtest</a></li>
+                        <li><a href="https://aitradingsignals.netlify.app/#funding-section">Pricing</a></li>
+                        <li><a href="https://aitradingsignals.netlify.app/#faqs-section">FAQs</a></li>
+                        <li><a href="/About">About</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="/Join" class="btn btn-primary">Join in</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="legal-hero">
+        <div class="container">
+            <h1>LEGAL AGREEMENTS & TERMS</h1>
+            <p>Comprehensive documentation for using our services.</p>
+        </div>
+    </section>
+
+    <section class="legal-container">
+        <div class="container">
+            <div class="legal-section">
+                <h2>
+                    Terms of Service — Quantum Signals
+                </h2>
+                
+                <ul>
+                    <li>
+                        Introduction
+                        <br>
+                        By accessing or using Quantum Signals, you agree to these Terms of Service and confirm that you have read and understood all related policies.
+                    </li>
+
+                    <li>
+                        Scope of Service
+                        <br>
+                        We provide AI-powered algorithmic trading signals, analytics, and alerts. We do not execute trades on behalf of users, nor do we offer brokerage or custodial services.
+                    </li>
+                    <li>
+                        User Eligibility
+                        <br>
+                        You may not use the service in jurisdictions where such platforms are restricted or require licenses you do not possess.
+                    </li>
+                    <li>
+                        User Responsibility
+                        <br>
+                        You are fully responsible for your trading decisions, automation settings, and integrations with third-party brokers. Any profit or loss resulting from using the signals is your responsibility alone.
+                    </li>
+                    <li>
+                        Limitation of Liability
+                        <br>
+                        Quantum Signals is not liable for any direct, indirect, incidental, or consequential losses arising from the use of the service.
+                        If liability cannot be excluded under applicable law, it is limited to the total fees paid to Quantum Signals in the twelve (12) months preceding the claim.
+                    </li>
+                    <li>
+                        Intellectual Property
+                        <br>
+                        All algorithms, models, code, content, and documentation are owned by or licensed to Quantum Signals. Copying, reverse engineering, or redistribution without written permission is prohibited.
+                    </li>
+                    <li>
+                        Modification or Suspension
+                        <br>
+                        We reserve the right to modify, suspend, or terminate any part of the service for security, legal, or technical reasons.
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="section-divider"></div>
+            
+            <div class="legal-section">
+                <h2>
+                    Privacy Policy — Quantum Signals
+                </h2>
+                <p>We collect minimal data necessary to operate, secure, and improve our platform. We treat all user data with strict confidentiality.</p>
+                
+                <ul>
+                    <li>
+                        Data We Collect
+                        <br>
+                        Account & Contact Data: name, email, and authentication details — used to operate the account.
+                        Usage Data: logs, timestamps, performance metrics — used to improve reliability and algorithms.
+                    </li>
+                    <li>
+                        Legal Basis
+                        <br>
+                        We process data based on:
+                        • contract fulfillment,
+                        • legitimate business interests,
+                        • user consent where required (e.g., marketing).
+                    </li>
+                    <li>
+                        Data Sharing
+                        <br>
+                        We may share limited data with infrastructure providers (hosting, analytics, payment gateways).
+                        All partners operate under confidentiality and data-processing agreements.
+                    </li>
+                    <li>
+                        User Rights
+                        <br>
+                        Depending on your jurisdiction, you may request:
+                        • access,
+                        • correction,
+                        • deletion,
+                        • restriction of processing,
+                        • data portability,
+                        • objection to certain uses.
+
+                    </li>
+                    <li>
+                        Security
+                        <br>
+                        We apply administrative and technical safeguards including encryption, access controls, and continuous monitoring.
+                        No system is completely immune from breaches, but we maintain enterprise-level standards.
+                    </li>
+                    <li>
+                        Data Retention
+                        <br>
+                        We keep personal data only as long as needed for service operation, compliance, or legitimate business purposes.
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="section-divider"></div>
+            
+            <div class="legal-section">
+                <h2>Disclaimer — Quantum Signals</h2>
+                <ul>
+                    <li>
+                        No Investment Advice
+                        <br>
+                        All content and trading signals provided by Quantum Signals are for informational purposes only.
+                        They are not financial, investment, or trading advice. Users make decisions at their own risk.
+                    </li>
+                    <li>
+                        No Guarantee of Future Performance
+                        <br>
+                        Backtests, historical data, and model results do not guarantee future outcomes.
+                        Market conditions, volatility, and external events may cause actual results to differ.
+                    </li>
+                    <li>
+                        Technical Risks
+                        <br>
+                        We are not responsible for outages, delays, or integration failures involving third-party brokers, networks, or platforms.
+                    </li>
+                    <li>
+                        Legal & Geographic Restrictions
+                        <br>
+                        The service may be restricted or prohibited in certain countries.
+                        Users must ensure compliance with local laws before using the platform.
+                    </li>
+                    <li>
+                        Updates
+                        <br>
+                        This Disclaimer may be updated at any time. The latest version is always the one published on our website.
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>QUANTUM SIGNALS</h4>
+                    <p>Advanced AI-powered trading signals with transparent public backtesting for confident trading decisions.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>PRODUCT</h4>
+                    <ul>
+                        <li><a href="https://aitradingsignals.netlify.app/#faqs-section">FAQs</a></li>
+                        <li><a href="https://aitradingsignals.netlify.app/#funding-section">Pricing</a></li>
+                        <li><a href="/Backtest">Backtesting</a></li>
+                        <li><a href="/FundedAccounts">Funded Accounts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>RESOURCES</h4>
+                    <ul>
+                        <li><a href="/Tutorials">Tutorials</a></li>
+                        <li><a href="/Support">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>COMPANY</h4>
+                    <ul>
+                        <li><a href="/About">About Us</a></li>
+                        <li><a href="/Contact">Contact Us</a></li>
+                        <li><a href="/Legal">Legal</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Quantum Signals. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function () {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('shrink');
+            } else {
+                header.classList.remove('shrink');
+            }
+        });
+
+        // Header hover effect
+        const header = document.getElementById('main-header');
+        header.addEventListener('mouseenter', function () {
+            this.classList.remove('shrink');
+        });
+
+        header.addEventListener('mouseleave', function () {
+            if (window.scrollY > 50) {
+                this.classList.add('shrink');
+            }
+        });
+
+        // Smooth scroll to section
+        document.addEventListener('DOMContentLoaded', function() {
+            // Remove any existing event listeners from navigation links
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.getAttribute('href').startsWith('/')) {
+                        // Allow normal navigation for internal links
+                        return;
+                    }
+                    
+                    if (this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href').substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
