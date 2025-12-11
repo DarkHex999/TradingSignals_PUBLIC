@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Quantum Signals</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/lightweight-charts@4.0.0/dist/lightweight-charts.standalone.production.js"></script>
+
+    <style>
+        :root {
+            --dark-blue: #0a1a35;
+            --blue: #1a3a6c;
+            --light-blue: #2a5a9c;
+            --yellow: #ffcc00;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --medium-gray: #e9ecef;
+            --dark-gray: #333333;
+            --text-gray: #6c757d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--dark-blue);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--light-blue);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+
+            header.shrink {
+                padding: 10px 0;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s ease;
+        }
+
+        header.shrink .header-content {
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            transition: all 0.4s ease;
+        }
+
+        header.shrink .logo h1 {
+            font-size: 20px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            transition: all 0.4s ease;
+        }
+
+        .logo span {
+            color: var(--yellow);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            transition: all 0.4s ease;
+        }
+
+        header.shrink nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+            transition: all 0.4s ease;
+        }
+
+            nav ul li a {
+                color: var(--white);
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s;
+            }
+
+                nav ul li a:hover {
+                    color: var(--yellow);
+                }
+
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+            transition: all 0.4s ease;
+        }
+
+        header.shrink .auth-buttons .btn {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            transform: scale(1);
+        }
+
+        header .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            background: transparent;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--blue);
+            color: var(--blue);
+            background: transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--yellow);
+            color: var(--dark-blue);
+            border: 2px solid var(--yellow);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        header .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(26, 58, 108, 0.1);
+            border-color: var(--blue);
+            color: var(--blue);
+        }
+
+        .btn-primary:hover {
+            background-color: #e6b800;
+            border-color: #e6b800;
+            color: var(--dark-blue);
+        }
+
+        /* Contact Page Styles */
+        .contact-hero {
+            padding: 180px 0 80px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
+            text-align: center;
+            margin-top: 80px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+            .contact-hero h1 {
+                font-size: 42px;
+                margin-bottom: 15px;
+                font-weight: 800;
+                color: var(--dark-blue);
+            }
+
+            .contact-hero p {
+                font-size: 18px;
+                max-width: 700px;
+                margin: 0 auto;
+                color: var(--text-gray);
+            }
+
+        .contact-container {
+            padding: 80px 0;
+            background-color: var(--white);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px;
+        }
+
+        .contact-form-section {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info-section {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-form {
+            background-color: var(--light-gray);
+            padding: 40px;
+            border-radius: 10px;
+            border-left: 5px solid var(--yellow);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-info {
+            background-color: var(--light-gray);
+            padding: 40px;
+            border-radius: 10px;
+            border-left: 5px solid var(--blue);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-blue);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+
+            .form-control:focus {
+                outline: none;
+                border-color: var(--yellow);
+                box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.2);
+            }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--yellow);
+            color: var(--dark-blue);
+            border: none;
+            padding: 14px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+            .submit-btn:hover {
+                background-color: #e6b800;
+                transform: translateY(-2px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            }
+
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: var(--dark-blue);
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(26, 58, 108, 0.1);
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            background-color: var(--blue);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--dark-blue);
+        }
+
+        .contact-text p {
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: var(--dark-blue);
+            padding: 50px 0 20px;
+            color: var(--white);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+
+            .footer-column h4 {
+                font-size: 18px;
+                margin-bottom: 20px;
+                color: var(--yellow);
+            }
+
+            .footer-column ul {
+                list-style: none;
+            }
+
+                .footer-column ul li {
+                    margin-bottom: 10px;
+                }
+
+                    .footer-column ul li a {
+                        color: var(--light-gray);
+                        text-decoration: none;
+                        transition: color 0.3s;
+                    }
+
+                        .footer-column ul li a:hover {
+                            color: var(--yellow);
+                        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-blue);
+            color: var(--medium-gray);
+            font-size: 14px;
+        }
+
+        .active-link {
+            color: var(--yellow);
+            text-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+                nav ul li {
+                    margin: 5px 10px;
+                }
+
+            .contact-hero {
+                padding: 150px 0 60px;
+            }
+
+                .contact-hero h1 {
+                    font-size: 32px;
+                }
+
+                .contact-hero p {
+                    font-size: 16px;
+                }
+
+            .contact-container {
+                padding: 60px 0;
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .contact-form, .contact-info {
+                padding: 25px;
+            }
+
+            header.shrink .header-content {
+                flex-direction: row;
+            }
+
+            header.shrink nav ul li {
+                margin-left: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>QUANTUM <span>SIGNALS</span></h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/Backtest">Backtest</a></li>
+                        <li><a href="https://aitradingsignals.netlify.app/#funding-section">Pricing</a></li>
+                        <li><a href="https://aitradingsignals.netlify.app/#faqs-section">FAQs</a></li>
+                        <li><a href="/About">About</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="/Join" class="btn btn-primary">Join in</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="contact-hero">
+        <div class="container">
+            <h1>CONTACT US</h1>
+            <p>We'd love to hear from you!</p>
+        </div>
+    </section>
+
+    <section class="contact-container">
+        <div class="container" style="display: flex; flex-wrap: wrap; gap: 60px;">
+            <div class="contact-form-section">
+                <div class="contact-form">
+                    <h2>Send us a message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" class="form-control" placeholder="Your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Your email address" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" placeholder="Message subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" placeholder="Your message..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="contact-info-section">
+                <div class="contact-info">
+                    <h3>Make sure to know</h3>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>FAQ</h4>
+                                <p>Find answers to frequently asked questions</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Response Time</h4>
+                                <p>Expected response time: 1-3 days</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Missing Replies</h4>
+                                <p>Check your spam folder for missed replies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>QUANTUM SIGNALS</h4>
+                    <p>Advanced AI-powered trading signals with transparent public backtesting for confident trading decisions.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>PRODUCT</h4>
+                    <ul>
+                        <li><a href="https://aitradingsignals.netlify.app/#faqs-section">FAQs</a></li>
+                        <li><a href="https://aitradingsignals.netlify.app/#funding-section">Pricing</a></li>
+                        <li><a href="/Backtest">Backtesting</a></li>
+                        <li><a href="/FundedAccounts">Funded Accounts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>RESOURCES</h4>
+                    <ul>
+                        <li><a href="/Tutorials">Tutorials</a></li>
+                        <li><a href="/Support">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>COMPANY</h4>
+                    <ul>
+                        <li><a href="/About">About Us</a></li>
+                        <li><a href="/Contact">Contact Us</a></li>
+                        <li><a href="/Legal">Legal</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Quantum Signals. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function () {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('shrink');
+            } else {
+                header.classList.remove('shrink');
+            }
+        });
+
+        // Header hover effect
+        const header = document.getElementById('main-header');
+        header.addEventListener('mouseenter', function () {
+            this.classList.remove('shrink');
+        });
+
+        header.addEventListener('mouseleave', function () {
+            if (window.scrollY > 50) {
+                this.classList.add('shrink');
+            }
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            try {
+                // إرسال البيانات إلى API
+                const response = await fetch('https://trading-signals-private.vercel.app/api/WriteEmailMessage', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        FullName: name,
+                        EmailAddress: email,
+                        Subject: subject,
+                        Message: message
+                    })
+                });
+
+                // Reset the form
+                this.reset();
+            } catch (error) {
+                console.error('Error sending message:', error);
+            }
+        });
+
+        // Smooth scroll to section
+        document.addEventListener('DOMContentLoaded', function() {
+            // Remove any existing event listeners from navigation links
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.getAttribute('href').startsWith('/')) {
+                        // Allow normal navigation for internal links
+                        return;
+                    }
+                    
+                    if (this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href').substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
