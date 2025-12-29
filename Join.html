@@ -1441,7 +1441,7 @@
                     if (response.ok && result.ok) {
                         // تحديث واجهة المستخدم لحالة تسجيل الدخول
                         const link = 'https://trading-signals-private.vercel.app/api/CalculateStats?username=' + result.account.username.toString();
-                        const status = await fetch(link);
+                        const status = await fetch(link).json();
                         getAccountStatus(status);
                         updateUIForLoggedInUser(result.account);
 
@@ -1817,6 +1817,7 @@
         });</script>
 </body>
 </html>
+
 
 
 
