@@ -1310,23 +1310,23 @@
                     <div class="account-stats">
                         <div class="account-stat">
                             <div class="stat-label">Trades Count</div>
-                            <div class="stat-value">-</div>
+                            <div class="stat-value"id="trades-count">-</div>
                         </div>
                         <div class="account-stat">
                             <div class="stat-label">Win Trades</div>
-                            <div class="stat-value">-</div>
+                            <div class="stat-value"id="win-trades">-</div>
                         </div>
                         <div class="account-stat">
                             <div class="stat-label">Losing Trades</div>
-                            <div class="stat-value">-</div>
+                            <div class="stat-value"id="losing-trades">-</div>
                         </div>
                         <div class="account-stat">
                             <div class="stat-label">Win Rate</div>
-                            <div class="stat-value">-</div>
+                            <div class="stat-value"id="win-rate">-</div>
                         </div>
                         <div class="account-stat">
                             <div class="stat-label">Avg RR</div>
-                            <div class="stat-value">-</div>
+                            <div class="stat-value"id="avg-rr">-</div>
                         </div>
                         <div class="account-stat">
                             <div class="stat-label">Member From</div>
@@ -1390,8 +1390,7 @@
     </section>
 
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script>
-        // دوال التخزين المحلي باستخدام localStorage
+    <script>// دوال التخزين المحلي باستخدام localStorage
         async function GetKey(key) {
             return localStorage.getItem(key);
         }
@@ -1441,7 +1440,11 @@
                     console.log('result : ', result);
                     if (response.ok && result.ok) {
                         // تحديث واجهة المستخدم لحالة تسجيل الدخول
+                        const link = 'https://trading-signals-private.vercel.app/api/CalculateStats?username=' + result.account.username.toString();
+                        const status = await fetch(link);
+                        getAccountStatus(status);
                         updateUIForLoggedInUser(result.account);
+
                     } else {
                         clearLocalStorage();
                         updateUIForLoggedOutUser();
@@ -1497,7 +1500,15 @@
                 }
             }
         }
-
+        function getAccountStatus(Status)
+        {
+            console.log(Status);
+            document.getElementById('win-rate').innerText = Status.stats.winRate;
+            document.getElementById('avg-rr').innerText = Status.stats.averageRR;
+            document.getElementById('losing-trades').innerText = Status.stats.loseTradesCount;
+            document.getElementById('win-trades').innerText = Status.stats.winTradesCount;
+            document.getElementById('trades-count').innerText = Status.stats.tradesCount;
+        }
         // دالة لتحديث واجهة المستخدم عند تسجيل الخروج
         function updateUIForLoggedOutUser() {
             // إعادة QUANTUM JOIN IN
@@ -1808,8 +1819,8 @@
 
             // التحقق من حالة تسجيل الدخول عند تحميل الصفحة
             checkLoginStatus();
-        });
-    </script>
+        });</script>
 </body>
 </html>
+
 
