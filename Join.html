@@ -1503,7 +1503,7 @@
         function getAccountStatus(Status)
         {
             console.log(Status);
-            document.getElementById('win-rate').innerText = Status.stats.winRate;
+            document.getElementById('win-rate').innerText = Status.stats.winRate + "%";
             document.getElementById('avg-rr').innerText = Status.stats.averageRR;
             document.getElementById('losing-trades').innerText = Status.stats.loseTradesCount;
             document.getElementById('win-trades').innerText = Status.stats.winTradesCount;
@@ -1822,5 +1822,6 @@
         });</script>
 </body>
 </html>
+
 
 
