@@ -1186,6 +1186,307 @@
             .main-content.loaded {
                 opacity: 1;
             }
+        .trades-history-container {
+            position: absolute;
+            bottom: 20px;
+            right: 70px;
+            z-index: 10;
+        }
+
+        .trades-history-icon {
+            width: 35px;
+            height: 35px;
+            background: rgba(10, 26, 53, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--text-gray);
+            font-size: 1.1em;
+        }
+
+            .trades-history-icon:hover {
+                background: rgba(10, 26, 53, 0.2);
+                color: var(--dark-blue);
+                transform: scale(1.1);
+            }
+
+        /* نافذة عرض الصفقات المنبثقة */
+        .trades-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 26, 53, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+            .trades-modal-overlay.show {
+                opacity: 1;
+                visibility: visible;
+            }
+
+        .trades-modal {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            width: 90%;
+            max-width: 1200px;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform: scale(0.9);
+            transition: all 0.3s ease;
+        }
+
+        .trades-modal-overlay.show .trades-modal {
+            transform: scale(1);
+        }
+
+        .trades-modal-header {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--blue) 100%);
+            padding: 20px 30px;
+            color: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .trades-modal-title {
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+
+        .trades-modal-close {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+            .trades-modal-close:hover {
+                transform: rotate(90deg);
+            }
+
+        .trades-modal-content {
+            padding: 0;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .trades-table-container {
+            overflow-x: auto;
+        }
+
+        .trades-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+            .trades-table thead {
+                background: var(--medium-gray);
+                position: sticky;
+                top: 0;
+                z-index: 1;
+            }
+
+            .trades-table th {
+                padding: 15px 20px;
+                text-align: left;
+                color: var(--dark-blue);
+                font-weight: 600;
+                border-bottom: 2px solid var(--text-gray);
+                font-size: 0.9em;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            .trades-table td {
+                padding: 15px 20px;
+                border-bottom: 1px solid var(--medium-gray);
+                color: var(--text-gray);
+            }
+
+            .trades-table tbody tr {
+                transition: background-color 0.3s ease;
+            }
+
+                .trades-table tbody tr:hover {
+                    background-color: rgba(10, 26, 53, 0.05);
+                }
+
+            .trades-table .trade-win {
+                color: #4CAF50;
+                font-weight: 600;
+            }
+
+            .trades-table .trade-loss {
+                color: #f44336;
+                font-weight: 600;
+            }
+
+        .trade-type-buy {
+            background-color: rgba(76, 175, 80, 0.1);
+            color: #4CAF50;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .trade-type-sell {
+            background-color: rgba(244, 67, 54, 0.1);
+            color: #f44336;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .trade-pnl {
+            font-weight: 600;
+        }
+
+            .trade-pnl.positive {
+                color: #4CAF50;
+            }
+
+            .trade-pnl.negative {
+                color: #f44336;
+            }
+
+        .no-trades-message {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-gray);
+            font-size: 1.1em;
+        }
+
+        .trades-stats-summary {
+            background: var(--light-gray);
+            padding: 15px 30px;
+            border-bottom: 1px solid var(--medium-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .trades-stats-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stats-label {
+            font-size: 0.8em;
+            color: var(--text-gray);
+            margin-bottom: 4px;
+        }
+
+        .stats-value {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--dark-blue);
+        }
+
+        /* منع التمرير في الخلفية عند فتح النافذة */
+        .body-no-scroll-modal {
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* تحسين التمرير داخل النافذة */
+        .trades-modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .trades-modal-content::-webkit-scrollbar-track {
+            background: var(--medium-gray);
+        }
+
+        .trades-modal-content::-webkit-scrollbar-thumb {
+            background: var(--text-gray);
+            border-radius: 4px;
+        }
+
+            .trades-modal-content::-webkit-scrollbar-thumb:hover {
+                background: var(--dark-blue);
+            }
+
+        /* تحسينات للشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .trades-history-container {
+                right: 60px;
+                bottom: 20px;
+            }
+
+            .trades-modal {
+                width: 95%;
+                max-height: 85vh;
+            }
+
+            .trades-table {
+                min-width: 500px;
+            }
+
+                .trades-table th,
+                .trades-table td {
+                    padding: 10px 15px;
+                    font-size: 0.85em;
+                }
+
+            .trades-stats-summary {
+                padding: 10px 20px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .trades-stats-item {
+                flex-direction: row;
+                gap: 8px;
+            }
+
+            .stats-label {
+                margin-bottom: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .trades-history-container {
+                right: 55px;
+                bottom: 15px;
+            }
+
+            .trades-modal-header {
+                padding: 15px 20px;
+            }
+
+            .trades-modal-title {
+                font-size: 1.2em;
+            }
+        }
+
+        /* بقية الأنماط السابقة... */
     </style>
 </head>
 <body>
@@ -1208,6 +1509,26 @@
             <div class="confirm-buttons">
                 <button class="confirm-btn cancel" id="confirm-cancel">Cancel</button>
                 <button class="confirm-btn confirm" id="confirm-ok">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة عرض سجل الصفقات -->
+    <div id="trades-modal-overlay" class="trades-modal-overlay">
+        <div class="trades-modal">
+            <div class="trades-modal-header">
+                <div class="trades-modal-title">
+                    <i class="fa-regular fa-eye"></i> Trade History
+                </div>
+                <button class="trades-modal-close" id="trades-modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="trades-stats-summary" id="trades-stats-summary">
+                <!-- سيتم ملؤه بالبيانات عبر JavaScript -->
+            </div>
+            <div class="trades-modal-content" id="trades-modal-content">
+                <!-- سيتم ملؤه بالبيانات عبر JavaScript -->
             </div>
         </div>
     </div>
@@ -1286,6 +1607,13 @@
                         <i class="fa-solid fa-user-tie"></i>
                     </div>
 
+                    <!-- زر سجل الصفقات الجديد -->
+                    <div class="trades-history-container">
+                        <div class="trades-history-icon" id="trades-history-icon">
+                            <i class="fa-regular fa-eye"></i>
+                        </div>
+                    </div>
+
                     <!-- أيقونة الإعدادات الجديدة -->
                     <div class="account-settings">
                         <div class="settings-icon" id="settings-icon">
@@ -1310,23 +1638,23 @@
                     <div class="account-stats">
                         <div class="account-stat">
                             <div class="stat-label">Trades Count</div>
-                            <div class="stat-value"id="trades-count">-</div>
+                            <div class="stat-value" id="trades-count">-</div>
                         </div>
                         <div class="account-stat">
                             <div class="stat-label">Win Trades</div>
-                            <div class="stat-value"id="win-trades">-</div>
+                            <div class="stat-value" id="win-trades">-</div>
                         </div>
                         <div class="account-stat">
                             <div class="stat-label">Losing Trades</div>
-                            <div class="stat-value"id="losing-trades">-</div>
+                            <div class="stat-value" id="losing-trades">-</div>
                         </div>
                         <div class="account-stat">
                             <div class="stat-label">Win Rate</div>
-                            <div class="stat-value"id="win-rate">-</div>
+                            <div class="stat-value" id="win-rate">-</div>
                         </div>
                         <div class="account-stat">
                             <div class="stat-label">Avg RR</div>
-                            <div class="stat-value"id="avg-rr">-</div>
+                            <div class="stat-value" id="avg-rr">-</div>
                         </div>
                         <div class="account-stat">
                             <div class="stat-label">Member From</div>
@@ -1390,7 +1718,219 @@
     </section>
 
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script>// دوال التخزين المحلي باستخدام localStorage
+    <script>
+        // متغير لتخزين بيانات الصفقات
+        let tradesData = null;
+
+        // دالة لعرض نافذة سجل الصفقات
+        function showTradesModal() {
+            const modal = document.getElementById('trades-modal-overlay');
+            const closeBtn = document.getElementById('trades-modal-close');
+            const modalContent = document.getElementById('trades-modal-content');
+            const statsSummary = document.getElementById('trades-stats-summary');
+
+            // منع التمرير في الخلفية
+            document.body.classList.add('body-no-scroll-modal');
+
+            // عرض النافذة
+            modal.classList.add('show');
+
+            // تحميل وعرض بيانات الصفقات
+            if (tradesData && tradesData.trades) {
+                displayTradesData(tradesData);
+            } else {
+                // إذا لم توجد بيانات، عرض رسالة
+                modalContent.innerHTML = `
+                        <div class="no-trades-message">
+                            <i class="fas fa-chart-line" style="font-size: 3em; margin-bottom: 15px; color: var(--text-gray);"></i>
+                            <h3 style="color: var(--dark-blue); margin-bottom: 10px;">No Trade History Available</h3>
+                            <p>Your trade history will appear here once you start trading.</p>
+                        </div>
+                    `;
+                statsSummary.innerHTML = '';
+            }
+
+            // إغلاق النافذة عند النقر على زر الإغلاق
+            closeBtn.addEventListener('click', closeTradesModal);
+
+            // إغلاق النافذة عند النقر خارجها
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    closeTradesModal();
+                }
+            });
+
+            // إغلاق النافذة عند الضغط على زر ESC
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && modal.classList.contains('show')) {
+                    closeTradesModal();
+                }
+            });
+        }
+
+        // دالة لإغلاق نافذة سجل الصفقات
+        function closeTradesModal() {
+            const modal = document.getElementById('trades-modal-overlay');
+            const closeBtn = document.getElementById('trades-modal-close');
+
+            modal.classList.remove('show');
+
+            // السماح بالتمرير مرة أخرى
+            document.body.classList.remove('body-no-scroll-modal');
+
+            // إزالة معالجات الأحداث
+            closeBtn.removeEventListener('click', closeTradesModal);
+            modal.removeEventListener('click', arguments.callee);
+        }
+
+        // دالة لعرض بيانات الصفقات
+        function displayTradesData(data) {
+            const modalContent = document.getElementById('trades-modal-content');
+            const statsSummary = document.getElementById('trades-stats-summary');
+
+            // إنشاء ملخص الإحصائيات
+            statsSummary.innerHTML = `
+                    <div class="trades-stats-item">
+                        <span class="stats-label">Total Trades:</span>
+                        <span class="stats-value">${data.stats.tradesCount}</span>
+                    </div>
+                    <div class="trades-stats-item">
+                        <span class="stats-label">Win Rate:</span>
+                        <span class="stats-value">${data.stats.winRate}%</span>
+                    </div>
+                    <div class="trades-stats-item">
+                        <span class="stats-label">Win Trades:</span>
+                        <span class="stats-value">${data.stats.winTradesCount}</span>
+                    </div>
+                    <div class="trades-stats-item">
+                        <span class="stats-label">Lose Trades:</span>
+                        <span class="stats-value">${data.stats.loseTradesCount}</span>
+                    </div>
+                    <div class="trades-stats-item">
+                        <span class="stats-label">Avg RR:</span>
+                        <span class="stats-value">${data.stats.averageRR}</span>
+                    </div>
+                `;
+
+            // إنشاء جدول الصفقات
+            let tradesHtml = `
+                    <div class="trades-table-container">
+                        <table class="trades-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Market</th>
+                                    <th>Type</th>
+                                    <th>Entry Price</th>
+                                    <th>Exit Price</th>
+                                    <th>TP</th>
+                                    <th>SL</th>
+                                    <th>P&L</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                `;
+
+            // فرز الصفقات حسب التاريخ (الأحدث أولاً)
+            const tradesArray = Object.values(data.trades).sort((a, b) => b.timeStamp - a.timeStamp);
+
+            tradesArray.forEach((trade, index) => {
+                const tradeNumber = tradesArray.length - index;
+                const tradeType = trade.TradeType === 1 ? 'Buy' : 'Sell';
+                const tradeTypeClass = trade.TradeType === 1 ? 'trade-type-buy' : 'trade-type-sell';
+
+                // حساب الربح/الخسارة
+                let pnl = 0;
+                let pnlClass = '';
+                if (trade.TradeType === 1) { // Buy
+                    pnl = trade.ExitPrice - trade.price;
+                } else { // Sell
+                    pnl = trade.price - trade.ExitPrice;
+                }
+
+                // تحديد إذا كان الصفقة رابحة أم خاسرة
+                const isWin = (trade.TradeType === 1 && trade.ExitPrice > trade.price) ||
+                    (trade.TradeType === 2 && trade.ExitPrice < trade.price);
+
+                pnlClass = isWin ? 'positive' : 'negative';
+
+                // تنسيق التاريخ
+                const tradeDate = new Date(trade.timeStamp);
+                const formattedDate = tradeDate.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                });
+                const formattedTime = tradeDate.toLocaleTimeString('en-US', {
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+
+                tradesHtml += `
+                        <tr>
+                            <td>${tradeNumber}</td>
+                            <td>${trade.market}</td>
+                            <td><span class="${tradeTypeClass}">${tradeType}</span></td>
+                            <td>${trade.price.toFixed(2)}</td>
+                            <td>${trade.ExitPrice.toFixed(2)}</td>
+                            <td>${trade.TP.toFixed(2)}</td>
+                            <td>${trade.SL.toFixed(2)}</td>
+                            <td class="trade-pnl ${pnlClass}">${pnl.toFixed(2)}</td>
+                            <td>${formattedDate}<br><small>${formattedTime}</small></td>
+                        </tr>
+                    `;
+            });
+
+            tradesHtml += `
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+
+            modalContent.innerHTML = tradesHtml;
+        }
+
+        // دالة لتحديث واجهة المستخدم عند تسجيل الدخول
+        async function updateUIForLoggedInUser(account) {
+            // إخفاء زر تسجيل الدخول باستخدام قوقل
+            const link = 'https://trading-signals-private.vercel.app/api/CalculateStats?username=' + account.username.toString();
+            const status = await fetch(link);
+            const statusData = await status.json();
+
+            // تخزين بيانات الصفقات
+            tradesData = statusData;
+
+            getAccountStatus(statusData);
+
+            document.querySelector('.google-login-container').style.display = 'none';
+
+            // إظهار النص البديل
+            document.getElementById('logged-in-message').style.display = 'block';
+
+            // إخفاء زر Logout القديم
+            document.querySelector('.logout-btn-container').style.display = 'none';
+
+            // إظهار أيقونة الإعدادات
+            document.getElementById('settings-icon').style.display = 'flex';
+
+            // إظهار أيقونة سجل الصفقات
+            document.getElementById('trades-history-icon').style.display = 'flex';
+
+            // إخفاء ملاحظة تسجيل الدخول
+            document.getElementById('login-notice').style.display = 'none';
+
+            // تحديث بيانات الحساب
+            document.getElementById('trader-name').textContent = account.name || '-';
+
+            let memberFrom = account.signupTimestamp;
+            if (memberFrom) {
+                memberFrom = compareTimeStaWithNow(memberFrom).toFixed(0);
+                document.getElementById('member-from').textContent = (memberFrom > 1) ? memberFrom + " days" : memberFrom + " day";
+            }
+        }
+
+        // دوال التخزين المحلي باستخدام localStorage
         async function GetKey(key) {
             return localStorage.getItem(key);
         }
@@ -1469,39 +2009,7 @@
             hideLoadingAnimation(); // إخفاء أنيميشن التحميل بعد الانتهاء
         }
 
-        // دالة لتحديث واجهة المستخدم عند تسجيل الدخول
-        async function updateUIForLoggedInUser(account) {
-            // إخفاء زر تسجيل الدخول باستخدام قوقل
-            const link = 'https://trading-signals-private.vercel.app/api/CalculateStats?username=' + account.username.toString();
-            const status = await fetch(link);
-            const statusData = await status.json();
-            getAccountStatus(statusData);
-
-            document.querySelector('.google-login-container').style.display = 'none';
-
-            // إظهار النص البديل
-            document.getElementById('logged-in-message').style.display = 'block';
-
-            // إخفاء زر Logout القديم
-            document.querySelector('.logout-btn-container').style.display = 'none';
-
-            // إظهار أيقونة الإعدادات
-            document.getElementById('settings-icon').style.display = 'flex';
-
-            // إخفاء ملاحظة تسجيل الدخول
-            document.getElementById('login-notice').style.display = 'none';
-
-            // تحديث بيانات الحساب
-            document.getElementById('trader-name').textContent = account.name || '-';
-
-            let memberFrom = account.signupTimestamp;
-            if (memberFrom) {
-                memberFrom = compareTimeStaWithNow(memberFrom).toFixed(0);
-                document.getElementById('member-from').textContent = (memberFrom > 1) ? memberFrom + " days" : memberFrom + " day";
-            }
-        }
-        function getAccountStatus(Status)
-        {
+        function getAccountStatus(Status) {
             console.log(Status);
             document.getElementById('win-rate').innerText = Status.stats.winRate + "%";
             document.getElementById('avg-rr').innerText = Status.stats.averageRR;
@@ -1527,6 +2035,9 @@
             // إخفاء أيقونة الإعدادات
             document.getElementById('settings-icon').style.display = 'none';
 
+            // إخفاء أيقونة سجل الصفقات
+            document.getElementById('trades-history-icon').style.display = 'none';
+
             // إخفاء القائمة إذا كانت مفتوحة
             document.getElementById('settings-menu').classList.remove('show');
 
@@ -1536,6 +2047,9 @@
             // إعادة تعيين بيانات الحساب
             document.getElementById('trader-name').textContent = '-';
             document.getElementById('member-from').textContent = '-';
+
+            // مسح بيانات الصفقات
+            tradesData = null;
         }
 
         // دالة معالجة تسجيل الخروج
@@ -1788,6 +2302,7 @@
             const settingsMenu = document.getElementById('settings-menu');
             const logoutOption = document.getElementById('logout-option');
             const deleteOption = document.getElementById('delete-option');
+            const tradesHistoryIcon = document.getElementById('trades-history-icon');
 
             // إظهار/إخفاء القائمة عند النقر على أيقونة الإعدادات
             settingsIcon.addEventListener('click', function (e) {
@@ -1817,11 +2332,14 @@
                 showConfirmModal('delete', handleDeleteAccount);
             });
 
+            // فتح نافذة سجل الصفقات عند النقر على الأيقونة
+            tradesHistoryIcon.addEventListener('click', function () {
+                showTradesModal();
+            });
+
             // التحقق من حالة تسجيل الدخول عند تحميل الصفحة
             checkLoginStatus();
-        });</script>
+        });
+    </script>
 </body>
 </html>
-
-
-
