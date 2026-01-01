@@ -2081,7 +2081,44 @@
                         </tr>
                     `;
             });
+            const MissingTrades = currentStatusData.MissingTrades;
 
+            Object.keys(MissingTrades).forEach((key, index) => {
+                const trade = MissingTrades[key];
+                const tradeNumber = parseInt(key) + 1;
+                const tradeType = trade.TradeType === 1 ? 'Buy' : 'Sell';
+                const tradeTypeClass = trade.TradeType === 1 ? 'trade-type-buy' : 'trade-type-sell';
+
+                // حساب النتيجة
+                let result = 'N/A';
+                let resultClass = '';
+                if (trade.ExitPrice) {
+                    result = 'Missing';
+                    if (trade.TradeType === 1) { // Buy
+                        resultClass = trade.ExitPrice > trade.price ? 'trade-profit' : 'trade-loss';
+                    } else { // Sell
+                        resultClass = trade.ExitPrice < trade.price ? 'trade-profit' : 'trade-loss';
+                    }
+                }
+
+                // تحويل الطابع الزمني إلى تاريخ
+                const tradeDate = new Date(trade.timeStamp);
+                const formattedDate = tradeDate.toLocaleString();
+
+                html += `
+                            <tr>
+                                <td>${tradeNumber}</td>
+                                <td>${trade.market}</td>
+                                <td class="${tradeTypeClass}">${tradeType}</td>
+                                <td>${trade.price.toFixed(3)}</td>
+                                <td>${trade.ExitPrice ? trade.ExitPrice.toFixed(3) : 'N/A'}</td>
+                                <td>${trade.TP.toFixed(3)}</td>
+                                <td>${trade.SL.toFixed(3)}</td>
+                                <td class="${resultClass}">${result}</td>
+                                <td>${formattedDate}</td>
+                            </tr>
+                        `;
+            });
             html += `
                         </tbody>
                     </table>
@@ -2155,4 +2192,5 @@
     </script>
 </body>
 </html>
+
 
