@@ -2020,7 +2020,7 @@
         function populateTradesHistory() {
             const tradesBody = document.getElementById('trades-history-body');
 
-            if (!currentStatusData || !currentStatusData.trades || Object.keys(currentStatusData.trades).length === 0) {
+            if (!currentStatusData || ((!currentStatusData.trades || Object.keys(currentStatusData.trades).length === 0) && (!currentStatusData.MissingTrades || Object.keys(currentStatusData.MissingTrades).length === 0))) {
                 tradesBody.innerHTML = '<div class="no-trades">No trades history available</div>';
                 return;
             }
@@ -2192,5 +2192,6 @@
     </script>
 </body>
 </html>
+
 
 
