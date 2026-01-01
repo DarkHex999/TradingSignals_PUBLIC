@@ -48,12 +48,30 @@
             z-index: 10001;
             transform: scale(0.9);
             opacity: 0;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: fadeInContent 0.3s ease forwards;
         }
 
         .trades-history-modal.show .trades-history-content {
             transform: scale(1);
             opacity: 1;
+        }
+
+        .trades-history-modal.hiding .trades-history-content {
+            transform: scale(0.9);
+            opacity: 0;
+        }
+
+        @keyframes fadeInContent {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         .trades-history-header {
@@ -95,8 +113,8 @@
 
         .trades-history-body {
             padding: 20px;
-            overflow-y: auto;
-            flex: 1;
+            overflow: visible;
+            max-height: none;
         }
 
         .trades-table {
@@ -112,7 +130,7 @@
             }
 
             .trades-table th {
-                padding: 15px;
+                padding: 10px;
                 text-align: left;
                 color: var(--dark-blue);
                 font-weight: 600;
@@ -120,7 +138,7 @@
             }
 
             .trades-table td {
-                padding: 15px;
+                padding: 10px;
                 border-bottom: 1px solid var(--medium-gray);
                 color: var(--text-gray);
             }
@@ -129,25 +147,52 @@
                 background: rgba(10, 26, 53, 0.03);
             }
 
-        .trade-type-buy {
-            color: #4CAF50;
+        /* تصميم جديد للنتائج */
+        .result-badge {
+            display: inline-block;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
             font-weight: 600;
+            text-align: center;
+            min-width: 80px;
         }
 
-        .trade-type-sell {
-            color: #F44336;
+            .result-badge.profit {
+                background-color: rgba(76, 175, 80, 0.15);
+                color: #2e7d32;
+                border: 1px solid #4CAF50;
+            }
+
+            .result-badge.missing,
+            .result-badge.loss {
+                background-color: rgba(244, 67, 54, 0.15);
+                color: #c62828;
+                border: 1px solid #F44336;
+            }
+
+        /* تصميم جديد للنوع */
+        .type-badge {
+            display: inline-block;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
             font-weight: 600;
+            text-align: center;
+            min-width: 70px;
         }
 
-        .trade-profit {
-            color: #4CAF50;
-            font-weight: 600;
-        }
+            .type-badge.buy {
+                background-color: rgba(76, 175, 80, 0.15);
+                color: #2e7d32;
+                border: 1px solid #4CAF50;
+            }
 
-        .trade-loss {
-            color: #F44336;
-            font-weight: 600;
-        }
+            .type-badge.sell {
+                background-color: rgba(244, 67, 54, 0.15);
+                color: #c62828;
+                border: 1px solid #F44336;
+            }
 
         .no-trades {
             text-align: center;
@@ -181,7 +226,7 @@
             gap: 10px;
         }
 
-        .settings-icon, .trades-history-icon {
+        .settings-icon, .trades-history-icon, .missing-trades-icon {
             width: 35px;
             height: 35px;
             background: rgba(10, 26, 53, 0.1);
@@ -200,7 +245,11 @@
             font-size: 1.2em;
         }
 
-            .settings-icon:hover, .trades-history-icon:hover {
+        .missing-trades-icon {
+            font-size: 1.1em;
+        }
+
+            .settings-icon:hover, .trades-history-icon:hover, .missing-trades-icon:hover {
                 background: rgba(10, 26, 53, 0.2);
                 color: var(--dark-blue);
                 transform: rotate(15deg);
@@ -605,6 +654,13 @@
             .account-settings {
                 bottom: 15px;
                 right: 15px;
+            }
+
+            .result-badge,
+            .type-badge {
+                padding: 4px 10px;
+                font-size: 0.8em;
+                min-width: 60px;
             }
         }
 
@@ -1406,7 +1462,7 @@
         <div class="trades-history-backdrop" id="trades-history-backdrop"></div>
         <div class="trades-history-content">
             <div class="trades-history-header">
-                <h2>Trades History</h2>
+                <h2 id="trades-title">Trades History</h2>
                 <button class="trades-history-close" id="trades-history-close">&times;</button>
             </div>
             <div class="trades-history-body" id="trades-history-body">
@@ -1493,8 +1549,12 @@
                     <!-- أيقونات الإعدادات وسجل الصفقات -->
                     <div class="account-settings">
                         <div class="trades-history-icon" id="trades-history-icon">
-                            <i class="fa-regular fa-eye"></i>
+                            <i class="fas fa-chart-line"></i>
                             <div class="trades-count-badge" id="trades-count-badge" style="display: none;">0</div>
+                        </div>
+                        <div class="missing-trades-icon" id="missing-trades-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <div class="trades-count-badge" id="missing-count-badge" style="display: none;">0</div>
                         </div>
                         <div class="settings-icon" id="settings-icon">
                             <i class="fas fa-cog"></i>
@@ -1602,6 +1662,7 @@
         // متغيرات عالمية
         let currentStatusData = null;
         let scrollPosition = 0;
+        let isClosingTradesHistory = false;
 
         // دوال التخزين المحلي باستخدام localStorage
         async function GetKey(key) {
@@ -1694,6 +1755,7 @@
             document.querySelector('.logout-btn-container').style.display = 'none';
             document.getElementById('settings-icon').style.display = 'flex';
             document.getElementById('trades-history-icon').style.display = 'flex';
+            document.getElementById('missing-trades-icon').style.display = 'flex';
             document.getElementById('login-notice').style.display = 'none';
 
             document.getElementById('trader-name').textContent = account.name || '-';
@@ -1705,17 +1767,24 @@
             }
 
             // تحديث عدد الصفقات في البادج
-            if (currentStatusData && currentStatusData.trades) {
-                const tradesCount = Object.keys(currentStatusData.trades).length + Object.keys(currentStatusData.MissingTrades).length;
+            if (currentStatusData) {
+                const tradesCount = currentStatusData.trades ? Object.keys(currentStatusData.trades).length : 0;
+                const missingTradesCount = currentStatusData.MissingTrades ? Object.keys(currentStatusData.MissingTrades).length : 0;
+
                 const badge = document.getElementById('trades-count-badge');
+                const missingBadge = document.getElementById('missing-count-badge');
+
                 badge.textContent = tradesCount;
                 badge.style.display = tradesCount > 0 ? 'flex' : 'none';
+
+                missingBadge.textContent = missingTradesCount;
+                missingBadge.style.display = missingTradesCount > 0 ? 'flex' : 'none';
             }
         }
 
         function getAccountStatus(Status) {
             console.log(Status);
-            console.log('missing trades:' , Status.MissingTrades);            
+            console.log('missing trades:', Status.MissingTrades);
             document.getElementById('win-rate').innerText = Status.stats.winRate + "%";
             document.getElementById('avg-rr').innerText = Status.stats.averageRR;
             document.getElementById('losing-trades').innerText = Status.stats.loseTradesCount;
@@ -1733,6 +1802,7 @@
             document.querySelector('.logout-btn-container').style.display = 'none';
             document.getElementById('settings-icon').style.display = 'none';
             document.getElementById('trades-history-icon').style.display = 'none';
+            document.getElementById('missing-trades-icon').style.display = 'none';
             document.getElementById('settings-menu').classList.remove('show');
             document.getElementById('login-notice').style.display = 'block';
 
@@ -1741,6 +1811,7 @@
 
             // إخفاء بادج الصفقات
             document.getElementById('trades-count-badge').style.display = 'none';
+            document.getElementById('missing-count-badge').style.display = 'none';
 
             // إغلاق نافذة سجل الصفقات إذا كانت مفتوحة
             closeTradesHistory();
@@ -1986,10 +2057,12 @@
         }
 
         // دوال التحكم في نافذة سجل الصفقات
-        function openTradesHistory() {
-            if (!currentStatusData || !currentStatusData.trades) {
+        function openTradesHistory(openType) {
+            if (!currentStatusData) {
                 return;
             }
+
+            if (isClosingTradesHistory) return;
 
             // حفظ موضع التمرير الحالي
             scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
@@ -2000,104 +2073,84 @@
 
             // إظهار النافذة
             const modal = document.getElementById('trades-history-modal');
+            modal.classList.remove('hiding');
             modal.classList.add('show');
 
             // ملء بيانات الصفقات
-            populateTradesHistory();
+            populateTradesHistory(openType);
         }
 
         function closeTradesHistory() {
-            // إغلاق النافذة
+            if (isClosingTradesHistory) return;
+
+            // إغلاق النافذة مع انيميشن
             const modal = document.getElementById('trades-history-modal');
+            isClosingTradesHistory = true;
+            modal.classList.add('hiding');
             modal.classList.remove('show');
 
-            // إعادة التمرير وفك القفل
-            document.body.classList.remove('no-scroll');
-            document.body.style.top = '';
-            window.scrollTo(0, scrollPosition);
+            setTimeout(() => {
+                // إعادة التمرير وفك القفل
+                document.body.classList.remove('no-scroll');
+                document.body.style.top = '';
+                window.scrollTo(0, scrollPosition);
+
+                modal.classList.remove('hiding');
+                isClosingTradesHistory = false;
+            }, 300);
         }
 
-        function populateTradesHistory() {
+        function populateTradesHistory(openType) {
             const tradesBody = document.getElementById('trades-history-body');
-
-            if (!currentStatusData || ((!currentStatusData.trades || Object.keys(currentStatusData.trades).length === 0) && (!currentStatusData.MissingTrades || Object.keys(currentStatusData.MissingTrades).length === 0))) {
+            if (openType === 'trades') {
+                document.getElementById('trades-title').innerText = 'Trades History';
+            }
+            else if (openType === 'missing') {
+                document.getElementById('trades-title').innerText = 'Missing Trades History';
+            }
+            if (!currentStatusData || ((!currentStatusData.trades || Object.keys(currentStatusData.trades).length === 0) && openType === 'trades' || openType === 'missing' && (!currentStatusData.MissingTrades || Object.keys(currentStatusData.MissingTrades).length === 0))) {
                 tradesBody.innerHTML = '<div class="no-trades">No trades history available</div>';
                 return;
             }
 
-            const trades = currentStatusData.trades;
+            const trades = currentStatusData.trades || {};
+            const missingTrades = currentStatusData.MissingTrades || {};
             let html = `
-                    <table class="trades-table">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Market</th>
-                                <th>Type</th>
-                                <th>Entry Price</th>
-                                <th>Exit Price</th>
-                                <th>TP</th>
-                                <th>SL</th>
-                                <th>Result</th>
-                                <th>Time</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                `;
-
-            Object.keys(trades).forEach((key, index) => {
-                const trade = trades[key];
-                const tradeNumber = parseInt(key) + 1;
-                const tradeType = trade.TradeType === 1 ? 'Buy' : 'Sell';
-                const tradeTypeClass = trade.TradeType === 1 ? 'trade-type-buy' : 'trade-type-sell';
-
-                // حساب النتيجة
-                let result = 'N/A';
-                let resultClass = '';
-                if (trade.ExitPrice) {
-                    if (trade.TradeType === 1) { // Buy
-                        result = trade.ExitPrice > trade.price ? 'Profit' : 'Loss';
-                        resultClass = trade.ExitPrice > trade.price ? 'trade-profit' : 'trade-loss';
-                    } else { // Sell
-                        result = trade.ExitPrice < trade.price ? 'Profit' : 'Loss';
-                        resultClass = trade.ExitPrice < trade.price ? 'trade-profit' : 'trade-loss';
-                    }
-                }
-
-                // تحويل الطابع الزمني إلى تاريخ
-                const tradeDate = new Date(trade.timeStamp);
-                const formattedDate = tradeDate.toLocaleString();
-
-                html += `
-                        <tr>
-                            <td>${tradeNumber}</td>
-                            <td>${trade.market}</td>
-                            <td class="${tradeTypeClass}">${tradeType}</td>
-                            <td>${trade.price.toFixed(3)}</td>
-                            <td>${trade.ExitPrice ? trade.ExitPrice.toFixed(3) : 'N/A'}</td>
-                            <td>${trade.TP.toFixed(3)}</td>
-                            <td>${trade.SL.toFixed(3)}</td>
-                            <td class="${resultClass}">${result}</td>
-                            <td>${formattedDate}</td>
-                        </tr>
+                        <table class="trades-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Market</th>
+                                    <th>Type</th>
+                                    <th>Entry Price</th>
+                                    <th>Exit Price</th>
+                                    <th>TP</th>
+                                    <th>SL</th>
+                                    <th>Result</th>
+                                    <th>Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                     `;
-            });
-            const MissingTrades = currentStatusData.MissingTrades;
 
-            Object.keys(MissingTrades).forEach((key, index) => {
-                const trade = MissingTrades[key];
-                const tradeNumber = parseInt(key) + 1;
+            let tradeCounter = 1;
+
+            // الصفقات العادية
+            if (openType === 'trades')
+            Object.keys(trades).forEach((key) => {
+                const trade = trades[key];
                 const tradeType = trade.TradeType === 1 ? 'Buy' : 'Sell';
-                const tradeTypeClass = trade.TradeType === 1 ? 'trade-type-buy' : 'trade-type-sell';
 
                 // حساب النتيجة
                 let result = 'N/A';
                 let resultClass = '';
                 if (trade.ExitPrice) {
-                    result = 'Missing';
                     if (trade.TradeType === 1) { // Buy
-                        resultClass = trade.ExitPrice > trade.price ? 'trade-profit' : 'trade-loss';
+                        result = trade.ExitPrice > trade.price ? 'Win' : 'Loss';
+                        resultClass = trade.ExitPrice > trade.price ? 'profit' : 'loss';
                     } else { // Sell
-                        resultClass = trade.ExitPrice < trade.price ? 'trade-profit' : 'trade-loss';
+                        result = trade.ExitPrice < trade.price ? 'Win' : 'Loss';
+                        resultClass = trade.ExitPrice < trade.price ? 'profit' : 'loss';
                     }
                 }
 
@@ -2107,22 +2160,59 @@
 
                 html += `
                             <tr>
-                                <td>${tradeNumber}</td>
+                                <td>${tradeCounter}</td>
                                 <td>${trade.market}</td>
-                                <td class="${tradeTypeClass}">${tradeType}</td>
+                                <td><span class="type-badge ${tradeType.toLowerCase()}">${tradeType}</span></td>
                                 <td>${trade.price.toFixed(3)}</td>
                                 <td>${trade.ExitPrice ? trade.ExitPrice.toFixed(3) : 'N/A'}</td>
                                 <td>${trade.TP.toFixed(3)}</td>
                                 <td>${trade.SL.toFixed(3)}</td>
-                                <td class="${resultClass}">${result}</td>
+                                <td><span class="result-badge ${resultClass}">${result}</span></td>
                                 <td>${formattedDate}</td>
                             </tr>
                         `;
+                tradeCounter++;
             });
+
+            // الصفقات المفقودة
+            if (openType === 'missing')
+            Object.keys(missingTrades).forEach((key) => {
+                const trade = missingTrades[key];
+                const tradeType = trade.TradeType === 1 ? 'Buy' : 'Sell';
+
+                if (trade.ExitPrice) {
+                    if (trade.TradeType === 1) { // Buy
+                        result = trade.ExitPrice > trade.price ? 'Win' : 'Missing Loss';
+                        resultClass = trade.ExitPrice > trade.price ? 'profit' : 'missing';
+                    } else { // Sell
+                        result = trade.ExitPrice < trade.price ? 'Win' : 'Missing Loss';
+                        resultClass = trade.ExitPrice < trade.price ? 'profit' : 'missing';
+                    }
+                }
+                // تحويل الطابع الزمني إلى تاريخ
+                const tradeDate = new Date(trade.timeStamp);
+                const formattedDate = tradeDate.toLocaleString();
+
+                html += `
+                            <tr>
+                                <td>${tradeCounter}</td>
+                                <td>${trade.market}</td>
+                                <td><span class="type-badge ${tradeType.toLowerCase()}">${tradeType}</span></td>
+                                <td>${trade.price.toFixed(3)}</td>
+                                <td>${trade.ExitPrice ? trade.ExitPrice.toFixed(3) : 'N/A'}</td>
+                                <td>${trade.TP.toFixed(3)}</td>
+                                <td>${trade.SL.toFixed(3)}</td>
+                                <td><span class="result-badge ${resultClass}">${result}</span></td>
+                                <td>${formattedDate}</td>
+                            </tr>
+                        `;
+                tradeCounter++;
+            });
+
             html += `
-                        </tbody>
-                    </table>
-                `;
+                            </tbody>
+                        </table>
+                    `;
 
             tradesBody.innerHTML = html;
         }
@@ -2131,6 +2221,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             const settingsIcon = document.getElementById('settings-icon');
             const tradesHistoryIcon = document.getElementById('trades-history-icon');
+            const missingTradesIcon = document.getElementById('missing-trades-icon');
             const settingsMenu = document.getElementById('settings-menu');
             const logoutOption = document.getElementById('logout-option');
             const deleteOption = document.getElementById('delete-option');
@@ -2147,7 +2238,16 @@
             tradesHistoryIcon.addEventListener('click', function (e) {
                 e.stopPropagation();
                 if (currentStatusData) {
-                    openTradesHistory();
+                    openTradesHistory('trades');
+                }
+                settingsMenu.classList.remove('show');
+            });
+
+            // فتح نافذة سجل الصفقات (نفس الوظيفة للمفقودات)
+            missingTradesIcon.addEventListener('click', function (e) {
+                e.stopPropagation();
+                if (currentStatusData) {
+                    openTradesHistory('missing');
                 }
                 settingsMenu.classList.remove('show');
             });
@@ -2192,7 +2292,3 @@
     </script>
 </body>
 </html>
-
-
-
-
