@@ -1706,7 +1706,7 @@
 
             // تحديث عدد الصفقات في البادج
             if (currentStatusData && currentStatusData.trades) {
-                const tradesCount = Object.keys(currentStatusData.trades).length;
+                const tradesCount = Object.keys(currentStatusData.trades).length + Object.keys(currentStatusData.MissingTrades).length;
                 const badge = document.getElementById('trades-count-badge');
                 badge.textContent = tradesCount;
                 badge.style.display = tradesCount > 0 ? 'flex' : 'none';
@@ -2192,6 +2192,7 @@
     </script>
 </body>
 </html>
+
 
 
 
