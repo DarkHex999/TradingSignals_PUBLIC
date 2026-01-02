@@ -1782,14 +1782,14 @@
             }
         }
 
+
         function getAccountStatus(Status) {
-            console.log(Status);
-            console.log('missing trades:', Status.MissingTrades);
-            document.getElementById('win-rate').innerText = Status.stats.winRate ? Status.stats.winRate : 0 + "%";
-            document.getElementById('avg-rr').innerText = Status.stats.averageRR ? Status.stats.averageRR : 0;
-            document.getElementById('losing-trades').innerText = Status.stats.loseTradesCount ? Status.stats.loseTradesCount : 0;
-            document.getElementById('win-trades').innerText = Status.stats.winTradesCount ? Status.stats.winTradesCount : 0;
-            document.getElementById('trades-count').innerText = Status.stats.tradesCount ? Status.stats.tradesCount : 0;
+            const stats = Status.stats || {};
+            document.getElementById('win-rate').innerText = stats.winRate ? stats.winRate : 0 + "%";
+            document.getElementById('avg-rr').innerText = stats.averageRR ? stats.averageRR : 0;
+            document.getElementById('losing-trades').innerText = stats.loseTradesCount ? stats.loseTradesCount : 0;
+            document.getElementById('win-trades').innerText = stats.winTradesCount ? stats.winTradesCount : 0;
+            document.getElementById('trades-count').innerText = stats.tradesCount ? stats.tradesCount : 0;
         }
 
         // دالة لتحديث واجهة المستخدم عند تسجيل الخروج
@@ -2292,4 +2292,5 @@
     </script>
 </body>
 </html>
+
 
