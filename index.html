@@ -1659,6 +1659,7 @@
             window.addEventListener('resize', () => chart.resize(container.clientWidth, 360));
         }
         // connect phantom wallet
+        let wallet;
         const getProvider = () => window?.solana?.isPhantom ? window.solana : null;
         async function connectWallet() {
             const provider = getProvider();
@@ -1668,20 +1669,28 @@
                 return;
             }
             const resp = await provider.connect();
-
-            console.log(`wallet: ${resp.publicKey.toString()}`);
+            wallet = resp;
+            onConnectWallet();
+            console.log(`wallet:${resp.publicKey.toString()}`);
         }
         async function CheckConnection() {
             const provider = getProvider();
             if (!provider) return;
             try {
                 const resp = await provider.connect({ onlyIfTrusted: true });
+                wallet = resp;
+                onConnectWallet();
                 console.log(`wallet:${resp.publicKey.toString()}`);
-            } catch {}
+            } catch {/* SKIP ERRORS */}
+        }
+        function onConnectWallet() {
+            const CW_Button = document.getElementById('connect-wallet');
+            CW_Button.innerText = 'Connected ' + wallet.publicKey.toString().slice(0,4) + "...";
         }
         CheckConnection();
     </script>
 </body>
 </html>
+
 
 
