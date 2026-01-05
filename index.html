@@ -1716,9 +1716,10 @@
             });
             const data = await res.json();
             const txBase64 = data.transaction;
-            const txBytes = Uint8Array.from(atob(txBase64), c => c.charCodeAt(0));
-            const tx = Transaction.from(txBytes);
-            const txid = await provider.sendAndConfirm(tx);
+            const tx = Transaction.from(Uint8Array.from(atob(txBase64), c => c.charCodeAt(0)));
+            const signedTx = await provider.signTransaction(tx);
+            const txid = await connection.sendRawTransaction(signedTx.serialize());
+            await connection.confirmTransaction(txid, 'finalized');
             console.log("Transaction ID:", txid);
         }
     </script>
