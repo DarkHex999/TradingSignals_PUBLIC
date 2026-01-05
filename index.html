@@ -1717,6 +1717,7 @@
                 })
             );
             tx.feePayer = from;
+            tx.recentBlockhash = (await connection.getLatestBlockhash()).blockhash;
             const signedTransaction = await provider.signTransaction(tx);
             const signedTxBase64 = signedTransaction.serialize().toString('base64');
 
@@ -1725,3 +1726,4 @@
     </script>
 </body>
 </html>
+
