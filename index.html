@@ -1717,8 +1717,10 @@
                 })
             );
             tx.feePayer = from;
-            const sig = await provider.signAndSendTransaction(tx);
-            console.log("TX Signature:", sig.signature);
+            const signedTransaction = await provider.signTransaction(tx);
+            const signedTxBase64 = signedTransaction.serialize().toString('base64');
+
+            console.log("Signed Transaction (Base64):", signedTxBase64);
         }
     </script>
 </body>
