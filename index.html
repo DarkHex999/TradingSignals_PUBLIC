@@ -1689,9 +1689,10 @@
             CW_Button.onclick = null;
         }
         CheckConnection();
+
         // transaction logic
+
         const { Connection, PublicKey, SystemProgram, Transaction, LAMPORTS_PER_SOL } = solanaWeb3;
-        const connection = new Connection("https://api.mainnet-beta.solana.com");
         async function Pay() {
             if (!wallet) {
                 await connectWallet();
@@ -1705,9 +1706,9 @@
                 console.log('provider dosent exist');
                 return;
             }
+
             const from = wallet.publicKey;
             const to = new PublicKey('4W1ikm5b544hCxHDLJF2NyNLeFb2zasmLAA3KiejiDod');
-
             const tx = new Transaction().add(
                 SystemProgram.transfer({
                     fromPubkey: from,
@@ -1716,11 +1717,8 @@
                 })
             );
             tx.feePayer = from;
-            tx.recentBlockhash = (await connection.getLatestBlockhash()).blockhash;
-            const signed = await provider.signTransaction(tx);
-            const sig = await connection.sendRawTransaction(signed.serialize());
-
-            console.log("TX:", sig);
+            const sig = await provider.signAndSendTransaction(tx);
+            console.log("TX Signature:", sig.signature);
         }
     </script>
 </body>
