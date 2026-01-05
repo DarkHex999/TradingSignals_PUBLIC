@@ -1718,6 +1718,7 @@
             const txBase64 = data.transaction;
             const tx = Transaction.from(Uint8Array.from(atob(txBase64), c => c.charCodeAt(0)));
             const signedTx = await provider.signTransaction(tx);
+            const connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl('devnet'));
             const txid = await connection.sendRawTransaction(signedTx.serialize());
             await connection.confirmTransaction(txid, 'finalized');
             console.log("Transaction ID:", txid);
