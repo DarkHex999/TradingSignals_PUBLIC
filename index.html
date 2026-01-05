@@ -1686,12 +1686,13 @@
         function onConnectWallet() {
             const CW_Button = document.getElementById('connect-wallet');
             CW_Button.innerText = 'Connected ' + wallet.publicKey.toString().slice(0,4) + "...";
-            CW_Button.onclick = '';
+            CW_Button.onclick = null;
         }
         CheckConnection();
     </script>
 </body>
 </html>
+
 
 
 
