@@ -1711,11 +1711,11 @@
             const tx = new Transaction().add(
                 SystemProgram.transfer({
                     fromPubkey: from,
-                    feePayer : from,
-                    toPubKey: to,
+                    toPubkey: to,
                     lamports: 0.01 * LAMPORTS_PER_SOL
                 })
             );
+            tx.feePayer = from;
             tx.recentBlockhash = (await connection.getLatestBlockhash()).blockhash;
             const signed = await provider.signTransaction(tx);
             const sig = await connection.sendRawTransaction(signed.serialize());
