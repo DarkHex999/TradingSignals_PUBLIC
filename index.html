@@ -1706,26 +1706,41 @@
                 console.log('provider dosent exist');
                 return;
             }
+            const PayButton = document.getElementById('pay-button');
+            PayButton.innerText = 'Processing...';
+            PayButton.disabled = true;
 
-            const creatorWallet = wallet.publicKey.toBase58();
-
-            const res = await fetch('https://trading-signals-private.vercel.app/api/CreateTransaction', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ creatorWallet })
-            });
-            const data = await res.json();
-            const txBase64 = data.transaction;
-            const tx = Transaction.from(Uint8Array.from(atob(txBase64), c => c.charCodeAt(0)));
-            const signedTx = await provider.signTransaction(tx);
-            console.log(data.Network);
-            const connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl(data.Network));
-            const txid = await connection.sendRawTransaction(signedTx.serialize());
-            await connection.confirmTransaction(txid, 'finalized');
-            console.log("Transaction ID:", txid);
+            try {
+                const creatorWallet = wallet.publicKey.toBase58();
+                const res = await fetch('https://trading-signals-private.vercel.app/api/CreateTransaction', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ creatorWallet })
+                });
+                const data = await res.json();
+                console.log(data.Network);
+                const txBase64 = data.transaction;
+                const tx = Transaction.from(Uint8Array.from(atob(txBase64), c => c.charCodeAt(0)));
+                PayButton.innerText = 'Confirm The Transaction';
+                const signedTx = await provider.signTransaction(tx);
+                const connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl(data.Network));
+                PayButton.innerText = 'Sending To Blockchain....';
+                const txid = await connection.sendRawTransaction(signedTx.serialize());
+                await connection.confirmTransaction(txid, 'finalized');
+                console.log("Transaction ID:", txid);
+            }
+            catch (ex) {
+                console.log(ex);
+            }
+            finally
+            {
+                PayButton.innerText = 'Get Started';
+                PayButton.disabled = false;
+            }
         }
     </script>
 </body>
 </html>
+
 
 
