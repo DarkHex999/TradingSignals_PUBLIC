@@ -975,7 +975,7 @@
                         <p>● Passing Funded Accounts</p>
                         <p>● Crypto signals</p>
                         <p>● Email support</p>
-                        <a href="#" class="btn btn-outline" style="margin-top: 20px;">Get Started</a>
+                        <a onclick="Pay()" class="btn btn-outline" style="margin-top: 20px;">Get Started</a>
                     </div>
                     <div class="funding-option pro-locked">
                         <div class="pro-content">
@@ -1279,7 +1279,7 @@
             </div>
         </div>
     </footer>
-
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
     <script>
         class FundedAccount {
             constructor(balance, maxEquity, minEquity, accountEquity, dailyEquity, closeReason, openTime, closeTime, accountID) {
@@ -1681,19 +1681,47 @@
                 wallet = resp;
                 onConnectWallet();
                 console.log(`wallet:${resp.publicKey.toString()}`);
-            } catch {/* SKIP ERRORS */}
+            } catch {/* SKIP ERRORS */ }
         }
         function onConnectWallet() {
             const CW_Button = document.getElementById('connect-wallet');
-            CW_Button.innerText = 'Connected ' + wallet.publicKey.toString().slice(0,4) + "...";
+            CW_Button.innerText = 'Connected ' + wallet.publicKey.toString().slice(0, 4) + "...";
             CW_Button.onclick = null;
         }
         CheckConnection();
+        // transaction logic
+        const { Connection, PublicKey, SystemProgram, Transaction, LAMPORTS_PER_SOL } = solanaWeb3;
+        const connection = new Connection("https://api.mainnet-beta.solana.com");
+        async function Pay() {
+            if (!wallet) {
+                await connectWallet();
+                if (!wallet) {
+                    console.log('user reject the connection');
+                    return;
+                }
+            }
+            const provider = getProvider();
+            if (!provider) {
+                console.log('provider dosent exist');
+                return;
+            }
+            const from = wallet.publicKey;
+            const to = new PublicKey('4W1ikm5b544hCxHDLJF2NyNLeFb2zasmLAA3KiejiDod');
+
+            const tx = new Transaction().add(
+                SystemProgram.transfer({
+                    fromPubkey: from,
+                    feePayer : from,
+                    toPubKey: to,
+                    lamports: 0.01 * LAMPORTS_PER_SOL
+                })
+            );
+            tx.recentBlockhash = (await connection.getLatestBlockhash()).blockhash;
+            const signed = await provider.signTransaction(tx);
+            const sig = await connection.sendRawTransaction(signed.serialize());
+
+            console.log("TX:", sig);
+        }
     </script>
 </body>
 </html>
-
-
-
-
-
