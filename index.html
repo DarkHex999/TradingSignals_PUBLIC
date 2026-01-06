@@ -849,7 +849,69 @@
             color: rgba(249, 205, 0, 1);
             text-shadow: 0 0 8px rgba(249, 205, 0, 0.6);
         }
+        .popup-icon {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
 
+        /* Popup message styles */
+        .popup-message {
+            background-color: var(--dark-blue);
+            color: #fff;
+            padding: 15px;
+            border-radius: 15px;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            width: 350px; /* عرض ثابت أو يمكن استخدام max-width */
+            box-sizing: border-box;
+        }
+
+        /* Header section with icon and title */
+        .popup-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .popup-title {
+            margin: 0;
+            font-size: 1.1em;
+            font-weight: bold;
+            flex-grow: 1;
+            padding-left: 8px; /* padding خفيف بين الصورة والعنوان */
+        }
+
+        .popup-body {
+            padding-top: 8px;
+            line-height: 1.4;
+        }
+
+        .popup-message .timeline {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background-color: #e6b800;
+            width: 100%;
+        }
+
+        /* Container for popup messages */
+        #popup-container {
+            position: fixed;
+            bottom: 40px;
+            right: 20px; /* تغيير لليمين بدلاً من الوسط */
+            z-index: 1000;
+            max-width: 400px; /* أقصى عرض */
+        }
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -950,7 +1012,8 @@
             </div>
         </div>
     </header>
-
+    <!-- Container for popup messages -->
+    <div id="popup-container"></div>
     <section class="hero">
         <div class="container">
             <h2>AI-POWERED TRADING SIGNALS</h2>
@@ -1658,6 +1721,76 @@
 
             window.addEventListener('resize', () => chart.resize(container.clientWidth, 360));
         }
+        function showPopupMessage(title, text, iconSrc) {
+            const container = document.getElementById('popup-container');
+            const popup = document.createElement('div');
+            popup.className = 'popup-message';
+            popup.style.opacity = "0";
+            popup.style.transform = "translateY(20px)";
+
+            // إنشاء الهيكل الجديد
+            const popupContent = document.createElement('div');
+
+            // Header section
+            const header = document.createElement('div');
+            header.className = 'popup-header';
+
+            // Create icon element
+            const icon = document.createElement('img');
+            icon.className = 'popup-icon';
+            icon.src = iconSrc;
+
+            // Create title element
+            const titleEl = document.createElement('div');
+            titleEl.className = 'popup-title';
+            titleEl.textContent = title;
+
+            header.appendChild(icon);
+            header.appendChild(titleEl);
+
+            // Body section
+            const body = document.createElement('div');
+            body.className = 'popup-body';
+            body.textContent = text;
+
+            // Add to content
+            popupContent.appendChild(header);
+            popupContent.appendChild(body);
+
+            // Add content to popup
+            popup.appendChild(popupContent);
+
+            // Create timeline element
+            const timeline = document.createElement('div');
+            timeline.className = 'timeline';
+            popup.appendChild(timeline);
+
+            container.appendChild(popup);
+
+            // Force reflow then fade in
+            requestAnimationFrame(() => {
+                popup.style.opacity = "1";
+                popup.style.transform = "translateY(0)";
+            });
+
+            // Animate timeline shrinking over 1.5 seconds
+            timeline.style.transition = "width 2.1s linear";
+            timeline.offsetWidth; // force reflow
+            timeline.style.width = "0";
+
+            // بعد 1.5 ثانية ابدأ التلاشي
+            setTimeout(() => {
+                popup.style.opacity = "0";
+                popup.style.transform = "translateY(-20px)";
+            }, 2100);
+
+            // إزالة العنصر بعد انتهاء تأثير التلاشي (0.5 ثانية)
+            setTimeout(() => {
+                if (container.contains(popup)) {
+                    container.removeChild(popup);
+                }
+            }, 2600);
+        }
         // connect phantom wallet
         let wallet;
         const getProvider = () => window?.solana?.isPhantom ? window.solana : null;
@@ -1665,6 +1798,7 @@
             const provider = getProvider();
 
             if (!provider) {
+                showPopupMessage("Download Required", "Download Phantom Wallet Extension", "https://mintcdn.com/phantom-e50e2e68/fkWrmnMWhjoXSGZ9/resources/images/Phantom_SVG_Icon.svg?w=1100&fit=max&auto=format&n=fkWrmnMWhjoXSGZ9&q=85&s=d9602893116f9314145e2a303d675ccc");
                 console.log('wallet dose not exist');
                 return;
             }
@@ -1732,8 +1866,7 @@
             catch (ex) {
                 console.log(ex);
             }
-            finally
-            {
+            finally {
                 PayButton.innerText = 'Get Started';
                 PayButton.disabled = false;
             }
@@ -1741,7 +1874,3 @@
     </script>
 </body>
 </html>
-
-
-
-
