@@ -1866,8 +1866,17 @@
                     body: JSON.stringify({ signedTxBase64 })
                 });
                 data = await res.json();
-                const txid = data.txid;
-                console.log("Transaction ID:", txid);
+                try {
+                    if (!data.txid)
+                        throw new Error(data.message);
+                    const txid = data.txid;
+                    console.log("Transaction ID:", txid);
+                    showPopupMessage('Transaction', `Done Successfully`, "https://icons.veryicon.com/png/o/internet--web/online-finance/transaction.png");
+                }
+                catch(ex)
+                {
+                    showPopupMessage('Transaction Error', `${ex}`, "https://www.freeiconspng.com/uploads/error-icon-4.png");
+                }
             }
             catch (ex) {
                 console.log(ex);
