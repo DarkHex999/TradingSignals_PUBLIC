@@ -849,6 +849,7 @@
             color: rgba(249, 205, 0, 1);
             text-shadow: 0 0 8px rgba(249, 205, 0, 0.6);
         }
+
         .popup-icon {
             width: 24px;
             height: 24px;
@@ -912,6 +913,7 @@
             z-index: 1000;
             max-width: 400px; /* أقصى عرض */
         }
+
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -1825,8 +1827,7 @@
         CheckConnection();
 
         // transaction logic
-
-        const { Connection, PublicKey, SystemProgram, Transaction, LAMPORTS_PER_SOL } = solanaWeb3;
+        const { PublicKey, SystemProgram, Transaction, LAMPORTS_PER_SOL } = solanaWeb3;
         async function Pay() {
             if (!wallet) {
                 await connectWallet();
@@ -1846,21 +1847,26 @@
 
             try {
                 const creatorWallet = wallet.publicKey.toBase58();
-                const res = await fetch('https://trading-signals-private.vercel.app/api/CreateTransaction', {
+                let res = await fetch('https://trading-signals-private.vercel.app/api/CreateTransaction', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ creatorWallet })
                 });
-                const data = await res.json();
+                let data = await res.json();
                 console.log(data.Network);
                 const txBase64 = data.transaction;
                 const tx = Transaction.from(Uint8Array.from(atob(txBase64), c => c.charCodeAt(0)));
                 PayButton.innerText = 'Confirm The Transaction';
                 const signedTx = await provider.signTransaction(tx);
-                const connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl(data.Network));
                 PayButton.innerText = 'Sending To Blockchain....';
-                const txid = await connection.sendRawTransaction(signedTx.serialize());
-                await connection.confirmTransaction(txid, 'finalized');
+                const signedTxBase64 = btoa(String.fromCharCode(...signedTx.serialize()));
+                res = await fetch('https://trading-signals-private.vercel.app/api/ConfirmTransaction', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ signedTxBase64 })
+                });
+                data = await res.json();
+                const txid = data.txid;
                 console.log("Transaction ID:", txid);
             }
             catch (ex) {
