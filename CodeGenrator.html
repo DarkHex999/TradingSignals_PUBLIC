@@ -920,7 +920,7 @@
                 })
             });
             const data = await req.json();
-            giftKeys = data;
+            giftKeys = data.userKeys;
             console.log(giftKeys);
             updateKeysTable();
             return giftKeys;
@@ -1359,4 +1359,3 @@
     </script>
 </body>
 </html>
-
