@@ -915,7 +915,7 @@
                 body:JSON.stringify({
                     ActionType:'GetUserKeys',
                     email,
-                    Username:username,
+                    username,
                     UID
                 })
             });
@@ -949,7 +949,7 @@
                     Wallet
                 })
             });
-            return req;      
+            return req;
         }
         async function EditKey(email , username , UID , KeyID , Key , Wallet) {
             if(NotJoinedIn|| !email || !username || !UID || !KeyID || !Key || !Wallet)
