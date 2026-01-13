@@ -1141,11 +1141,10 @@
 
         async function handleConfirmationYes() {
             if (currentAction === 'delete' && currentIndex !== null) {
-                const req = await DeleteKey(email , username , UID , KeyID);
+                const req = await DeleteKey(email , username , UID , giftKeys[currentIndex].KeyID);
                 if(!req){
                     showPopupMessage('Error Alert' , 'failed to delete Key' , 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png');
                     return;
-
                 }
                 giftKeys.splice(currentIndex, 1);
                 localStorage.setItem('giftKeys', JSON.stringify(giftKeys));
@@ -1154,7 +1153,7 @@
             } else if (currentAction === 'update' && currentIndex !== null) {
                 confirmationCallback = function () {
                     const wallet = document.getElementById('wallet-input').value.trim();
-                    giftKeys[currentIndex].wallet = wallet;
+                    giftKeys[currentIndex].Wallet = wallet;
                     localStorage.setItem('giftKeys', JSON.stringify(giftKeys));
                     updateKeysTable();
                     closePopup();
