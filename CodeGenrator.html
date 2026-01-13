@@ -1232,12 +1232,12 @@
             } else {
                 const req = await AddKey(email , username , UID , key , wallet);
                 const data = await req.json();
-                console.log('req' , data);
+                console.log('req:' , data);
                 if(!req){
                     showPopupMessage('failed to Add new Key' , 'Error Alert' , 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png');
                     return;
                 }
-                giftKeys.push({ key, wallet });
+                giftKeys.push({ ...data.newKey });
             }
 
             localStorage.setItem('giftKeys', JSON.stringify(giftKeys));
