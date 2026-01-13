@@ -981,6 +981,7 @@
                 method:'POST',
                 headers:{'Content-Type':'application/json'},
                 body:JSON.stringify({
+                    ActionType:'DeleteKey',
                     email,
                     username,
                     UID,
@@ -1121,7 +1122,7 @@
 
             const key = giftKeys[index];
             document.getElementById('confirmation-title').textContent = 'Delete Key';
-            document.getElementById('confirmation-message').textContent = `Are you sure you want to delete the key "${key.key}"?`;
+            document.getElementById('confirmation-message').textContent = `Are you sure you want to delete the key "${key.Key}"?`;
 
             document.getElementById('confirmation-overlay').classList.add('active');
             document.getElementById('confirmation-popup').classList.add('active');
