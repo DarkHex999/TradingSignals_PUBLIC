@@ -888,12 +888,15 @@
         let currentAction = null;
         let currentIndex = null;
         let NotJoinedIn = false;
+        const email = localStorage.getItem('email');
+        const username = localStorage.getItem('username');
+        const UID = localStorage.getItem('UID');
 
         document.addEventListener('DOMContentLoaded', function () {
             updateKeysTable();
             setupEventListeners();
             setupHeaderEffect();
-            getKeys();
+            getKeys(email , username , UID);
         });
         async function getKeys(email , username , UID) {
             if(!email || !username || !UID){
@@ -1136,15 +1139,12 @@
         }
 
         async function handleConfirmationYes() {
-            const email = localStorage.getItem('email');
-            const username = localStorage.getItem('username');
-            const UID = localStorage.getItem('UID');
             if (currentAction === 'delete' && currentIndex !== null) {
                 const req = await DeleteKey(email , username , UID , KeyID);
                 if(!req){
                     showPopupMessage('Error Alert' , 'failed to delete Key' , 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png');
                     return;
-                    
+
                 }
                 giftKeys.splice(currentIndex, 1);
                 localStorage.setItem('giftKeys', JSON.stringify(giftKeys));
@@ -1219,9 +1219,6 @@
                 showUpdateConfirmation(existingIndex, wallet);
                 return;
             }
-            const email = localStorage.getItem('email');
-            const username = localStorage.getItem('username');
-            const UID = localStorage.getItem('UID');
             if (isEditing && editingIndex >= 0) { // edit & save keys flow
                 const KeyID = giftKeys[editingIndex].KeyID;
                 const req  = await EditKey(email , username , UID , KeyID , key , wallet);
