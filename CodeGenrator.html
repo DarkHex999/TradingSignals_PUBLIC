@@ -1223,6 +1223,8 @@
             if (isEditing && editingIndex >= 0) { // edit & save keys flow
                 const KeyID = giftKeys[editingIndex].KeyID;
                 const req  = await EditKey(email , username , UID , KeyID , key , wallet);
+                const data = await req.json();
+                console.log('edited key:' , data);
                 if(!req) {
                     showPopupMessage('failed to Edit Key' , 'Error Alert' , 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png');
                     return;
