@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Signals | Gift Keys Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="https://raw.githubusercontent.com/DarkHex999/TradingSignals_PUBLIC/refs/heads/main/logo.ico">
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
+
+    <style>
+        :root {
+            --dark-blue: #0a1a35;
+            --blue: #1a3a6c;
+            --light-blue: #2a5a9c;
+            --yellow: #ffcc00;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --medium-gray: #e9ecef;
+            --dark-gray: #333333;
+            --text-gray: #6c757d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--dark-gray);
+            line-height: 1.6;
+            padding-top: 80px; /* للتعويض عن الهيدر الثابت */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles (بدون تغيير) */
+        header {
+            background-color: var(--dark-blue);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--light-blue);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+
+            header.shrink {
+                padding: 10px 0;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s ease;
+        }
+
+        header.shrink .header-content {
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            transition: all 0.4s ease;
+        }
+
+        header.shrink .logo h1 {
+            font-size: 20px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            transition: all 0.4s ease;
+        }
+
+        .logo span {
+            color: var(--yellow);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            transition: all 0.4s ease;
+        }
+
+        header.shrink nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+            transition: all 0.4s ease;
+        }
+
+            nav ul li a {
+                color: var(--white);
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s;
+            }
+
+                nav ul li a:hover {
+                    color: var(--yellow);
+                }
+
+        .auth-buttons {
+            display: flex;
+            gap: 15px;
+            transition: all 0.4s ease;
+        }
+
+        header.shrink .auth-buttons .btn {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            transform: scale(1);
+            border: none;
+            font-size: 14px;
+        }
+
+        header .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            background: transparent;
+        }
+
+        .btn-outline {
+            border: 2px solid var(--blue);
+            color: var(--blue);
+            background: transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--yellow);
+            color: var(--dark-blue);
+            border: 2px solid var(--yellow);
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        header .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(26, 58, 108, 0.1);
+            border-color: var(--blue);
+            color: var(--blue);
+        }
+
+        .btn-primary:hover {
+            background-color: #e6b800;
+            border-color: #e6b800;
+            color: var(--dark-blue);
+        }
+
+        .btn-small {
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+            border: 2px solid #dc3545;
+        }
+
+            .btn-danger:hover {
+                background-color: #c82333;
+                border-color: #bd2130;
+            }
+
+        /* Main Content Styles */
+        .main-content {
+            padding: 60px 0;
+            min-height: calc(100vh - 300px);
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+            .page-title h2 {
+                font-size: 36px;
+                color: var(--dark-blue);
+                margin-bottom: 10px;
+            }
+
+            .page-title p {
+                color: var(--text-gray);
+                font-size: 18px;
+            }
+
+        /* Table Section */
+        .table-section {
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+            .section-header h3 {
+                font-size: 24px;
+                color: var(--dark-blue);
+            }
+
+        /* Table Styles */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        .keys-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+            .keys-table thead {
+                background-color: var(--dark-blue);
+                color: var(--white);
+            }
+
+            .keys-table th {
+                padding: 15px;
+                text-align: left;
+                font-weight: 600;
+            }
+
+            .keys-table td {
+                padding: 15px;
+                border-bottom: 1px solid var(--medium-gray);
+            }
+
+            .keys-table tbody tr:hover {
+                background-color: rgba(26, 58, 108, 0.03);
+            }
+
+            .keys-table tbody tr:last-child td {
+                border-bottom: none;
+            }
+
+        .key-cell {
+            font-family: monospace;
+            font-size: 14px;
+            color: var(--dark-blue);
+        }
+
+        .wallet-cell {
+            font-family: monospace;
+            font-size: 14px;
+            color: var(--blue);
+            max-width: 300px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .actions-cell {
+            width: 120px;
+        }
+
+            .actions-cell .btn-small {
+                margin-right: 5px;
+            }
+
+        /* Add Button */
+        .add-button-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        .add-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--yellow);
+            color: var(--dark-blue);
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
+        }
+
+            .add-btn:hover {
+                background-color: #e6b800;
+                transform: scale(1.1);
+                box-shadow: 0 6px 15px rgba(255, 204, 0, 0.4);
+            }
+
+        /* Popup Styles */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 26, 53, 0.8);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+            .popup-overlay.active {
+                opacity: 1;
+                visibility: visible;
+            }
+
+        .popup {
+            background-color: var(--white);
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transform: translateY(-30px) scale(0.9);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .popup-overlay.active .popup {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        .popup-header {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--yellow);
+        }
+
+            .popup-header h3 {
+                margin: 0;
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+        .popup-close {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 20px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            padding: 5px;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .popup-close:hover {
+                color: var(--yellow);
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+        .popup-body {
+            padding: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: 600;
+                color: var(--dark-blue);
+            }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--medium-gray);
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+
+            .form-control:focus {
+                outline: none;
+                border-color: var(--yellow);
+                box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.1);
+            }
+
+            .form-control.error {
+                border-color: #dc3545;
+            }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+            .error-message.show {
+                display: block;
+            }
+
+        .popup-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        /* Second Section (Placeholder) */
+        .placeholder-section {
+            background-color: var(--light-gray);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            color: var(--text-gray);
+        }
+
+            .placeholder-section h3 {
+                color: var(--dark-blue);
+                margin-bottom: 15px;
+            }
+
+        /* Footer Styles (بدون تغيير) */
+        footer {
+            background-color: var(--dark-blue);
+            padding: 50px 0 20px;
+            color: var(--white);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+
+            .footer-column h4 {
+                font-size: 18px;
+                margin-bottom: 20px;
+                color: var(--yellow);
+            }
+
+            .footer-column ul {
+                list-style: none;
+            }
+
+                .footer-column ul li {
+                    margin-bottom: 10px;
+                }
+
+                    .footer-column ul li a {
+                        color: var(--light-gray);
+                        text-decoration: none;
+                        transition: color 0.3s;
+                    }
+
+                        .footer-column ul li a:hover {
+                            color: var(--yellow);
+                        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-blue);
+            color: var(--medium-gray);
+            font-size: 14px;
+        }
+
+        .popup-icon {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        /* Popup message styles */
+        .popup-message {
+            background-color: var(--dark-blue);
+            color: #fff;
+            padding: 15px;
+            border-radius: 15px;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            width: 350px; /* عرض ثابت أو يمكن استخدام max-width */
+            box-sizing: border-box;
+        }
+
+        /* Header section with icon and title */
+        .popup-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .popup-title {
+            margin: 0;
+            font-size: 1.1em;
+            font-weight: bold;
+            flex-grow: 1;
+            padding-left: 8px; /* padding خفيف بين الصورة والعنوان */
+        }
+
+        .popup-body {
+            padding-top: 8px;
+            line-height: 1.4;
+        }
+
+        .popup-message .timeline {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background-color: #e6b800;
+            width: 100%;
+        }
+
+        /* Container for popup messages */
+        #popup-container {
+            position: fixed;
+            bottom: 40px;
+            right: 20px; /* تغيير لليمين بدلاً من الوسط */
+            z-index: 1000;
+            max-width: 400px; /* أقصى عرض */
+        }
+
+        /* Yes/No Popup Styles */
+        .confirmation-popup {
+            background-color: var(--white);
+            border-radius: 15px;
+            width: 90%;
+            max-width: 450px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transform: translateY(-30px) scale(0.9);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+            .confirmation-popup.active {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+
+        .confirmation-header {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--yellow);
+        }
+
+        .confirmation-icon {
+            margin-right: 15px;
+            font-size: 24px;
+            color: var(--yellow);
+        }
+
+        .confirmation-body {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .confirmation-message {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: var(--dark-gray);
+            line-height: 1.5;
+        }
+
+        .confirmation-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .confirmation-btn {
+            min-width: 120px;
+        }
+
+        .confirmation-btn-no {
+            background-color: #6c757d;
+            color: white;
+            border: 2px solid #6c757d;
+        }
+
+            .confirmation-btn-no:hover {
+                background-color: #5a6268;
+                border-color: #545b62;
+            }
+
+        .confirmation-btn-yes {
+            background-color: #28a745;
+            color: white;
+            border: 2px solid #28a745;
+        }
+
+            .confirmation-btn-yes:hover {
+                background-color: #218838;
+                border-color: #1e7e34;
+            }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+                nav ul li {
+                    margin: 5px 10px;
+                }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .keys-table th, .keys-table td {
+                padding: 10px;
+            }
+
+            .popup-footer {
+                flex-direction: column;
+            }
+
+                .popup-footer .btn {
+                    width: 100%;
+                }
+
+            header.shrink .header-content {
+                flex-direction: row;
+            }
+
+            header.shrink nav ul li {
+                margin-left: 15px;
+            }
+
+            .confirmation-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .confirmation-btn {
+                width: 100%;
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>QUANTUM <span>SIGNALS</span></h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="" class="active-link">Home</a></li>
+                        <li><a href="/Backtest">Backtest</a></li>
+                        <li><a href="#funding-section">Pricing</a></li>
+                        <li><a href="#faqs-section">FAQs</a></li>
+                        <li><a href="/About">About</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="/Join" class="btn btn-primary">Join in</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Container for popup messages -->
+    <div id="popup-container"></div>
+    <main class="main-content">
+        <div class="container">
+            <div class="page-title">
+                <h2>Gift Keys Generator</h2>
+                <p>Manage your gift keys and associated wallets</p>
+            </div>
+
+            <section class="table-section">
+                <div class="section-header">
+                    <h3>Gift Keys Management</h3>
+                    <div class="table-info">
+                        <span id="keys-count">0</span> keys stored
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="keys-table">
+                        <thead>
+                            <tr>
+                                <th>Key</th>
+                                <th>Wallet Address</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="keys-table-body">
+                            <!-- البيانات ستتم إضافتها ديناميكيًا -->
+                            <tr id="no-keys-message">
+                                <td colspan="3" style="text-align: center; padding: 40px; color: var(--text-gray);">
+                                    No gift keys added yet. Click the + button below to add your first key.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="add-button-container">
+                    <button id="add-key-btn" class="add-btn">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </section>
+
+            <section class="placeholder-section">
+                <h3>Additional Information</h3>
+                <p>This section can be used for additional information, statistics, or other related content about your gift keys.</p>
+            </section>
+        </div>
+    </main>
+
+    <!-- Popup for adding/editing keys -->
+    <div id="popup-overlay" class="popup-overlay">
+        <div class="popup">
+            <div class="popup-header">
+                <h3 id="popup-title">Add New Gift Key</h3>
+                <button class="popup-close" id="popup-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="popup-body">
+                <div class="form-group">
+                    <label for="key-input">Gift Key *</label>
+                    <input type="text" id="key-input" class="form-control" placeholder="Enter gift key (e.g., XXXX-XXXX-XXXX-XXXX)">
+                    <div id="key-error" class="error-message">Please enter a valid gift key</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="wallet-input">Wallet Address *</label>
+                    <input type="text" id="wallet-input" class="form-control" placeholder="Enter Solana wallet address">
+                    <div id="wallet-error" class="error-message">Please enter a valid Solana wallet address</div>
+                </div>
+
+                <div class="popup-footer">
+                    <button id="cancel-btn" class="btn btn-outline">Cancel</button>
+                    <button id="save-btn" class="btn btn-primary">Add Key</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Yes/No Confirmation Popup -->
+    <div id="confirmation-overlay" class="popup-overlay">
+        <div id="confirmation-popup" class="confirmation-popup">
+            <div class="confirmation-header">
+                <i class="fas fa-question-circle confirmation-icon"></i>
+                <h3 id="confirmation-title">Confirmation</h3>
+            </div>
+            <div class="confirmation-body">
+                <p id="confirmation-message" class="confirmation-message">Are you sure you want to perform this action?</p>
+                <div class="confirmation-buttons">
+                    <button id="confirmation-no-btn" class="btn confirmation-btn-no confirmation-btn">No</button>
+                    <button id="confirmation-yes-btn" class="btn confirmation-btn-yes confirmation-btn">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>QUANTUM SIGNALS</h4>
+                    <p>Advanced AI-powered trading signals with transparent public backtesting for confident trading decisions.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>PRODUCT</h4>
+                    <ul>
+                        <li><a href="#faqs-section">FAQs</a></li>
+                        <li><a href="#funding-section">Pricing</a></li>
+                        <li><a href="/Backtest">Backtesting</a></li>
+                        <li><a href="/FundedAccounts">Funded Accounts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>RESOURCES</h4>
+                    <ul>
+                        <li><a href="/Tutorials">Tutorials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>COMPANY</h4>
+                    <ul>
+                        <li><a href="/About">About Us</a></li>
+                        <li><a href="/Contact">Contact Us</a></li>
+                        <li><a href="/Legal">Legal</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Quantum Signals. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let giftKeys = [];
+        let isEditing = false;
+        let editingIndex = -1;
+        let confirmationCallback = null;
+        let currentAction = null;
+        let currentIndex = null;
+        let NotJoinedIn = false;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            updateKeysTable();
+            setupEventListeners();
+            setupHeaderEffect();
+            getKeys();
+        });
+        async function getKeys(email , username , UID) {
+            if(!email || !username || !UID){
+                showPopupMessage('Join in Require' , 'Create Your Account First' , 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png');                
+                NotJoinedIn = true;
+                const AddButton = document.getElementById('add-key-btn');
+                //AddButton.removeEventListener('click' , showAddPopup);
+                //AddButton.addEventListener('click' , () => showPopupMessage('Join in Require' , 'Create Your Account First' , 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png'));
+                updateKeysTable();
+                return;
+            }
+            try{
+                const req = await fetch('https://trading-signals-private.vercel.app/api/KeyMaker' , {
+                method:'POST',
+                headers:{'Content-Type':'application/json'},
+                body:JSON.stringify({
+                    ActionType:'GetUserKeys',
+                    email,
+                    Username:username,
+                    UID
+                })
+            });
+            const data = await req.json();
+            giftKeys = data;
+            updateKeysTable();
+            return giftKeys;
+            }
+            catch (ex){
+                console.log(ex);
+                giftKeys = [];
+                updateKeysTable();
+                return [];
+            }
+        }
+        async function AddKey(email , username , UID , Key , Wallet) {
+            if(NotJoinedIn || !email || !username || !UID || !Key || !Wallet)
+            {
+                return false;
+            }
+            const req = await fetch('https://trading-signals-private.vercel.app/api/KeyMaker' , {
+                method:'POST',
+                headers:{'Content-Type':'application/json'},
+                body:JSON.stringify({
+                    ActionType:'AddKey',
+                    email,
+                    username,
+                    UID,
+                    Key,
+                    Wallet
+                })
+            });
+            return req;      
+        }
+        async function EditKey(email , username , UID , KeyID , Key , Wallet) {
+            if(NotJoinedIn|| !email || !username || !UID || !KeyID || !Key || !Wallet)
+            {
+                return false;
+            }
+            const req = await fetch('https://trading-signals-private.vercel.app/api/KeyMaker' , {
+                method:'POST',
+                headers:{'Content-Type':'application/json'},
+                body:JSON.stringify({
+                    ActionType:'EditKey',
+                    email,
+                    username,
+                    UID,
+                    KeyID,
+                    Key,
+                    Wallet
+                })
+            });
+
+            return req;
+        }
+        async function DeleteKey(email , username , UID , KeyID) {
+            if(NotJoinedIn || !email || !username || !UID || !KeyID)
+            {
+                return false;
+            }
+            const req = await fetch('https://trading-signals-private.vercel.app/api/KeyMaker' , {
+                method:'POST',
+                headers:{'Content-Type':'application/json'},
+                body:JSON.stringify({
+                    email,
+                    username,
+                    UID,
+                    KeyID
+                })
+            });
+            return req;
+        }
+        async function updateKeysTable() {
+            const tableBody = document.getElementById('keys-table-body');
+            const keysCount = document.getElementById('keys-count');
+
+            keysCount.textContent = giftKeys.length;
+
+            tableBody.innerHTML = '';
+
+            if (giftKeys.length === 0) {
+                const rawText = NotJoinedIn ? 'Join in first to use this section' : 'No gift keys added yet. Click the + button below to add your first key.';
+                const row = document.createElement('tr');
+                row.id = 'no-keys-message';
+                row.innerHTML = `
+                        <td colspan="3" style="text-align: center; padding: 40px; color: var(--text-gray);">
+                        ${rawText}
+                        </td>
+                    `;
+                tableBody.appendChild(row);
+            } else {
+
+                giftKeys.forEach((key, index) => {
+                    const row = document.createElement('tr');
+
+                    row.innerHTML = `
+                            <td class="key-cell">${key.key}</td>
+                            <td class="wallet-cell" title="${key.wallet}">${key.wallet}</td>
+                            <td class="actions-cell">
+                                <button class="btn btn-primary btn-small edit-btn" data-index="${index}">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-danger btn-small delete-btn" data-index="${index}">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        `;
+
+                    tableBody.appendChild(row);
+                });
+
+                document.querySelectorAll('.edit-btn').forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        const index = parseInt(this.getAttribute('data-index'));
+                        editKey(index);
+                    });
+                });
+
+                document.querySelectorAll('.delete-btn').forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        const index = parseInt(this.getAttribute('data-index'));
+                        showDeleteConfirmation(index);
+                    });
+                });
+            }
+        }
+
+        function setupEventListeners() {
+            document.getElementById('add-key-btn').addEventListener('click', showAddPopup);
+
+            document.getElementById('popup-close').addEventListener('click', closePopup);
+            document.getElementById('cancel-btn').addEventListener('click', closePopup);
+
+            document.getElementById('save-btn').addEventListener('click', saveKey);
+
+            document.getElementById('popup-overlay').addEventListener('click', function (e) {
+                if (e.target === this) {
+                    closePopup();
+                }
+            });
+
+            document.getElementById('key-input').addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    document.getElementById('save-btn').click();
+                }
+            });
+
+            document.getElementById('wallet-input').addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    document.getElementById('save-btn').click();
+                }
+            });
+
+            document.getElementById('confirmation-no-btn').addEventListener('click', closeConfirmation);
+            document.getElementById('confirmation-yes-btn').addEventListener('click', handleConfirmationYes);
+            document.getElementById('confirmation-overlay').addEventListener('click', function (e) {
+                if (e.target === this) {
+                    closeConfirmation();
+                }
+            });
+        }
+
+        function showAddPopup() {
+            isEditing = false;
+            editingIndex = -1;
+
+            document.getElementById('popup-title').textContent = 'Add New Gift Key';
+            document.getElementById('save-btn').textContent = 'Add Key';
+
+            document.getElementById('key-input').value = '';
+            document.getElementById('wallet-input').value = '';
+
+            clearErrors();
+
+            document.getElementById('popup-overlay').classList.add('active');
+            document.getElementById('key-input').focus();
+        }
+
+        async function editKey(index) {
+            if (index >= 0 && index < giftKeys.length) {
+                isEditing = true;
+                editingIndex = index;
+
+                const key = giftKeys[index];
+
+                document.getElementById('popup-title').textContent = 'Edit Gift Key';
+                document.getElementById('save-btn').textContent = 'Update Key';
+
+                document.getElementById('key-input').value = key.key;
+                document.getElementById('wallet-input').value = key.wallet;
+
+                clearErrors();
+
+                document.getElementById('popup-overlay').classList.add('active');
+                document.getElementById('key-input').focus();
+            }
+        }
+
+        async function showDeleteConfirmation(index) {
+            currentAction = 'delete';
+            currentIndex = index;
+
+            const key = giftKeys[index];
+            document.getElementById('confirmation-title').textContent = 'Delete Key';
+            document.getElementById('confirmation-message').textContent = `Are you sure you want to delete the key "${key.key}"?`;
+
+            document.getElementById('confirmation-overlay').classList.add('active');
+            document.getElementById('confirmation-popup').classList.add('active');
+        }
+
+        async function showUpdateConfirmation(existingIndex, wallet) {
+            currentAction = 'update';
+            currentIndex = existingIndex;
+
+            const key = giftKeys[existingIndex];
+            document.getElementById('confirmation-title').textContent = 'Update Wallet Address';
+            document.getElementById('confirmation-message').textContent = `This key "${key.key}" already exists. Do you want to update the wallet address?`;
+
+            document.getElementById('confirmation-overlay').classList.add('active');
+            document.getElementById('confirmation-popup').classList.add('active');
+        }
+
+        async function handleConfirmationYes() {
+            const email = localStorage.getItem('email');
+            const username = localStorage.getItem('username');
+            const UID = localStorage.getItem('UID');
+            if (currentAction === 'delete' && currentIndex !== null) {
+                const req = await DeleteKey(email , username , UID , KeyID);
+                if(!req){
+                    showPopupMessage('Error Alert' , 'failed to delete Key' , 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png');
+                    return;
+                    
+                }
+                giftKeys.splice(currentIndex, 1);
+                localStorage.setItem('giftKeys', JSON.stringify(giftKeys));
+                updateKeysTable();
+                showPopupMessage('Key Deleted', 'The key has been deleted successfully', 'https://cdn-icons-png.flaticon.com/512/1828/1828843.png');
+            } else if (currentAction === 'update' && currentIndex !== null) {
+                confirmationCallback = function () {
+                    const wallet = document.getElementById('wallet-input').value.trim();
+                    giftKeys[currentIndex].wallet = wallet;
+                    localStorage.setItem('giftKeys', JSON.stringify(giftKeys));
+                    updateKeysTable();
+                    closePopup();
+                    showPopupMessage('Wallet Address', 'Updated Successfully', 'https://cdn-icons-png.flaticon.com/512/190/190411.png');
+                };
+
+                if (confirmationCallback) {
+                    confirmationCallback();
+                    confirmationCallback = null;
+                }
+            }
+
+            closeConfirmation();
+        }
+
+        function closeConfirmation() {
+            document.getElementById('confirmation-overlay').classList.remove('active');
+            document.getElementById('confirmation-popup').classList.remove('active');
+            currentAction = null;
+            currentIndex = null;
+            confirmationCallback = null;
+        }
+
+        async function saveKey() {
+            const keyInput = document.getElementById('key-input');
+            const walletInput = document.getElementById('wallet-input');
+
+            const key = keyInput.value.trim();
+            const wallet = walletInput.value.trim();
+
+            let isValid = true;
+
+            if (!key) {
+                showError('key-error', 'Please enter a gift key');
+                keyInput.classList.add('error');
+                isValid = false;
+            } else {
+                clearError('key-error');
+                keyInput.classList.remove('error');
+            }
+
+            if (!wallet) {
+                showError('wallet-error', 'Please enter a wallet address');
+                walletInput.classList.add('error');
+                isValid = false;
+            } else if (!isValidSolanaAddress(wallet)) {
+                showError('wallet-error', 'Please enter a valid Solana wallet address');
+                walletInput.classList.add('error');
+                isValid = false;
+            } else {
+                clearError('wallet-error');
+                walletInput.classList.remove('error');
+            }
+
+            if (!isValid) {
+                return;
+            }
+
+            const existingIndex = giftKeys.findIndex(item => item.key === key);
+
+            if (existingIndex !== -1 && !isEditing) {
+
+                showUpdateConfirmation(existingIndex, wallet);
+                return;
+            }
+            const email = localStorage.getItem('email');
+            const username = localStorage.getItem('username');
+            const UID = localStorage.getItem('UID');
+            if (isEditing && editingIndex >= 0) { // edit & save keys flow
+                const KeyID = giftKeys[editingIndex].KeyID;
+                const req  = await EditKey(email , username , UID , KeyID , key , wallet);
+                if(!req) {
+                    showPopupMessage('failed to Edit Key' , 'Error Alert' , 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png');
+                    return;
+                }
+                giftKeys[editingIndex].key = key;
+                giftKeys[editingIndex].wallet = wallet;
+            } else {
+                const req = await AddKey(email , username , UID , key , wallet);
+                if(!req){
+                    showPopupMessage('failed to Add new Key' , 'Error Alert' , 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png');
+                    return;
+                }
+                giftKeys.push({ key, wallet });
+            }
+
+            localStorage.setItem('giftKeys', JSON.stringify(giftKeys));
+
+            updateKeysTable();
+            closePopup();
+            showPopupMessage('Key Saved', 'Your key has been saved successfully', 'https://cdn2.iconfinder.com/data/icons/round-interface-1/223/6-1024.png');
+        }
+
+        function showPopupMessage(title, text, iconSrc) {
+            const container = document.getElementById('popup-container');
+            const popup = document.createElement('div');
+            popup.className = 'popup-message';
+            popup.style.opacity = "0";
+            popup.style.transform = "translateY(20px)";
+
+            const popupContent = document.createElement('div');
+
+            const header = document.createElement('div');
+            header.className = 'popup-header';
+
+            const icon = document.createElement('img');
+            icon.className = 'popup-icon';
+            icon.src = iconSrc;
+
+            const titleEl = document.createElement('div');
+            titleEl.className = 'popup-title';
+            titleEl.textContent = title;
+
+            header.appendChild(icon);
+            header.appendChild(titleEl);
+
+            const body = document.createElement('div');
+            body.className = 'popup-body';
+            body.textContent = text;
+
+            popupContent.appendChild(header);
+            popupContent.appendChild(body);
+
+            popup.appendChild(popupContent);
+
+            const timeline = document.createElement('div');
+            timeline.className = 'timeline';
+            popup.appendChild(timeline);
+
+            container.appendChild(popup);
+
+            requestAnimationFrame(() => {
+                popup.style.opacity = "1";
+                popup.style.transform = "translateY(0)";
+            });
+
+            timeline.style.transition = "width 2.1s linear";
+            timeline.offsetWidth; // force reflow
+            timeline.style.width = "0";
+
+            setTimeout(() => {
+                popup.style.opacity = "0";
+                popup.style.transform = "translateY(-20px)";
+            }, 2100);
+
+            setTimeout(() => {
+                if (container.contains(popup)) {
+                    container.removeChild(popup);
+                }
+            }, 2600);
+        }
+
+        function isValidSolanaAddress(address) {
+            try {
+                const publicKey = new solanaWeb3.PublicKey(address);
+                return true;
+            } catch (error) {
+                return false;
+            }
+        }
+
+        function closePopup() {
+            document.getElementById('popup-overlay').classList.remove('active');
+        }
+
+        function showError(elementId, message) {
+            const errorElement = document.getElementById(elementId);
+            errorElement.textContent = message;
+            errorElement.classList.add('show');
+        }
+
+        function clearError(elementId) {
+            const errorElement = document.getElementById(elementId);
+            errorElement.classList.remove('show');
+        }
+
+        function clearErrors() {
+            clearError('key-error');
+            clearError('wallet-error');
+            document.getElementById('key-input').classList.remove('error');
+            document.getElementById('wallet-input').classList.remove('error');
+        }
+
+        function setupHeaderEffect() {
+            const header = document.getElementById('main-header');
+
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    header.classList.add('shrink');
+                } else {
+                    header.classList.remove('shrink');
+                }
+            });
+
+            header.addEventListener('mouseenter', function () {
+                this.classList.remove('shrink');
+            });
+
+            header.addEventListener('mouseleave', function () {
+                if (window.scrollY > 50) {
+                    this.classList.add('shrink');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
