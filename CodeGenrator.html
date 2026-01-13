@@ -1231,7 +1231,7 @@
                 giftKeys[editingIndex].wallet = wallet;
             } else {
                 const req = await AddKey(email , username , UID , key , wallet);
-                console.log(req);
+                console.log('req:' , req);
                 if(!req){
                     showPopupMessage('failed to Add new Key' , 'Error Alert' , 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png');
                     return;
@@ -1360,3 +1360,4 @@
     </script>
 </body>
 </html>
+
