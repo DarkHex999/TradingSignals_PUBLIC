@@ -1150,7 +1150,7 @@
                 giftKeys.splice(currentIndex, 1);
                 localStorage.setItem('giftKeys', JSON.stringify(giftKeys));
                 updateKeysTable();
-                showPopupMessage('Key Deleted', 'The key has been deleted successfully', 'https://cdn-icons-png.flaticon.com/512/1828/1828843.png');
+                showPopupMessage('Key Deleted', 'The key has been deleted successfully', 'https://cdn-icons-png.flaticon.com/512/190/190411.png');
             } else if (currentAction === 'update' && currentIndex !== null) {
                 confirmationCallback = function () {
                     const wallet = document.getElementById('wallet-input').value.trim();
@@ -1231,7 +1231,8 @@
                 giftKeys[editingIndex].wallet = wallet;
             } else {
                 const req = await AddKey(email , username , UID , key , wallet);
-                console.log('req:' , req.json());
+                const data = await req.json();
+                console.log('req' , data);
                 if(!req){
                     showPopupMessage('failed to Add new Key' , 'Error Alert' , 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png');
                     return;
@@ -1360,5 +1361,3 @@
     </script>
 </body>
 </html>
-
-
