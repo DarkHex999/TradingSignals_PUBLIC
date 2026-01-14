@@ -1306,7 +1306,7 @@
                 confirmationCallback =  async function () {
                     const wallet = document.getElementById('wallet-input').value.trim();
                     const Key = giftKeys[currentIndex];
-                    const req = await EditKey(email , username , UID , Key.KeyID , Key.Key , Key.Wallet);
+                    const req = await EditKey(email , username , UID , Key.KeyID , Key.Key , wallet);
                     if(!req) {
                         showPopupMessage('failed to Edit Key' , 'Error Alert' , 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png');
                         return;
