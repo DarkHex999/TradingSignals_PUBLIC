@@ -1052,6 +1052,9 @@
             const data = await req.json();
             if(!data.newKey){
                 console.log('add key error' , data);
+                if(data.message === 'Key Own By Another Account'){
+                    showPopupMessage('Forbidden' , data.message , 'https://uxwing.com/wp-content/themes/uxwing/download/signs-and-symbols/forbidden-prohibited-icon.png')
+                }
                 throw new Error('add key failed');
             }
             return data;
