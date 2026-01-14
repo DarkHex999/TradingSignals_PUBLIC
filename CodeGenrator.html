@@ -1051,6 +1051,7 @@
             });
             const data = req.json();
             if(!data.newKey){
+                console.log('add key error' , data);
                 throw new Error('add key failed');
             }
             return data;
@@ -1085,6 +1086,7 @@
             });
             const data = req.json();
             if(!data.EditedKey){
+                console.log('editing key error :' , data);
                 throw new Error('Editing Key Failed');
             }
             return data;
@@ -1118,6 +1120,7 @@
             hideLoadingAnimation();
             const data = req.json();
             if(!data.Key){
+                console.log('deleting key error :' , data);
                 throw new Error('Deleting Key Failed');
             }
             return data;
