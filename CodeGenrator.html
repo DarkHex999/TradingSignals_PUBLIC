@@ -668,7 +668,90 @@
                 background-color: #218838;
                 border-color: #1e7e34;
             }
+                    .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 26, 53, 0.95);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
 
+            .loading-overlay.hidden {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+        .loading-spinner {
+            width: 80px;
+            height: 80px;
+            border: 6px solid rgba(255, 204, 0, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--yellow);
+            animation: spin 1.5s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        .loading-text {
+            color: var(--white);
+            font-size: 1.5em;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .loading-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .loading-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--yellow);
+            animation: bounce 1.4s infinite ease-in-out both;
+        }
+
+            .loading-dot:nth-child(1) {
+                animation-delay: -0.32s;
+            }
+
+            .loading-dot:nth-child(2) {
+                animation-delay: -0.16s;
+            }
+            .body-no-scroll {
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+        }
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 80%, 100% {
+                transform: scale(0);
+            }
+
+            40% {
+                transform: scale(1);
+            }
+        }
         /* Responsive Styles */
         @media (max-width: 768px) {
             .header-content {
@@ -724,6 +807,15 @@
     </style>
 </head>
 <body>
+    <div id="loading-animation" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading</div>
+        <div class="loading-dots">
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+        </div>
+    </div>
     <header id="main-header">
         <div class="container">
             <div class="header-content">
@@ -891,7 +983,6 @@
         const email = localStorage.getItem('email');
         const username = localStorage.getItem('username');
         const UID = localStorage.getItem('UID');
-
         document.addEventListener('DOMContentLoaded', function () {
             updateKeysTable();
             setupEventListeners();
@@ -899,13 +990,15 @@
             getKeys(email , username , UID);
         });
         async function getKeys(email , username , UID) {
+        showLoadingAnimation();
             if(!email || !username || !UID){
                 showPopupMessage('Join in Require' , 'Create Your Account First' , 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png');                
                 NotJoinedIn = true;
                 const AddButton = document.getElementById('add-key-btn');
-                //AddButton.removeEventListener('click' , showAddPopup);
-                //AddButton.addEventListener('click' , () => showPopupMessage('Join in Require' , 'Create Your Account First' , 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png'));
+                AddButton.removeEventListener('click' , showAddPopup);
+                AddButton.addEventListener('click' , () => showPopupMessage('Join in Require' , 'Create Your Account First' , 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png'));
                 updateKeysTable();
+                hideLoadingAnimation();
                 return;
             }
             try{
@@ -931,13 +1024,20 @@
                 updateKeysTable();
                 return [];
             }
+            finally{
+                hideLoadingAnimation();
+            }
         }
         async function AddKey(email , username , UID , Key , Wallet) {
+            showLoadingAnimation();
             if(NotJoinedIn || !email || !username || !UID || !Key || !Wallet)
             {
+                hideLoadingAnimation();
                 return false;
             }
-            const req = await fetch('https://trading-signals-private.vercel.app/api/KeyMaker' , {
+            try
+            {
+                const req = await fetch('https://trading-signals-private.vercel.app/api/KeyMaker' , {
                 method:'POST',
                 headers:{'Content-Type':'application/json'},
                 body:JSON.stringify({
@@ -949,14 +1049,28 @@
                     Wallet
                 })
             });
-            return req;
+            const data = req.json();
+            if(!data.newKey){
+                throw new Error('add key failed');
+            }
+            return data;
+            }
+            catch{
+            return false;    
+            }
+            finally{
+                hideLoadingAnimation();
+            }
         }
         async function EditKey(email , username , UID , KeyID , Key , Wallet) {
+            showLoadingAnimation();
             if(NotJoinedIn|| !email || !username || !UID || !KeyID || !Key || !Wallet)
             {
+                hideLoadingAnimation();
                 return false;
             }
-            const req = await fetch('https://trading-signals-private.vercel.app/api/KeyMaker' , {
+            try{
+                const req = await fetch('https://trading-signals-private.vercel.app/api/KeyMaker' , {
                 method:'POST',
                 headers:{'Content-Type':'application/json'},
                 body:JSON.stringify({
@@ -969,14 +1083,27 @@
                     Wallet
                 })
             });
-
-            return req;
-        }
-        async function DeleteKey(email , username , UID , KeyID) {
-            if(NotJoinedIn || !email || !username || !UID || !KeyID)
-            {
+            const data = req.json();
+            if(!data.EditedKey){
+                throw new Error('Editing Key Failed');
+            }
+            return data;
+            }
+            catch{
                 return false;
             }
+            finally{
+                hideLoadingAnimation();
+            }
+        }
+        async function DeleteKey(email , username , UID , KeyID) {
+            showLoadingAnimation();
+            if(NotJoinedIn || !email || !username || !UID || !KeyID)
+            {
+                hideLoadingAnimation();
+                return false;
+            }
+            try{
             const req = await fetch('https://trading-signals-private.vercel.app/api/KeyMaker' , {
                 method:'POST',
                 headers:{'Content-Type':'application/json'},
@@ -988,9 +1115,22 @@
                     KeyID
                 })
             });
-            return req;
+            hideLoadingAnimation();
+            const data = req.json();
+            if(!data.Key){
+                throw new Error('Deleting Key Failed');
+            }
+            return data;
+            }
+            catch{
+                return false;
+            }
+            finally{
+                hideLoadingAnimation();
+            }
         }
         async function updateKeysTable() {
+            showLoadingAnimation();
             const tableBody = document.getElementById('keys-table-body');
             const keysCount = document.getElementById('keys-count');
 
@@ -1222,20 +1362,18 @@
             }
             if (isEditing && editingIndex >= 0) { // edit & save keys flow
                 const KeyID = giftKeys[editingIndex].KeyID;
-                const req  = await EditKey(email , username , UID , KeyID , key , wallet);
-                const data = await req.json();
+                const data  = await EditKey(email , username , UID , KeyID , key , wallet);
                 console.log('edited key:' , data);
-                if(!req) {
+                if(!data) {
                     showPopupMessage('failed to Edit Key' , 'Error Alert' , 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png');
                     return;
                 }
                 giftKeys[editingIndex].Key = data.EditedKey.Key;
                 giftKeys[editingIndex].Wallet = data.EditedKey.Wallet;
             } else {
-                const req = await AddKey(email , username , UID , key , wallet);
-                const data = await req.json();
+                const data = await AddKey(email , username , UID , key , wallet);
                 console.log('req:' , data);
-                if(!req){
+                if(!data){
                     showPopupMessage('failed to Add new Key' , 'Error Alert' , 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png');
                     return;
                 }
@@ -1359,6 +1497,35 @@
                     this.classList.add('shrink');
                 }
             });
+        }
+        function showLoadingAnimation() {
+            const loadingElement = document.getElementById('loading-animation');
+            const mainContent = document.getElementById('main-content');
+
+            document.body.classList.add('body-no-scroll');
+
+            if (loadingElement) {
+                loadingElement.classList.remove('hidden');
+            }
+            if (mainContent) {
+                mainContent.classList.remove('loaded');
+            }
+        }
+
+        function hideLoadingAnimation() {
+            const loadingElement = document.getElementById('loading-animation');
+            const mainContent = document.getElementById('main-content');
+
+            document.body.classList.remove('body-no-scroll');
+
+            if (loadingElement) {
+                loadingElement.classList.add('hidden');
+            }
+            if (mainContent) {
+                setTimeout(() => {
+                    mainContent.classList.add('loaded');
+                }, 300);
+            }
         }
     </script>
 </body>
