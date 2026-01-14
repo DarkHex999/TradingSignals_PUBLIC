@@ -1285,7 +1285,7 @@
 
             const key = giftKeys[existingIndex];
             document.getElementById('confirmation-title').textContent = 'Update Wallet Address';
-            document.getElementById('confirmation-message').textContent = `This key "${key.key}" already exists. Do you want to update the wallet address?`;
+            document.getElementById('confirmation-message').textContent = `This key "${key.Key}" already exists. Do you want to update the wallet address?`;
 
             document.getElementById('confirmation-overlay').classList.add('active');
             document.getElementById('confirmation-popup').classList.add('active');
@@ -1303,9 +1303,15 @@
                 updateKeysTable();
                 showPopupMessage('Key Deleted', 'The key has been deleted successfully', 'https://cdn-icons-png.flaticon.com/512/190/190411.png');
             } else if (currentAction === 'update' && currentIndex !== null) {
-                confirmationCallback = function () {
+                confirmationCallback =  async function () {
                     const wallet = document.getElementById('wallet-input').value.trim();
-                    giftKeys[currentIndex].Wallet = wallet;
+                    const Key = giftKeys[currentIndex];
+                    const req = await EditKey(email , username , UID , Key.KeyID , Key.Key , Key.Wallet);
+                    if(!req) {
+                        showPopupMessage('failed to Edit Key' , 'Error Alert' , 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png');
+                        return;
+                    }
+                    Key.Wallet = wallet;
                     localStorage.setItem('giftKeys', JSON.stringify(giftKeys));
                     updateKeysTable();
                     closePopup();
