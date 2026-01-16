@@ -1090,7 +1090,7 @@
                 })
             });
             const data = await req.json();
-            if(!data.EditedKey){
+            if(!data.keyData){
                 console.log('editing key error :' , data);
                 throw new Error('Editing Key Failed');
             }
@@ -1393,8 +1393,8 @@
                     showPopupMessage('failed to Edit Key' , 'Error Alert' , 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png');
                     return;
                 }
-                giftKeys[editingIndex].Key = data.EditedKey.Key;
-                giftKeys[editingIndex].Wallet = data.EditedKey.Wallet;
+                giftKeys[editingIndex].Key = data.keyData.Key;
+                giftKeys[editingIndex].Wallet = data.keyData.Wallet;
             } else {
                 const data = await AddKey(email , username , UID , key , wallet);
                 console.log('req:' , data);
@@ -1555,4 +1555,5 @@
     </script>
 </body>
 </html>
+
 
