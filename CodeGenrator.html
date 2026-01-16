@@ -1125,7 +1125,7 @@
             });
             hideLoadingAnimation();
             const data = await req.json();
-            if(!data.Key){
+            if(!data.keyData){
                 console.log('deleting key error :' , data);
                 throw new Error('Deleting Key Failed');
             }
@@ -1555,6 +1555,7 @@
     </script>
 </body>
 </html>
+
 
 
 
