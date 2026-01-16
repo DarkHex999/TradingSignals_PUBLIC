@@ -988,7 +988,209 @@
             .faq-answer {
                 font-size: 14px;
             }
+            .gift-btn {
+                bottom: 20px;
+                left: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .gift-popup {
+                width: 95%;
+                margin: 20px;
+            }
+
+            .gift-popup-body {
+                padding: 20px;
+            }
         }
+        /* Gift Button Styles */
+        .gift-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: var(--yellow);
+            color: var(--dark-blue);
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .gift-btn:hover {
+                transform: scale(1.1);
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+                background: #e6b800;
+            }
+
+        /* Gift Popup Overlay */
+        .gift-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 26, 53, 0.7);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+            .gift-popup-overlay.active {
+                opacity: 1;
+                visibility: visible;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+        /* Gift Popup */
+        .gift-popup {
+            background: var(--white);
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transform: translateY(-30px) scale(0.9);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .gift-popup-overlay.active .gift-popup {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+        /* Closing Animations */
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        @keyframes popupSlideOut {
+            from {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+
+            to {
+                opacity: 0;
+                transform: translateY(-30px) scale(0.9);
+            }
+        }
+
+        .gift-popup-overlay.closing {
+            animation: fadeOut 0.3s ease forwards;
+        }
+
+        .gift-popup.closing {
+            animation: popupSlideOut 0.3s ease forwards;
+        }
+        .gift-popup-header {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--yellow);
+        }
+
+            .gift-popup-header h3 {
+                margin: 0;
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+        .gift-popup-close {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 20px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            padding: 5px;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .gift-popup-close:hover {
+                color: var(--yellow);
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+        .gift-popup-body {
+            padding: 30px;
+        }
+
+        #gift-key-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--medium-gray);
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+
+            #gift-key-input:focus {
+                outline: none;
+                border-color: var(--yellow);
+                box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.1);
+            }
+
+        #apply-gift-key {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes popupSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px) scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -998,6 +1200,9 @@
                 <div class="logo">
                     <h1>QUANTUM <span>SIGNALS</span></h1>
                 </div>
+                <button id="gift-button" class="gift-btn" title="Gift Key">
+                    <i class="fas fa-gift"></i>
+                </button>
                 <nav>
                     <ul>
                         <li><a href="" class="active-link">Home</a></li>
@@ -1344,6 +1549,21 @@
             </div>
         </div>
     </footer>
+    <!-- Gift Popup Menu -->
+    <div id="gift-popup-overlay" class="gift-popup-overlay">
+        <div class="gift-popup">
+            <div class="gift-popup-header">
+                <h3>Enter the gift key</h3>
+                <button class="gift-popup-close" id="gift-popup-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="gift-popup-body">
+                <input type="text" id="gift-key-input" placeholder="Enter your gift key here">
+                <button id="apply-gift-key" class="btn btn-primary">Apply Key</button>
+            </div>
+        </div>
+    </div>
     <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
     <script>
         class FundedAccount {
@@ -1381,6 +1601,7 @@
             backtestChart: false,
             FundChart: false
         };
+        let giftKey = '';
 
         async function loadFundedAccounts() {
             try {
@@ -1847,10 +2068,17 @@
 
             try {
                 const creatorWallet = wallet.publicKey.toBase58();
+                let payload;
+                if (giftKey) {
+                    payload = JSON.stringify({ creatorWallet , GiftKey: giftKey });
+                }
+                else {
+                    payload = JSON.stringify({ creatorWallet });
+                }
                 let res = await fetch('https://trading-signals-private.vercel.app/api/CreateTransaction', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ creatorWallet })
+                    body: payload
                 });
                 let data = await res.json();
                 console.log(data.Network);
@@ -1873,8 +2101,7 @@
                     console.log("Transaction ID:", txid);
                     showPopupMessage('Transaction', `Done Successfully`, "https://icons.veryicon.com/png/o/internet--web/online-finance/transaction.png");
                 }
-                catch(ex)
-                {
+                catch (ex) {
                     showPopupMessage('Transaction Error', `${ex}`, "https://www.freeiconspng.com/uploads/error-icon-4.png");
                 }
             }
@@ -1885,6 +2112,117 @@
                 PayButton.innerText = 'Get Started';
                 PayButton.disabled = false;
             }
+        }
+        // Gift Button Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const giftButton = document.getElementById('gift-button');
+            const giftPopupOverlay = document.getElementById('gift-popup-overlay');
+            const giftPopupClose = document.getElementById('gift-popup-close');
+            const applyGiftKeyButton = document.getElementById('apply-gift-key');
+            const giftKeyInput = document.getElementById('gift-key-input');
+
+            // Open gift popup
+            giftButton.addEventListener('click', function () {
+                giftPopupOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+                giftKeyInput.focus();
+            });
+
+            // Close gift popup
+            giftPopupClose.addEventListener('click', function () {
+                closeGiftPopup();
+            });
+
+            // Close popup when clicking outside
+            giftPopupOverlay.addEventListener('click', function (e) {
+                if (e.target === giftPopupOverlay) {
+                    closeGiftPopup();
+                }
+            });
+
+            // Apply gift key
+            applyGiftKeyButton.addEventListener('click', async function () {
+                giftKey = giftKeyInput.value.trim();
+                try {
+                    if (!giftKey) {
+                        giftKeyInput.style.borderColor = '#dc3545';
+                        giftKeyInput.focus();
+                        setTimeout(() => {
+                            giftKeyInput.style.borderColor = 'var(--medium-gray)';
+                        }, 2000);
+                        return;
+                    }
+                    console.log('Applying gift key:', giftKey);
+                    const res = await fetch('https://trading-signals-private.vercel.app/api/KeyVerifier', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ Key: giftKey })
+                    });
+                    const data = await res.json();
+                    if (!data.findKey) {
+                        showPopupMessage('Gift Key', `Key verification failed!`, "https://www.freeiconspng.com/uploads/error-icon-4.png");
+                        giftKey = '';
+                        return;
+                    } else {
+                        showPopupMessage('Gift Key', `Gift key applied successfully!`, "https://cdn-icons-png.flaticon.com/512/190/190411.png");
+                    }
+                }
+                catch
+                {
+                    showPopupMessage('Gift Key Error', `Something went wrong!`, "https://www.freeiconspng.com/uploads/error-icon-4.png");
+                    giftKey = '';
+                }
+                finally
+                {
+                    if (giftKeyInput.value !== '') {
+                        closeGiftPopup();
+                        giftKeyInput.value = '';
+                    }
+                }
+            });
+
+            // Allow Enter key to apply gift key
+            giftKeyInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    applyGiftKeyButton.click();
+                }
+            });
+
+            // Close popup with Escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && giftPopupOverlay.classList.contains('active')) {
+                    closeGiftPopup();
+                }
+            });
+
+            // Function to close gift popup
+            function closeGiftPopup() {
+                giftPopupOverlay.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+                giftKeyInput.value = ''; // Clear input
+            }
+
+            // Optional: Add gift key validation function
+            function validateGiftKey(key) {
+                return true;
+            }
+        });
+        // Function to close gift popup with animation
+        function closeGiftPopup() {
+            const overlay = document.getElementById('gift-popup-overlay');
+            const popup = document.querySelector('.gift-popup');
+
+            // Add closing classes to trigger animations
+            overlay.classList.add('closing');
+            popup.classList.add('closing');
+
+            // Remove active class after animation completes
+            setTimeout(() => {
+                overlay.classList.remove('active', 'closing');
+                popup.classList.remove('closing');
+                document.body.style.overflow = ''; // Restore scrolling
+                giftKeyInput.value = ''; // Clear input
+            }, 300); // Match the animation duration
         }
     </script>
 </body>
