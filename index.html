@@ -2142,8 +2142,10 @@
 
             // Apply gift key
             applyGiftKeyButton.addEventListener('click', async function () {
-                giftKey = giftKeyInput.value.trim();
                 try {
+                    giftKey = giftKeyInput.value.trim();
+                    applyGiftKeyButton.disabled = true;
+                    applyGiftKeyButton.innerText = 'Processing...';
                     if (!giftKey) {
                         giftKeyInput.style.borderColor = '#dc3545';
                         giftKeyInput.focus();
@@ -2178,6 +2180,8 @@
                         closeGiftPopup();
                         giftKeyInput.value = '';
                     }
+                    applyGiftKeyButton.disabled = false;
+                    applyGiftKeyButton.innerText = 'Apply Key';
                 }
             });
 
