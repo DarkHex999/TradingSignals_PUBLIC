@@ -1051,7 +1051,7 @@
                 })
             });
             const data = await req.json();
-            if(!data.newKey){
+            if(!data.keyData){
                 console.log('add key error' , data);
                 if(data.message === 'Key Own By Another Account'){
                     showPopupMessage('Forbidden' , data.message , 'https://uxwing.com/wp-content/themes/uxwing/download/signs-and-symbols/forbidden-prohibited-icon.png')
@@ -1402,7 +1402,7 @@
                     showPopupMessage('failed to Add new Key' , 'Error Alert' , 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png');
                     return;
                 }
-                giftKeys.push({ ...data.newKey });
+                giftKeys.push({ ...data.keyData });
             }
 
             localStorage.setItem('giftKeys', JSON.stringify(giftKeys));
@@ -1555,5 +1555,6 @@
     </script>
 </body>
 </html>
+
 
 
