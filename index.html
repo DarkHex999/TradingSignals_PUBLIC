@@ -2099,10 +2099,10 @@
                 const creatorWallet = wallet.publicKey.toBase58();
                 let payload;
                 if (giftKey) {
-                    payload = JSON.stringify({ creatorWallet , email , username , UID , GiftKey: giftKey });
+                    payload = JSON.stringify({ creatorWallet , GiftKey: giftKey });
                 }
                 else {
-                    payload = JSON.stringify({ creatorWallet , email , username , UID });
+                    payload = JSON.stringify({ creatorWallet });
                 }
                 let res;
                 let data;
@@ -2124,7 +2124,7 @@
                 res = await fetch('https://trading-signals-private.vercel.app/api/ConfirmTransaction', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ signedTxBase64 })
+                    body: JSON.stringify({ signedTxBase64, email, username , UID })
                 });
                 data = await res.json();
                 try {
