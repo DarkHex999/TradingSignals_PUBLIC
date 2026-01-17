@@ -2063,6 +2063,7 @@
                 data = await res.json();
                 if ((res.ok && data.ok)) {
                     LoggedIn = true;
+                    showPopupMessage('Join in', 'Verified Account', 'https://icons.veryicon.com/png/o/internet--web/online-finance/transaction.png');
                     return;
                 }
             }
