@@ -1602,7 +1602,8 @@
             FundChart: false
         };
         let giftKey = '';
-
+        let LoggedIn = false;
+        let PayButton  = document.getElementById('pay-button');
         async function loadFundedAccounts() {
             try {
                 const response = await fetch('https://raw.githubusercontent.com/DarkHex999/TradingSignals_PUBLIC/refs/heads/main/FundedAccounts.txt');
@@ -2045,11 +2046,37 @@
             CW_Button.innerText = 'Connected ' + wallet.publicKey.toString().slice(0, 4) + "...";
             CW_Button.onclick = null;
         }
+        async function CheckLoginStatus() {
+            const username = localStorage.getItem('username');
+            const email = localStorage.getItem('email');
+            const UID = localStorage.getItem('UID');
+            if (username && email && UID) {
+                res = await fetch('https://trading-signals-private.vercel.app/api/Login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        username,
+                        email,
+                        UID
+                    })
+                });
+                data = await res.json();
+                if ((res.ok && data.ok)) {
+                    LoggedIn = true;
+                    return;
+                }
+            }
+
+        }
         CheckConnection();
+        CheckLoginStatus();
 
         // transaction logic
         const { PublicKey, SystemProgram, Transaction, LAMPORTS_PER_SOL } = solanaWeb3;
         async function Pay() {
+            if (!LoggedIn) {
+                showPopupMessage('Join in Require', 'Creat your account first', 'https://www.freeiconspng.com/uploads/error-icon-4.png');
+            }
             if (!wallet) {
                 await connectWallet();
                 if (!wallet) {
@@ -2062,7 +2089,9 @@
                 console.log('provider dosent exist');
                 return;
             }
-            const PayButton = document.getElementById('pay-button');
+            if (!LoggedIn) {
+                return;
+            }
             PayButton.innerText = 'Processing...';
             PayButton.disabled = true;
 
@@ -2077,26 +2106,6 @@
                 }
                 let res;
                 let data;
-                const username = localStorage.getItem('username');
-                const email = localStorage.getItem('email');
-                const UID = localStorage.getItem('UID');
-                if (username && email && UID) {
-                    res = await fetch('https://trading-signals-private.vercel.app/api/Login', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            username,
-                            email,
-                            UID
-                        })
-                    });
-                    data = await res.json();
-                    if (!(res.ok && data.ok)) {
-                        throw new Error('Join in Required');
-                    }
-                } else {
-                    throw new Error('Join in Required');
-                }
 
                 res = await fetch('https://trading-signals-private.vercel.app/api/CreateTransaction', {
                     method: 'POST',
@@ -2131,12 +2140,6 @@
             }
             catch (ex) {
                 console.log(ex);
-
-                if (ex.message === 'Join in Required') {
-                    PayButton.removeEventListener('click', Pay);
-                    PayButton.addEventListener('click', () => showPopupMessage('Join in Required', 'Create Your Account First', 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png'));
-                    showPopupMessage(ex.message, 'Create Your Account First', 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png');
-                }
             }
             finally {
                 PayButton.innerText = 'Get Started';
@@ -2145,12 +2148,13 @@
         }
         // Gift Button Functionality
         document.addEventListener('DOMContentLoaded', function () {
+            console.log('DOOM LODED');
             const giftButton = document.getElementById('gift-button');
             const giftPopupOverlay = document.getElementById('gift-popup-overlay');
             const giftPopupClose = document.getElementById('gift-popup-close');
             const applyGiftKeyButton = document.getElementById('apply-gift-key');
             const giftKeyInput = document.getElementById('gift-key-input');
-
+            PayButton = document.getElementById('pay-button');
             // Open gift popup
             giftButton.addEventListener('click', function () {
                 giftPopupOverlay.classList.add('active');
