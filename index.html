@@ -2046,10 +2046,10 @@
             CW_Button.innerText = 'Connected ' + wallet.publicKey.toString().slice(0, 4) + "...";
             CW_Button.onclick = null;
         }
+        const username = localStorage.getItem('username');
+        const email = localStorage.getItem('email');
+        const UID = localStorage.getItem('UID');
         async function CheckLoginStatus() {
-            const username = localStorage.getItem('username');
-            const email = localStorage.getItem('email');
-            const UID = localStorage.getItem('UID');
             if (username && email && UID) {
                 res = await fetch('https://trading-signals-private.vercel.app/api/Login', {
                     method: 'POST',
@@ -2067,7 +2067,6 @@
                     return;
                 }
             }
-
         }
         CheckConnection();
         CheckLoginStatus();
@@ -2100,10 +2099,10 @@
                 const creatorWallet = wallet.publicKey.toBase58();
                 let payload;
                 if (giftKey) {
-                    payload = JSON.stringify({ creatorWallet , GiftKey: giftKey });
+                    payload = JSON.stringify({ creatorWallet , email , username , UID , GiftKey: giftKey });
                 }
                 else {
-                    payload = JSON.stringify({ creatorWallet });
+                    payload = JSON.stringify({ creatorWallet , email , username , UID });
                 }
                 let res;
                 let data;
