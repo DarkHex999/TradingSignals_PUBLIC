@@ -988,6 +988,7 @@
             .faq-answer {
                 font-size: 14px;
             }
+
             .gift-btn {
                 bottom: 20px;
                 left: 20px;
@@ -1069,6 +1070,7 @@
             opacity: 0;
             transition: transform 0.3s ease, opacity 0.3s ease;
         }
+
         .gift-popup-overlay.active .gift-popup {
             transform: translateY(0) scale(1);
             opacity: 1;
@@ -1103,6 +1105,7 @@
         .gift-popup.closing {
             animation: popupSlideOut 0.3s ease forwards;
         }
+
         .gift-popup-header {
             background: var(--dark-blue);
             color: var(--white);
@@ -1190,7 +1193,6 @@
                 transform: translateY(0) scale(1);
             }
         }
-
     </style>
 </head>
 <body>
@@ -1240,7 +1242,7 @@
                 <div class="funding-options">
                     <div class="funding-option">
                         <h4>BASIC PLAN</h4>
-                        <div class="amount">$99/MONTH</div>
+                        <div class="amount" id="basic-price">$99/MONTH</div>
                         <p>● Stable Backtesting Result</p>
                         <p>● Passing Funded Accounts</p>
                         <p>● Crypto signals</p>
@@ -1603,7 +1605,7 @@
         };
         let giftKey = '';
         let LoggedIn = false;
-        let PayButton  = document.getElementById('pay-button');
+        let PayButton = document.getElementById('pay-button');
         async function loadFundedAccounts() {
             try {
                 const response = await fetch('https://raw.githubusercontent.com/DarkHex999/TradingSignals_PUBLIC/refs/heads/main/FundedAccounts.txt');
@@ -2099,7 +2101,7 @@
                 const creatorWallet = wallet.publicKey.toBase58();
                 let payload;
                 if (giftKey) {
-                    payload = JSON.stringify({ creatorWallet , GiftKey: giftKey });
+                    payload = JSON.stringify({ creatorWallet, GiftKey: giftKey });
                 }
                 else {
                     payload = JSON.stringify({ creatorWallet });
@@ -2124,7 +2126,7 @@
                 res = await fetch('https://trading-signals-private.vercel.app/api/ConfirmTransaction', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ signedTxBase64, email, username , UID })
+                    body: JSON.stringify({ signedTxBase64, email, username, UID })
                 });
                 data = await res.json();
                 try {
@@ -2195,12 +2197,15 @@
                         body: JSON.stringify({ Key: giftKey })
                     });
                     const data = await res.json();
+                    const basicPrice = document.getElementById('basic-price');
                     if (!data.findKey) {
                         showPopupMessage('Gift Key', `Key verification failed!`, "https://www.freeiconspng.com/uploads/error-icon-4.png");
                         giftKey = '';
+                        basicPrice.innerText = '$99/MONTH';
                         return;
                     } else {
                         showPopupMessage('Gift Key', `Gift key applied successfully!`, "https://cdn-icons-png.flaticon.com/512/190/190411.png");
+                        basicPrice.innerText = '$99/MONTH+7D';
                     }
                 }
                 catch
@@ -2208,8 +2213,7 @@
                     showPopupMessage('Gift Key Error', `Something went wrong!`, "https://www.freeiconspng.com/uploads/error-icon-4.png");
                     giftKey = '';
                 }
-                finally
-                {
+                finally {
                     if (giftKeyInput.value !== '') {
                         closeGiftPopup();
                         giftKeyInput.value = '';
