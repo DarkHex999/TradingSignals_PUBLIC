@@ -2123,10 +2123,17 @@
                 PayButton.innerText = 'Sending To Blockchain....';
                 const signedTxBase64 = btoa(String.fromCharCode(...signedTx.serialize()));
 
+                if (giftKey) {
+                    payload = JSON.stringify({ signedTxBase64, email, username, UID, giftKey });
+                }
+                else {
+                    payload = JSON.stringify({ signedTxBase64, email, username, UID });
+                }
+
                 res = await fetch('https://trading-signals-private.vercel.app/api/ConfirmTransaction', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ signedTxBase64, email, username, UID })
+                    body: payload
                 });
                 data = await res.json();
                 try {
