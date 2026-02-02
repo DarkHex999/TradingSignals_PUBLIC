@@ -2124,7 +2124,7 @@
                 const signedTxBase64 = btoa(String.fromCharCode(...signedTx.serialize()));
 
                 if (giftKey) {
-                    payload = JSON.stringify({ signedTxBase64, email, username, UID, Key: giftKey });
+                    payload = JSON.stringify({ signedTxBase64, email, username, UID, giftKey  });
                 }
                 else {
                     payload = JSON.stringify({ signedTxBase64, email, username, UID });
@@ -2276,4 +2276,5 @@
     </script>
 </body>
 </html>
+
 
