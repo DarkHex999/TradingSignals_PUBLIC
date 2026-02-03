@@ -1413,7 +1413,7 @@
                 showUpdateConfirmation(existingIndex, wallet);
                 return;
             }
-            if (isEditing && editingIndex >= 0) { // edit & save keys flow
+            if (isEditing && editingIndex >= 0) { // edit & save keys flow.
                 const KeyID = giftKeys[editingIndex].KeyID;
                 const data  = await EditKey(email , username , UID , KeyID , key , wallet);
                 console.log('edited key:' , data);
@@ -1585,3 +1585,4 @@
     </script>
 </body>
 </html>
+
