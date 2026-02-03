@@ -1035,9 +1035,9 @@
                 closePopup();
             }
         }
-        async function AddKey(email , username , UID , Key , Wallet , inviteKey) {
+        async function AddKey(email, username, UID, Key, Wallet, InviteKey) {
             showLoadingAnimation();
-            if (NotJoinedIn || !email || !username || !UID || !Key || !Wallet || !inviteKey)
+            if (NotJoinedIn || !email || !username || !UID || !Key || !Wallet || !InviteKey)
             {
                 hideLoadingAnimation();
                 return false;
@@ -1054,7 +1054,7 @@
                     UID,
                     Key,
                     Wallet,
-                    inviteKey
+                    InviteKey
                 })
             });
             const data = await req.json();
@@ -1428,7 +1428,7 @@
                 const data = await AddKey(email, username, UID, key, wallet, invite);
                 console.log('req:' , data);
                 if(!data){
-                    showPopupMessage('failed to Add new Key' , 'Error Alert' , 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png');
+                    showPopupMessage('Error Alert', 'failed to Add new Key' , 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png');
                     return;
                 }
                 giftKeys.push({ ...data.keyData });
