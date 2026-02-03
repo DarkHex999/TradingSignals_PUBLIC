@@ -910,6 +910,12 @@
                     <div id="wallet-error" class="error-message">Please enter a valid Solana wallet address</div>
                 </div>
 
+                <div class="form-group">
+                    <label for="invite-input">Invite Code *</label>
+                    <input type="text" id="invite-input" class="form-control" placeholder="Enter Invite Code">
+                    <div id="invite-error" class="error-message">Please enter a valid Invite Code</div>
+                </div>
+
                 <div class="popup-footer">
                     <button id="cancel-btn" class="btn btn-outline">Cancel</button>
                     <button id="save-btn" class="btn btn-primary">Add Key</button>
@@ -1029,9 +1035,9 @@
                 closePopup();
             }
         }
-        async function AddKey(email , username , UID , Key , Wallet) {
+        async function AddKey(email , username , UID , Key , Wallet , inviteKey) {
             showLoadingAnimation();
-            if(NotJoinedIn || !email || !username || !UID || !Key || !Wallet)
+            if (NotJoinedIn || !email || !username || !UID || !Key || !Wallet || !inviteKey)
             {
                 hideLoadingAnimation();
                 return false;
@@ -1053,8 +1059,11 @@
             const data = await req.json();
             if(!data.keyData){
                 console.log('add key error' , data);
-                if(data.message === 'Key Own By Another Account'){
-                    showPopupMessage('Forbidden' , data.message , 'https://uxwing.com/wp-content/themes/uxwing/download/signs-and-symbols/forbidden-prohibited-icon.png')
+                if (data.message === 'Key Own By Another Account') {
+                    showPopupMessage('Forbidden', data.message, 'https://uxwing.com/wp-content/themes/uxwing/download/signs-and-symbols/forbidden-prohibited-icon.png');
+                }
+                else if (data.message === 'use a valid invite') {
+                    showPopupMessage('Invalid', data.message, 'https://cdn-icons-png.freepik.com/512/9426/9426995.png?ga=GA1.1.850130124.1752992055');
                 }
                 throw new Error('add key failed');
             }
@@ -1230,6 +1239,12 @@
                 }
             });
 
+            document.getElementById('invite-input').addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    document.getElementById('save-btn').click();
+                }
+            });
+
             document.getElementById('confirmation-no-btn').addEventListener('click', closeConfirmation);
             document.getElementById('confirmation-yes-btn').addEventListener('click', handleConfirmationYes);
             document.getElementById('confirmation-overlay').addEventListener('click', function (e) {
@@ -1248,6 +1263,7 @@
 
             document.getElementById('key-input').value = '';
             document.getElementById('wallet-input').value = '';
+            document.getElementById('invite-input').value = '';
 
             clearErrors();
 
@@ -1267,6 +1283,7 @@
 
                 document.getElementById('key-input').value = key.Key;
                 document.getElementById('wallet-input').value = key.Wallet;
+                document.getElementById('invite-input').value = key.Invite;
 
                 clearErrors();
 
@@ -1346,9 +1363,11 @@
         async function saveKey() {
             const keyInput = document.getElementById('key-input');
             const walletInput = document.getElementById('wallet-input');
+            const inviteInput = document.getElementById('invite-input');
 
             const key = keyInput.value.trim();
             const wallet = walletInput.value.trim();
+            const invite = inviteInput.value.trim();
 
             let isValid = true;
 
@@ -1374,6 +1393,15 @@
                 walletInput.classList.remove('error');
             }
 
+            if (!invite) {
+                showError('invite-error', 'Please enter a valid invite code');
+                inviteInput.classList.add('error');
+                isValid = false;
+            } else {
+                clearError('invite-error');
+                inviteInput.classList.remove('error');
+            }
+
             if (!isValid) {
                 return;
             }
@@ -1396,7 +1424,7 @@
                 giftKeys[editingIndex].Key = data.keyData.Key;
                 giftKeys[editingIndex].Wallet = data.keyData.Wallet;
             } else {
-                const data = await AddKey(email , username , UID , key , wallet);
+                const data = await AddKey(email, username, UID, key, wallet, invite);
                 console.log('req:' , data);
                 if(!data){
                     showPopupMessage('failed to Add new Key' , 'Error Alert' , 'https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png');
@@ -1498,8 +1526,10 @@
         function clearErrors() {
             clearError('key-error');
             clearError('wallet-error');
+            clearError('invite-error');
             document.getElementById('key-input').classList.remove('error');
             document.getElementById('wallet-input').classList.remove('error');
+            document.getElementById('invite-input').classList.remove('error');
         }
 
         function setupHeaderEffect() {
@@ -1555,7 +1585,3 @@
     </script>
 </body>
 </html>
-
-
-
-
