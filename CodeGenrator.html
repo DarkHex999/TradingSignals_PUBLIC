@@ -415,6 +415,7 @@
 
         .form-group {
             margin-bottom: 20px;
+            display:block;
         }
 
             .form-group label {
@@ -423,7 +424,9 @@
                 font-weight: 600;
                 color: var(--dark-blue);
             }
-
+        .form-group.hidden{
+            display:none;
+        }
         .form-control {
             width: 100%;
             padding: 12px 15px;
@@ -897,7 +900,7 @@
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            <div class="popup-body">
+            <div class="popup-body" id="popup-group">
                 <div class="form-group">
                     <label for="key-input">Gift Key *</label>
                     <input type="text" id="key-input" class="form-control" placeholder="Enter gift key (e.g., XXXX-XXXX-XXXX-XXXX)">
@@ -910,7 +913,7 @@
                     <div id="wallet-error" class="error-message">Please enter a valid Solana wallet address</div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" id="invite-group">
                     <label for="invite-input">Invite Code *</label>
                     <input type="text" id="invite-input" class="form-control" placeholder="Enter Invite Code">
                     <div id="invite-error" class="error-message">Please enter a valid Invite Code</div>
@@ -1265,6 +1268,7 @@
             document.getElementById('key-input').value = '';
             document.getElementById('wallet-input').value = '';
             document.getElementById('invite-input').value = '';
+            document.getElementById('invite-group').classList.remove('hidden');
 
             clearErrors();
 
@@ -1284,8 +1288,7 @@
 
                 document.getElementById('key-input').value = key.Key;
                 document.getElementById('wallet-input').value = key.Wallet;
-                document.getElementById('invite-input').value = key.Invite;
-
+                document.getElementById('invite-group').classList.add('hidden');
                 clearErrors();
 
                 document.getElementById('popup-overlay').classList.add('active');
